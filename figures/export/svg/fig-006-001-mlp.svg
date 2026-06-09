@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-006-001 - Architecture d'un réseau multicouche</title>
+  <desc id="desc">Schéma d'un MLP montrant les entrées, deux couches cachées, les fonctions d'activation, la couche de sortie et les matrices de poids.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#334155"/>
+    </marker>
+    <style>
+      .title { font: 700 31px Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 16px Arial, sans-serif; fill: #475569; }
+      .label { font: 700 18px Arial, sans-serif; fill: #111827; }
+      .small { font: 15px Arial, sans-serif; fill: #334155; }
+      .mono { font: 15px Consolas, monospace; fill: #111827; }
+      .node { stroke: #0f172a; stroke-width: 2.2; }
+      .edge { stroke: #94a3b8; stroke-width: 1.8; fill: none; }
+      .flow { stroke: #334155; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .band { rx: 18; ry: 18; stroke-width: 2.4; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="680" fill="#ffffff"/>
+  <text x="60" y="58" class="title">Architecture d'un réseau multicouche</text>
+  <text x="60" y="88" class="subtitle">Les couches cachées construisent des représentations intermédiaires avant la décision finale.</text>
+
+  <rect x="65" y="135" width="190" height="430" class="band" fill="#eff6ff" stroke="#2563eb"/>
+  <rect x="345" y="115" width="210" height="470" class="band" fill="#f5f3ff" stroke="#7c3aed"/>
+  <rect x="645" y="145" width="210" height="410" class="band" fill="#ecfdf5" stroke="#059669"/>
+  <rect x="955" y="210" width="160" height="280" class="band" fill="#fff7ed" stroke="#ea580c"/>
+
+  <text x="110" y="170" class="label">Entrée</text>
+  <text x="390" y="150" class="label">Couche cachée 1</text>
+  <text x="692" y="180" class="label">Couche cachée 2</text>
+  <text x="995" y="245" class="label">Sortie</text>
+
+  <text x="98" y="535" class="mono">x</text>
+  <text x="405" y="535" class="mono">h_1 = a(W_1x+b_1)</text>
+  <text x="675" y="535" class="mono">h_2 = a(W_2h_1+b_2)</text>
+  <text x="985" y="535" class="mono">y_hat</text>
+
+  <g id="input">
+    <circle cx="160" cy="235" r="18" class="node" fill="#bfdbfe"/>
+    <circle cx="160" cy="305" r="18" class="node" fill="#bfdbfe"/>
+    <circle cx="160" cy="375" r="18" class="node" fill="#bfdbfe"/>
+    <circle cx="160" cy="445" r="18" class="node" fill="#bfdbfe"/>
+  </g>
+  <g id="hidden1">
+    <circle cx="450" cy="205" r="19" class="node" fill="#ddd6fe"/>
+    <circle cx="450" cy="275" r="19" class="node" fill="#ddd6fe"/>
+    <circle cx="450" cy="345" r="19" class="node" fill="#ddd6fe"/>
+    <circle cx="450" cy="415" r="19" class="node" fill="#ddd6fe"/>
+    <circle cx="450" cy="485" r="19" class="node" fill="#ddd6fe"/>
+  </g>
+  <g id="hidden2">
+    <circle cx="750" cy="245" r="19" class="node" fill="#bbf7d0"/>
+    <circle cx="750" cy="330" r="19" class="node" fill="#bbf7d0"/>
+    <circle cx="750" cy="415" r="19" class="node" fill="#bbf7d0"/>
+  </g>
+  <g id="output">
+    <circle cx="1035" cy="295" r="20" class="node" fill="#fed7aa"/>
+    <circle cx="1035" cy="385" r="20" class="node" fill="#fed7aa"/>
+  </g>
+
+  <g id="edges-input-hidden1">
+    <path class="edge" d="M178 235 L431 205"/><path class="edge" d="M178 235 L431 275"/><path class="edge" d="M178 235 L431 345"/><path class="edge" d="M178 235 L431 415"/><path class="edge" d="M178 235 L431 485"/>
+    <path class="edge" d="M178 305 L431 205"/><path class="edge" d="M178 305 L431 275"/><path class="edge" d="M178 305 L431 345"/><path class="edge" d="M178 305 L431 415"/><path class="edge" d="M178 305 L431 485"/>
+    <path class="edge" d="M178 375 L431 205"/><path class="edge" d="M178 375 L431 275"/><path class="edge" d="M178 375 L431 345"/><path class="edge" d="M178 375 L431 415"/><path class="edge" d="M178 375 L431 485"/>
+    <path class="edge" d="M178 445 L431 205"/><path class="edge" d="M178 445 L431 275"/><path class="edge" d="M178 445 L431 345"/><path class="edge" d="M178 445 L431 415"/><path class="edge" d="M178 445 L431 485"/>
+  </g>
+  <g id="edges-hidden1-hidden2">
+    <path class="edge" d="M469 205 L731 245"/><path class="edge" d="M469 205 L731 330"/><path class="edge" d="M469 205 L731 415"/>
+    <path class="edge" d="M469 275 L731 245"/><path class="edge" d="M469 275 L731 330"/><path class="edge" d="M469 275 L731 415"/>
+    <path class="edge" d="M469 345 L731 245"/><path class="edge" d="M469 345 L731 330"/><path class="edge" d="M469 345 L731 415"/>
+    <path class="edge" d="M469 415 L731 245"/><path class="edge" d="M469 415 L731 330"/><path class="edge" d="M469 415 L731 415"/>
+    <path class="edge" d="M469 485 L731 245"/><path class="edge" d="M469 485 L731 330"/><path class="edge" d="M469 485 L731 415"/>
+  </g>
+  <g id="edges-hidden2-output">
+    <path class="edge" d="M769 245 L1015 295"/><path class="edge" d="M769 245 L1015 385"/>
+    <path class="edge" d="M769 330 L1015 295"/><path class="edge" d="M769 330 L1015 385"/>
+    <path class="edge" d="M769 415 L1015 295"/><path class="edge" d="M769 415 L1015 385"/>
+  </g>
+
+  <path class="flow" d="M258 615 L338 615"/>
+  <text x="270" y="600" class="small">W_1, b_1</text>
+  <path class="flow" d="M558 615 L638 615"/>
+  <text x="570" y="600" class="small">W_2, b_2</text>
+  <path class="flow" d="M858 615 L948 615"/>
+  <text x="870" y="600" class="small">W_3, b_3</text>
+
+  <text x="65" y="650" class="subtitle">Lecture : chaque couche affine est suivie d'une activation non linéaire. Sans cette non-linéarité, l'empilement resterait linéaire.</text>
+</svg>

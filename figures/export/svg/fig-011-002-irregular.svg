@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-011-002 - Données irrégulièrement échantillonnées</title>
+  <desc id="desc">Série temporelle avec observations irrégulières, délais variables et grille régulière artificielle.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font: 700 28px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 400 16px "Segoe UI", Arial, sans-serif; fill: #4b5563; }
+      .panel { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; filter: url(#shadow); }
+      .axis { stroke: #374151; stroke-width: 2; marker-end: url(#arrow); }
+      .grid { stroke: #dbe4f0; stroke-width: 1.2; stroke-dasharray: 6 6; }
+      .obsLine { fill: none; stroke: #047857; stroke-width: 3.5; }
+      .obs { fill: #ecfdf5; stroke: #047857; stroke-width: 3; }
+      .missing { fill: #fff7ed; stroke: #ea580c; stroke-width: 2; }
+      .regular { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; }
+      .label { font: 600 16px "Segoe UI", Arial, sans-serif; fill: #1f2937; }
+      .small { font: 400 14px "Segoe UI", Arial, sans-serif; fill: #4b5563; }
+      .math { font: 600 15px "Consolas", "Cascadia Mono", monospace; fill: #111827; }
+      .tagGreen { fill: #ecfdf5; stroke: #047857; stroke-width: 1.5; }
+      .tagBlue { fill: #eff6ff; stroke: #2563eb; stroke-width: 1.5; }
+      .warn { fill: #fff7ed; stroke: #ea580c; stroke-width: 1.5; }
+      .delta { stroke: #ea580c; stroke-width: 2; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="680"/>
+  <text class="title" x="48" y="54">Données irrégulièrement échantillonnées</text>
+  <text class="subtitle" x="48" y="82">Les valeurs comptent, mais les délais entre observations peuvent porter une partie du sens.</text>
+
+  <rect class="panel" x="60" y="120" width="1080" height="500" rx="14"/>
+
+  <line class="axis" x1="120" y1="515" x2="1085" y2="515"/>
+  <line class="axis" x1="120" y1="515" x2="120" y2="175"/>
+  <text class="small" x="1010" y="545">temps réel</text>
+  <text class="small" x="78" y="180">valeur</text>
+
+  <line class="grid" x1="190" y1="180" x2="190" y2="515"/>
+  <line class="grid" x1="280" y1="180" x2="280" y2="515"/>
+  <line class="grid" x1="370" y1="180" x2="370" y2="515"/>
+  <line class="grid" x1="460" y1="180" x2="460" y2="515"/>
+  <line class="grid" x1="550" y1="180" x2="550" y2="515"/>
+  <line class="grid" x1="640" y1="180" x2="640" y2="515"/>
+  <line class="grid" x1="730" y1="180" x2="730" y2="515"/>
+  <line class="grid" x1="820" y1="180" x2="820" y2="515"/>
+  <line class="grid" x1="910" y1="180" x2="910" y2="515"/>
+  <line class="grid" x1="1000" y1="180" x2="1000" y2="515"/>
+
+  <path class="obsLine" d="M150 440 L215 390 L340 405 L520 245 L590 285 L865 455 L1015 310"/>
+
+  <circle class="obs" cx="150" cy="440" r="9"/>
+  <circle class="obs" cx="215" cy="390" r="9"/>
+  <circle class="obs" cx="340" cy="405" r="9"/>
+  <circle class="obs" cx="520" cy="245" r="9"/>
+  <circle class="obs" cx="590" cy="285" r="9"/>
+  <circle class="obs" cx="865" cy="455" r="9"/>
+  <circle class="obs" cx="1015" cy="310" r="9"/>
+
+  <circle class="regular" cx="190" cy="515" r="6"/>
+  <circle class="regular" cx="280" cy="515" r="6"/>
+  <circle class="regular" cx="370" cy="515" r="6"/>
+  <circle class="regular" cx="460" cy="515" r="6"/>
+  <circle class="regular" cx="550" cy="515" r="6"/>
+  <circle class="regular" cx="640" cy="515" r="6"/>
+  <circle class="regular" cx="730" cy="515" r="6"/>
+  <circle class="regular" cx="820" cy="515" r="6"/>
+  <circle class="regular" cx="910" cy="515" r="6"/>
+  <circle class="regular" cx="1000" cy="515" r="6"/>
+
+  <rect class="tagGreen" x="145" y="145" width="310" height="44" rx="8"/>
+  <text class="label" x="167" y="173">Observations réelles : temps variables</text>
+
+  <rect class="tagBlue" x="710" y="145" width="315" height="44" rx="8"/>
+  <text class="label" x="733" y="173">Grille régulière : approximation</text>
+
+  <line class="delta" x1="150" y1="560" x2="215" y2="560"/>
+  <text class="math" x="168" y="585">Δt court</text>
+  <line class="delta" x1="590" y1="560" x2="865" y2="560"/>
+  <text class="math" x="675" y="585">Δt long</text>
+
+  <rect class="warn" x="628" y="345" width="275" height="62" rx="8"/>
+  <text class="small" x="650" y="370">Long silence : absence de mesure,</text>
+  <text class="small" x="650" y="392">pas nécessairement valeur nulle.</text>
+
+  <circle class="missing" cx="700" cy="455" r="22"/>
+  <text class="small" x="689" y="461">trou</text>
+  <circle class="missing" cx="765" cy="455" r="22"/>
+  <text class="small" x="754" y="461">trou</text>
+
+  <rect class="warn" x="145" y="225" width="275" height="58" rx="8"/>
+  <text class="small" x="165" y="249">Forcer une grille peut imposer</text>
+  <text class="small" x="165" y="271">des valeurs fabriquées entre les points.</text>
+
+  <text class="small" x="390" y="650">FIG-011-002 - Données irrégulièrement échantillonnées</text>
+</svg>

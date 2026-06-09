@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="760" viewBox="0 0 1240 760" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-036-002 - Carte des exemples implémentés</title>
+  <desc id="desc">Carte reliant les exemples TorchSharp MLP, RNN, LTC, MoE, hybride, les tests xUnit, les rapports console et les benchmarks futurs.</desc>
+  <defs>
+    <marker id="arrow2" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#334155"/>
+    </marker>
+    <style>
+      .title { font: 700 28px Arial, sans-serif; fill: #172033; }
+      .subtitle { font: 400 14px Arial, sans-serif; fill: #64748B; }
+      .label { font: 700 15px Arial, sans-serif; fill: #172033; }
+      .small { font: 400 12px Arial, sans-serif; fill: #334155; }
+      .tiny { font: 400 11px Arial, sans-serif; fill: #64748B; }
+      .box { stroke-width: 2; rx: 10; ry: 10; }
+      .arrow { stroke: #334155; stroke-width: 2.1; fill: none; marker-end: url(#arrow2); }
+      .soft { stroke: #94A3B8; stroke-width: 1.6; fill: none; marker-end: url(#arrow2); }
+      .band { fill: #F8FAFC; stroke: #CBD5E1; stroke-width: 1.5; rx: 14; ry: 14; }
+    </style>
+  </defs>
+
+  <rect width="1240" height="760" fill="#FFFFFF"/>
+  <text x="44" y="48" class="title">Carte des exemples implémentés</text>
+  <text x="44" y="73" class="subtitle">Chaque exemple enseigne un mécanisme précis et possède des tests qui vérifient ses invariants locaux.</text>
+
+  <rect x="54" y="115" width="210" height="496" class="band"/>
+  <text x="82" y="151" class="label">Base commune</text>
+  <rect x="84" y="208" width="150" height="102" class="box" fill="#E8F3FF" stroke="#2563EB"/>
+  <text x="112" y="241" class="label">TorchSharp</text>
+  <text x="108" y="265" class="small">tenseurs, shapes,</text>
+  <text x="108" y="285" class="small">dtype, using var</text>
+
+  <rect x="314" y="115" width="404" height="496" class="band"/>
+  <text x="342" y="151" class="label">Exemples du chapitre</text>
+  <rect x="350" y="184" width="174" height="82" class="box" fill="#EAF2FF" stroke="#2563EB"/>
+  <text x="381" y="213" class="label">MlpClassifier</text>
+  <text x="381" y="237" class="small">XOR, couche cachée</text>
+  <text x="381" y="257" class="small">perte décroissante</text>
+
+  <rect x="542" y="184" width="174" height="82" class="box" fill="#F3EAFF" stroke="#7C3AED"/>
+  <text x="574" y="213" class="label">SimpleRnnForecast</text>
+  <text x="574" y="237" class="small">sinusoïde, état</text>
+  <text x="574" y="257" class="small">caché discret</text>
+
+  <rect x="350" y="326" width="174" height="82" class="box" fill="#FFF7E6" stroke="#D97706"/>
+  <text x="381" y="355" class="label">SimpleLtcCell</text>
+  <text x="381" y="379" class="small">delta temps, solveur</text>
+  <text x="381" y="399" class="small">tau effectif</text>
+
+  <rect x="542" y="326" width="174" height="82" class="box" fill="#EAFBEF" stroke="#16A34A"/>
+  <text x="574" y="355" class="label">SparseMoeLayer</text>
+  <text x="574" y="379" class="small">top-k, experts actifs</text>
+  <text x="574" y="399" class="small">load balancing</text>
+
+  <rect x="446" y="468" width="174" height="82" class="box" fill="#ECFDF5" stroke="#059669"/>
+  <text x="472" y="497" class="label">LiquidMoe</text>
+  <text x="472" y="521" class="small">état temporel +</text>
+  <text x="472" y="541" class="small">routage dynamique</text>
+
+  <rect x="772" y="115" width="404" height="496" class="band"/>
+  <text x="800" y="151" class="label">Validation et sortie</text>
+  <rect x="820" y="205" width="184" height="96" class="box" fill="#F8FAFC" stroke="#475569"/>
+  <text x="855" y="238" class="label">Tests xUnit</text>
+  <text x="855" y="262" class="small">shapes, invariants,</text>
+  <text x="855" y="282" class="small">cas invalides</text>
+
+  <rect x="820" y="368" width="184" height="96" class="box" fill="#EEF2FF" stroke="#4F46E5"/>
+  <text x="855" y="401" class="label">Program.cs</text>
+  <text x="855" y="425" class="small">rapports console,</text>
+  <text x="855" y="445" class="small">smoke tests</text>
+
+  <rect x="820" y="520" width="184" height="64" class="box" fill="#FFF1F2" stroke="#E11D48"/>
+  <text x="851" y="548" class="label">Benchmarks</text>
+  <text x="851" y="570" class="small">mesures futures</text>
+
+  <rect x="1042" y="236" width="116" height="268" class="box" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="1064" y="268" class="label">Statut</text>
+  <text x="1064" y="301" class="small">test local</text>
+  <text x="1064" y="323" class="small">preuve locale</text>
+  <text x="1064" y="345" class="small">pas preuve</text>
+  <text x="1064" y="367" class="small">scientifique</text>
+  <text x="1064" y="410" class="small">bench avant</text>
+  <text x="1064" y="432" class="small">production</text>
+
+  <path class="arrow" d="M234 258 H350"/>
+  <path class="arrow" d="M234 282 C276 348 302 367 350 367"/>
+  <path class="soft" d="M524 225 C610 105 768 105 820 236"/>
+  <path class="arrow" d="M716 225 H820"/>
+  <path class="soft" d="M524 367 H542"/>
+  <path class="soft" d="M437 408 V444 C437 462 474 468 505 468"/>
+  <path class="soft" d="M629 408 V444 C629 462 590 468 557 468"/>
+  <path class="soft" d="M716 367 C760 326 795 284 820 270"/>
+  <path class="arrow" d="M716 367 H820"/>
+  <path class="arrow" d="M620 510 C704 510 760 438 820 416"/>
+  <path class="soft" d="M1004 253 H1042"/>
+  <path class="soft" d="M1004 416 H1042"/>
+  <path class="arrow" d="M912 464 V520"/>
+
+  <text x="48" y="684" class="tiny">La carte montre le bon niveau de lecture : comprendre le mécanisme, lancer les tests, puis seulement mesurer.</text>
+  <text x="500" y="724" class="subtitle">FIG-036-002 - Carte des exemples implémentés</text>
+</svg>

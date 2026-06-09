@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-020-002 - Tableau visuel des compromis</title>
+  <desc id="desc">Tableau visuel reliant contraintes dominantes et familles d'architectures candidates : MLP, Transformer, SSM, LNN, MoE et LFM.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <filter id="shadow" x="-18%" y="-18%" width="136%" height="136%">
+      <feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font: 700 28px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 400 16px "Segoe UI", Arial, sans-serif; fill: #475569; }
+      .head { fill: #f8fafc; stroke: #64748b; stroke-width: 2; filter: url(#shadow); }
+      .constraint { fill: #eef2ff; stroke: #4f46e5; stroke-width: 2; filter: url(#shadow); }
+      .choice { fill: #ecfdf5; stroke: #059669; stroke-width: 2; filter: url(#shadow); }
+      .warn { fill: #fff7ed; stroke: #ea580c; stroke-width: 2; }
+      .label { font: 700 17px "Segoe UI", Arial, sans-serif; fill: #1e293b; }
+      .small { font: 400 14px "Segoe UI", Arial, sans-serif; fill: #475569; }
+      .line { fill: none; stroke: #334155; stroke-width: 2.1; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="760"/>
+  <text class="title" x="48" y="54">Tableau visuel des compromis</text>
+  <text class="subtitle" x="48" y="82">Choisir une architecture commence par la contrainte dominante, pas par la mode du moment.</text>
+
+  <rect class="head" x="60" y="316" width="210" height="98" rx="14"/>
+  <text class="label" x="105" y="352">Contrainte</text>
+  <text class="label" x="104" y="376">dominante</text>
+  <text class="small" x="105" y="399">à expliciter d'abord</text>
+
+  <g>
+    <rect class="constraint" x="340" y="128" width="210" height="74" rx="12"/>
+    <text class="label" x="376" y="158">Données fixes</text>
+    <text class="small" x="391" y="181">ou tabulaires</text>
+    <rect class="choice" x="640" y="128" width="230" height="74" rx="12"/>
+    <text class="label" x="724" y="158">MLP</text>
+    <text class="small" x="689" y="181">baseline simple</text>
+  </g>
+
+  <g>
+    <rect class="constraint" x="340" y="228" width="210" height="74" rx="12"/>
+    <text class="label" x="393" y="258">Texte, code</text>
+    <text class="small" x="372" y="281">relations contextuelles</text>
+    <rect class="choice" x="640" y="228" width="230" height="74" rx="12"/>
+    <text class="label" x="704" y="258">Transformer</text>
+    <text class="small" x="674" y="281">attention + écosystème</text>
+  </g>
+
+  <g>
+    <rect class="constraint" x="340" y="328" width="210" height="74" rx="12"/>
+    <text class="label" x="381" y="358">Longues séquences</text>
+    <text class="small" x="396" y="381">streaming</text>
+    <rect class="choice" x="640" y="328" width="230" height="74" rx="12"/>
+    <text class="label" x="708" y="358">SSM / Mamba</text>
+    <text class="small" x="703" y="381">état structuré</text>
+  </g>
+
+  <g>
+    <rect class="constraint" x="340" y="428" width="210" height="74" rx="12"/>
+    <text class="label" x="387" y="458">Temps irrégulier</text>
+    <text class="small" x="390" y="481">dynamique continue</text>
+    <rect class="choice" x="640" y="428" width="230" height="74" rx="12"/>
+    <text class="label" x="716" y="458">LNN / CfC</text>
+    <text class="small" x="686" y="481">dynamique temporelle</text>
+  </g>
+
+  <g>
+    <rect class="constraint" x="340" y="528" width="210" height="74" rx="12"/>
+    <text class="label" x="383" y="558">Grande capacité</text>
+    <text class="small" x="402" y="581">coût actif</text>
+    <rect class="choice" x="640" y="528" width="230" height="74" rx="12"/>
+    <text class="label" x="732" y="558">MoE</text>
+    <text class="small" x="704" y="581">experts routés</text>
+  </g>
+
+  <g>
+    <rect class="constraint" x="340" y="628" width="210" height="74" rx="12"/>
+    <text class="label" x="386" y="658">Déploiement local</text>
+    <text class="small" x="397" y="681">latence mémoire</text>
+    <rect class="choice" x="640" y="628" width="230" height="74" rx="12"/>
+    <text class="label" x="717" y="658">LFM compact</text>
+    <text class="small" x="696" y="681">co-design matériel</text>
+  </g>
+
+  <path class="line" d="M270 365 C302 276 310 181 340 165"/>
+  <path class="line" d="M270 365 C306 317 312 273 340 265"/>
+  <path class="line" d="M270 365 L340 365"/>
+  <path class="line" d="M270 365 C306 414 312 456 340 465"/>
+  <path class="line" d="M270 365 C305 500 312 556 340 565"/>
+  <path class="line" d="M270 365 C304 584 312 655 340 665"/>
+
+  <path class="line" d="M550 165 L640 165"/>
+  <path class="line" d="M550 265 L640 265"/>
+  <path class="line" d="M550 365 L640 365"/>
+  <path class="line" d="M550 465 L640 465"/>
+  <path class="line" d="M550 565 L640 565"/>
+  <path class="line" d="M550 665 L640 665"/>
+
+  <rect class="warn" x="930" y="214" width="210" height="330" rx="14"/>
+  <text class="label" x="968" y="248">Règle pratique</text>
+  <text class="small" x="958" y="286">1. Définir la métrique</text>
+  <text class="small" x="958" y="318">2. Construire une baseline</text>
+  <text class="small" x="958" y="350">3. Mesurer coût réel</text>
+  <text class="small" x="958" y="382">4. Observer les échecs</text>
+  <text class="small" x="958" y="414">5. Ajouter complexité</text>
+  <text class="small" x="979" y="438">seulement si elle paie</text>
+  <text class="small" x="958" y="486">Pas de gagnant abstrait.</text>
+  <text class="small" x="958" y="510">Seulement des compromis.</text>
+
+  <text class="small" x="445" y="736">FIG-020-002 - Tableau visuel des compromis</text>
+</svg>

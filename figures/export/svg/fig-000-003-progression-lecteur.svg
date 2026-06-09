@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1220" height="360" viewBox="0 0 1220 360" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-000-003 - Progression du lecteur</title>
+  <desc id="desc">Figure p&#233;dagogique du Tome I.</desc>
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; fill: #1f2937; }
+    .title { font-size: 22px; font-weight: 700; }
+    .subtitle { font-size: 12px; fill: #64748b; }
+    .box-title { font-size: 15px; font-weight: 700; }
+    .box-text { font-size: 12px; fill: #334155; }
+    .small { font-size: 11px; fill: #475569; }
+    .arrow { stroke: #64748b; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#64748b" />
+    </marker>
+  </defs>
+  <text class="title" x="40" y="42">Progression du lecteur dans le Tome I</text>
+  <text class="subtitle" x="40" y="64">Des bases math&#233;matiques vers les architectures modulaires et les prototypes.</text>
+  <rect x="30" y="120" width="145" height="98" rx="8" fill="#f8fafc" stroke="#4677b9" stroke-width="1.5"/>
+  <text class="box-title" x="44" y="146">Fondements</text>
+  <text class="box-text" x="44" y="168">alg&#232;bre, gradients</text>
+  <text class="box-text" x="44" y="186">syst&#232;mes dynamiques</text>
+  <path class="arrow" d="M175,169 L195,169"/>
+  <rect x="200" y="120" width="145" height="98" rx="8" fill="#f8fafc" stroke="#4677b9" stroke-width="1.5"/>
+  <text class="box-title" x="214" y="146">Socle discret</text>
+  <text class="box-text" x="214" y="168">perceptron, MLP</text>
+  <text class="box-text" x="214" y="186">RNN, LSTM, GRU</text>
+  <path class="arrow" d="M345,169 L365,169"/>
+  <rect x="370" y="120" width="145" height="98" rx="8" fill="#f8fafc" stroke="#4677b9" stroke-width="1.5"/>
+  <text class="box-title" x="384" y="146">Attention + SSM</text>
+  <text class="box-text" x="384" y="168">Transformers</text>
+  <text class="box-text" x="384" y="186">mod&#232;les d&#39;&#233;tat</text>
+  <path class="arrow" d="M515,169 L535,169"/>
+  <rect x="540" y="120" width="145" height="98" rx="8" fill="#f8fafc" stroke="#4677b9" stroke-width="1.5"/>
+  <text class="box-title" x="554" y="146">Temps continu</text>
+  <text class="box-text" x="554" y="168">Neural ODE</text>
+  <text class="box-text" x="554" y="186">CT-RNN, LTC, CfC</text>
+  <path class="arrow" d="M685,169 L705,169"/>
+  <rect x="710" y="120" width="145" height="98" rx="8" fill="#f8fafc" stroke="#4677b9" stroke-width="1.5"/>
+  <text class="box-title" x="724" y="146">Experts</text>
+  <text class="box-text" x="724" y="168">MoE, routage</text>
+  <text class="box-text" x="724" y="186">sp&#233;cialisation</text>
+  <path class="arrow" d="M855,169 L875,169"/>
+  <rect x="880" y="120" width="145" height="98" rx="8" fill="#f8fafc" stroke="#4677b9" stroke-width="1.5"/>
+  <text class="box-title" x="894" y="146">Architecture</text>
+  <text class="box-text" x="894" y="168">m&#233;moire, concepts</text>
+  <text class="box-text" x="894" y="186">agentique, gouvernance</text>
+  <path class="arrow" d="M1025,169 L1045,169"/>
+  <rect x="1050" y="120" width="145" height="98" rx="8" fill="#f8fafc" stroke="#4677b9" stroke-width="1.5"/>
+  <text class="box-title" x="1064" y="146">Prototype</text>
+  <text class="box-text" x="1064" y="168">TorchSharp</text>
+  <text class="box-text" x="1064" y="186">d&#233;ploiement</text>
+  <text class="small" x="40" y="285">Le parcours n&#39;impose pas une technologie gagnante : il donne les crit&#232;res pour choisir, refuser ou combiner.</text>
+</svg>

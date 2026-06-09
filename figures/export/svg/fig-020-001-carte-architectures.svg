@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-020-001 - Carte globale des familles d'architectures</title>
+  <desc id="desc">Carte conceptuelle reliant briques classiques, architectures récurrentes, Transformers, SSM, réseaux continus, LFM, MoE, Transformer² et architectures modulaires.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <filter id="shadow" x="-18%" y="-18%" width="136%" height="136%">
+      <feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font: 700 28px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 400 16px "Segoe UI", Arial, sans-serif; fill: #475569; }
+      .base { fill: #f8fafc; stroke: #64748b; stroke-width: 2; filter: url(#shadow); }
+      .seq { fill: #eef2ff; stroke: #4f46e5; stroke-width: 2; filter: url(#shadow); }
+      .dyn { fill: #ecfdf5; stroke: #059669; stroke-width: 2; filter: url(#shadow); }
+      .sparse { fill: #fff7ed; stroke: #ea580c; stroke-width: 2; filter: url(#shadow); }
+      .mod { fill: #fef2f2; stroke: #dc2626; stroke-width: 2; filter: url(#shadow); }
+      .label { font: 700 17px "Segoe UI", Arial, sans-serif; fill: #1e293b; }
+      .small { font: 400 14px "Segoe UI", Arial, sans-serif; fill: #475569; }
+      .line { fill: none; stroke: #334155; stroke-width: 2.1; marker-end: url(#arrow); }
+      .softLine { fill: none; stroke: #94a3b8; stroke-width: 1.8; stroke-dasharray: 6 6; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="760"/>
+  <text class="title" x="48" y="54">Carte globale des familles d'architectures</text>
+  <text class="subtitle" x="48" y="82">Chaque famille résout une contrainte différente : état, contexte, temps, capacité, efficacité ou orchestration.</text>
+
+  <rect class="base" x="80" y="318" width="190" height="86" rx="12"/>
+  <text class="label" x="116" y="350">Briques classiques</text>
+  <text class="small" x="126" y="374">Perceptron, MLP</text>
+
+  <rect class="seq" x="330" y="174" width="210" height="90" rx="12"/>
+  <text class="label" x="370" y="206">Mémoire séquentielle</text>
+  <text class="small" x="379" y="230">RNN, LSTM, GRU</text>
+
+  <rect class="seq" x="330" y="454" width="210" height="90" rx="12"/>
+  <text class="label" x="376" y="486">Attention explicite</text>
+  <text class="small" x="397" y="510">Transformer</text>
+
+  <rect class="seq" x="610" y="174" width="220" height="90" rx="12"/>
+  <text class="label" x="664" y="206">État structuré</text>
+  <text class="small" x="648" y="230">SSM, S4, S5, Mamba</text>
+
+  <rect class="dyn" x="610" y="314" width="220" height="94" rx="12"/>
+  <text class="label" x="661" y="348">Temps continu</text>
+  <text class="small" x="637" y="374">Neural ODE, CT-RNN,</text>
+  <text class="small" x="675" y="392">LTC, CfC</text>
+
+  <rect class="dyn" x="890" y="244" width="220" height="92" rx="12"/>
+  <text class="label" x="934" y="278">Fondation efficace</text>
+  <text class="small" x="942" y="302">LFM hybrides</text>
+
+  <rect class="sparse" x="610" y="500" width="220" height="92" rx="12"/>
+  <text class="label" x="662" y="534">Capacité sparse</text>
+  <text class="small" x="638" y="558">MoE, Switch, Mixtral,</text>
+  <text class="small" x="682" y="576">DeepSeek</text>
+
+  <rect class="sparse" x="890" y="500" width="220" height="92" rx="12"/>
+  <text class="label" x="929" y="534">Adaptation dynamique</text>
+  <text class="small" x="959" y="558">Transformer²</text>
+
+  <rect class="mod" x="890" y="620" width="220" height="82" rx="12"/>
+  <text class="label" x="928" y="653">Architecture modulaire</text>
+  <text class="small" x="934" y="677">mémoire, outils, traces</text>
+
+  <path class="line" d="M270 342 C300 305 318 252 330 219"/>
+  <path class="line" d="M270 380 C304 416 318 470 330 499"/>
+  <path class="line" d="M540 219 L610 219"/>
+  <path class="line" d="M540 499 L610 545"/>
+  <path class="softLine" d="M540 499 C590 430 610 332 610 266"/>
+  <path class="line" d="M830 219 C865 232 875 268 890 290"/>
+  <path class="line" d="M830 361 C862 342 875 312 890 290"/>
+  <path class="line" d="M540 219 C580 244 591 314 610 361"/>
+  <path class="line" d="M830 546 L890 546"/>
+  <path class="line" d="M1000 592 L1000 620"/>
+  <path class="line" d="M1000 336 L1000 620"/>
+  <path class="softLine" d="M720 592 C760 650 824 661 890 661"/>
+  <path class="softLine" d="M720 408 C748 520 815 626 890 661"/>
+
+  <rect class="base" x="86" y="640" width="560" height="46" rx="10"/>
+  <text class="small" x="122" y="668">Lecture : ce graphe n'est pas une chronologie stricte, mais une carte de compromis.</text>
+
+  <text class="small" x="430" y="736">FIG-020-001 - Carte globale des familles d'architectures</text>
+</svg>

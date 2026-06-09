@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="760" viewBox="0 0 1240 760" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-030-001 - Parallélismes d'entraînement</title>
+  <desc id="desc">Comparaison visuelle entre data parallel, model parallel et pipeline parallel.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#334155"/>
+    </marker>
+    <style>
+      .title { font: 700 28px Arial, sans-serif; fill: #172033; }
+      .subtitle { font: 400 14px Arial, sans-serif; fill: #64748B; }
+      .head { font: 700 17px Arial, sans-serif; fill: #172033; }
+      .label { font: 700 14px Arial, sans-serif; fill: #172033; }
+      .small { font: 400 12px Arial, sans-serif; fill: #334155; }
+      .tiny { font: 400 11px Arial, sans-serif; fill: #64748B; }
+      .panel { fill: #F8FAFC; stroke: #CBD5E1; stroke-width: 1.5; rx: 16; ry: 16; }
+      .box { stroke-width: 2; rx: 10; ry: 10; }
+      .arrow { stroke: #334155; stroke-width: 2.1; fill: none; marker-end: url(#arrow); }
+      .soft { stroke: #94A3B8; stroke-width: 1.6; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1240" height="760" fill="#FFFFFF"/>
+  <text x="44" y="48" class="title">Parallélismes d'entraînement</text>
+  <text x="44" y="73" class="subtitle">Le multi-GPU n'est pas une stratégie : il faut savoir ce qui est répliqué, découpé ou chaîné.</text>
+
+  <rect x="50" y="120" width="350" height="500" class="panel"/>
+  <text x="82" y="158" class="head">Data parallel</text>
+  <rect x="88" y="200" width="120" height="90" class="box" fill="#EAF2FF" stroke="#2563EB"/>
+  <text x="119" y="232" class="label">GPU 0</text>
+  <text x="107" y="256" class="small">modèle complet</text>
+  <text x="107" y="276" class="small">batch A</text>
+  <rect x="88" y="360" width="120" height="90" class="box" fill="#EAF2FF" stroke="#2563EB"/>
+  <text x="119" y="392" class="label">GPU 1</text>
+  <text x="107" y="416" class="small">modèle complet</text>
+  <text x="107" y="436" class="small">batch B</text>
+  <rect x="258" y="280" width="104" height="88" class="box" fill="#ECFDF5" stroke="#059669"/>
+  <text x="285" y="311" class="label">All-reduce</text>
+  <text x="280" y="335" class="small">gradients</text>
+  <text x="280" y="355" class="small">moyennés</text>
+  <path class="arrow" d="M208 245 C236 245 239 300 258 308"/>
+  <path class="arrow" d="M208 405 C236 405 239 352 258 344"/>
+  <text x="86" y="530" class="small">Réplique le modèle.</text>
+  <text x="86" y="552" class="small">Divise les données.</text>
+  <text x="86" y="574" class="small">Coût : synchronisation gradients.</text>
+
+  <rect x="445" y="120" width="350" height="500" class="panel"/>
+  <text x="477" y="158" class="head">Model parallel</text>
+  <rect x="482" y="230" width="120" height="95" class="box" fill="#F3EAFF" stroke="#7C3AED"/>
+  <text x="513" y="262" class="label">GPU 0</text>
+  <text x="503" y="286" class="small">poids ou</text>
+  <text x="503" y="306" class="small">couches 1</text>
+  <rect x="660" y="230" width="120" height="95" class="box" fill="#F3EAFF" stroke="#7C3AED"/>
+  <text x="691" y="262" class="label">GPU 1</text>
+  <text x="681" y="286" class="small">poids ou</text>
+  <text x="681" y="306" class="small">couches 2</text>
+  <path class="arrow" d="M602 277 H660"/>
+  <path class="soft" d="M660 315 H602"/>
+  <text x="612" y="255" class="tiny">activations</text>
+  <text x="616" y="339" class="tiny">gradients</text>
+  <text x="482" y="530" class="small">Découpe le modèle.</text>
+  <text x="482" y="552" class="small">Aide si le modèle ne rentre pas.</text>
+  <text x="482" y="574" class="small">Coût : transferts entre partitions.</text>
+
+  <rect x="840" y="120" width="350" height="500" class="panel"/>
+  <text x="872" y="158" class="head">Pipeline parallel</text>
+  <rect x="878" y="214" width="100" height="86" class="box" fill="#FFF7E6" stroke="#D97706"/>
+  <text x="902" y="246" class="label">Étape 1</text>
+  <text x="898" y="270" class="small">couches</text>
+  <text x="902" y="290" class="small">1-4</text>
+  <rect x="1000" y="214" width="100" height="86" class="box" fill="#FFF7E6" stroke="#D97706"/>
+  <text x="1024" y="246" class="label">Étape 2</text>
+  <text x="1020" y="270" class="small">couches</text>
+  <text x="1024" y="290" class="small">5-8</text>
+  <rect x="938" y="360" width="100" height="86" class="box" fill="#FFF7E6" stroke="#D97706"/>
+  <text x="962" y="392" class="label">Étape 3</text>
+  <text x="958" y="416" class="small">couches</text>
+  <text x="961" y="436" class="small">9-12</text>
+  <path class="arrow" d="M978 257 H1000"/>
+  <path class="arrow" d="M1050 300 C1050 336 1020 350 1002 360"/>
+  <text x="878" y="530" class="small">Chaîne les étapes.</text>
+  <text x="878" y="552" class="small">Utilise des micro-batchs.</text>
+  <text x="878" y="574" class="small">Coût : bulles et déséquilibre.</text>
+
+  <rect x="225" y="650" width="790" height="48" fill="#F8FAFC" stroke="#CBD5E1" rx="14" ry="14"/>
+  <text x="257" y="680" class="small">Question à poser : le goulot est-il la mémoire, le calcul, la communication, ou la coordination ?</text>
+  <text x="474" y="724" class="subtitle">FIG-030-001 - Parallélismes d'entraînement</text>
+</svg>

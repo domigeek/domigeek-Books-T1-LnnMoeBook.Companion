@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-007-001 - Propagation avant et arrière</title>
+  <desc id="desc">Schéma montrant le flux forward des activations vers la loss, puis le flux backward des gradients depuis la loss vers les paramètres.</desc>
+  <defs>
+    <marker id="arrow-forward" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-backward" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#dc2626"/>
+    </marker>
+    <style>
+      .title { font: 700 31px Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 16px Arial, sans-serif; fill: #475569; }
+      .label { font: 700 18px Arial, sans-serif; fill: #111827; }
+      .small { font: 15px Arial, sans-serif; fill: #334155; }
+      .mono { font: 15px Consolas, monospace; fill: #111827; }
+      .box { rx: 18; ry: 18; stroke-width: 2.4; }
+      .forward { stroke: #2563eb; stroke-width: 4; fill: none; marker-end: url(#arrow-forward); }
+      .backward { stroke: #dc2626; stroke-width: 4; fill: none; marker-end: url(#arrow-backward); }
+      .param { stroke: #64748b; stroke-width: 2; stroke-dasharray: 6 5; fill: none; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="680" fill="#ffffff"/>
+  <text x="60" y="58" class="title">Propagation avant et arrière</text>
+  <text x="60" y="88" class="subtitle">Le forward calcule les activations et la loss. Le backward remonte les gradients vers les paramètres.</text>
+
+  <rect x="70" y="205" width="145" height="95" class="box" fill="#eff6ff" stroke="#2563eb"/>
+  <text x="112" y="245" class="label">Entrée</text>
+  <text x="132" y="276" class="mono">x</text>
+
+  <rect x="285" y="185" width="180" height="135" class="box" fill="#f5f3ff" stroke="#7c3aed"/>
+  <text x="328" y="230" class="label">Couche 1</text>
+  <text x="320" y="263" class="mono">z_1 = W_1x+b_1</text>
+  <text x="340" y="294" class="mono">h_1 = a(z_1)</text>
+
+  <rect x="545" y="185" width="180" height="135" class="box" fill="#ecfdf5" stroke="#059669"/>
+  <text x="588" y="230" class="label">Couche 2</text>
+  <text x="578" y="263" class="mono">z_2 = W_2h_1+b_2</text>
+  <text x="600" y="294" class="mono">h_2 = a(z_2)</text>
+
+  <rect x="805" y="205" width="155" height="95" class="box" fill="#fff7ed" stroke="#ea580c"/>
+  <text x="842" y="245" class="label">Sortie</text>
+  <text x="852" y="276" class="mono">y_hat</text>
+
+  <rect x="1030" y="205" width="140" height="95" class="box" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="1074" y="245" class="label">Loss</text>
+  <text x="1086" y="276" class="mono">L</text>
+
+  <path class="forward" d="M 215 252 L 282 252"/>
+  <path class="forward" d="M 465 252 L 542 252"/>
+  <path class="forward" d="M 725 252 L 802 252"/>
+  <path class="forward" d="M 960 252 L 1027 252"/>
+  <text x="475" y="160" class="small" fill="#2563eb">forward : valeurs intermédiaires</text>
+
+  <path class="backward" d="M 1030 365 C 950 410, 905 410, 840 338"/>
+  <path class="backward" d="M 805 430 C 715 475, 655 470, 610 337"/>
+  <path class="backward" d="M 545 495 C 435 530, 365 500, 342 338"/>
+  <path class="backward" d="M 285 560 C 205 565, 155 505, 138 318"/>
+  <text x="430" y="610" class="small" fill="#dc2626">backward : gradients dL/dW, dL/db et gradients transmis</text>
+
+  <rect x="310" y="390" width="145" height="70" class="box" fill="#ffffff" stroke="#64748b"/>
+  <text x="338" y="418" class="label">Paramètres</text>
+  <text x="344" y="446" class="mono">W_1, b_1</text>
+  <path class="param" d="M 382 390 L 382 323"/>
+
+  <rect x="570" y="390" width="145" height="70" class="box" fill="#ffffff" stroke="#64748b"/>
+  <text x="598" y="418" class="label">Paramètres</text>
+  <text x="604" y="446" class="mono">W_2, b_2</text>
+  <path class="param" d="M 642 390 L 642 323"/>
+
+  <rect x="805" y="390" width="155" height="70" class="box" fill="#ffffff" stroke="#64748b"/>
+  <text x="842" y="418" class="label">Paramètres</text>
+  <text x="838" y="446" class="mono">W_3, b_3</text>
+  <path class="param" d="M 882 390 L 882 303"/>
+
+  <text x="70" y="650" class="subtitle">Lecture : la loss donne le point de départ du backward. Chaque couche calcule ses gradients locaux et transmet un gradient à la couche précédente.</text>
+</svg>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="680" viewBox="0 0 1180 680" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-035-002 - Corrélation d'événements et fenêtre d'attention</title>
+  <desc id="desc">Fragments de flux transformés en enveloppes d'événements, rattachés à une fenêtre d'attention par correlationId, puis traités par ED, OAD, projections du monde et ECAD.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#334155"/>
+    </marker>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 24px; fill: #0f172a; }
+      .subtitle { font-family: Arial, Helvetica, sans-serif; font-size: 14px; fill: #475569; }
+      .box { fill: #f8fafc; stroke: #334155; stroke-width: 2; rx: 12; }
+      .blue { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; rx: 12; }
+      .purple { fill: #faf5ff; stroke: #7c3aed; stroke-width: 2; rx: 12; }
+      .green { fill: #f0fdf4; stroke: #15803d; stroke-width: 2; rx: 12; }
+      .amber { fill: #fffbeb; stroke: #d97706; stroke-width: 2; rx: 12; }
+      .red { fill: #fff1f2; stroke: #be123c; stroke-width: 2; rx: 12; }
+      .label { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 14px; fill: #0f172a; text-anchor: middle; }
+      .small { font-family: Arial, Helvetica, sans-serif; font-size: 12px; fill: #475569; text-anchor: middle; }
+      .tiny { font-family: Arial, Helvetica, sans-serif; font-size: 11px; fill: #64748b; text-anchor: middle; }
+      .arrow { stroke: #334155; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+      .dash { stroke: #64748b; stroke-width: 1.8; fill: none; marker-end: url(#arrow); stroke-dasharray: 6 6; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1180" height="680"/>
+  <text class="title" x="52" y="48">Corrélation d'événements et fenêtre d'attention</text>
+  <text class="subtitle" x="52" y="72">Des fragments fréquents restent reliés par correlationId sans recevoir tous la même priorité.</text>
+
+  <rect class="blue" x="70" y="128" width="160" height="62"/>
+  <text class="label" x="150" y="153">Fragment 1</text>
+  <text class="small" x="150" y="174">frame vidéo</text>
+  <rect class="blue" x="70" y="222" width="160" height="62"/>
+  <text class="label" x="150" y="247">Fragment 2</text>
+  <text class="small" x="150" y="268">audio court</text>
+  <rect class="blue" x="70" y="316" width="160" height="62"/>
+  <text class="label" x="150" y="341">Fragment 3</text>
+  <text class="small" x="150" y="362">métrique RAM</text>
+  <rect class="red" x="70" y="410" width="160" height="62"/>
+  <text class="label" x="150" y="435">Fragment rare</text>
+  <text class="small" x="150" y="456">anomalie ou rupture</text>
+
+  <rect class="amber" x="310" y="116" width="210" height="76"/>
+  <text class="label" x="415" y="141">Envelope #1</text>
+  <text class="small" x="415" y="162">correlationId A</text>
+  <text class="tiny" x="415" y="181">payload visuel</text>
+  <rect class="amber" x="310" y="222" width="210" height="76"/>
+  <text class="label" x="415" y="247">Envelope #2</text>
+  <text class="small" x="415" y="268">correlationId A</text>
+  <text class="tiny" x="415" y="287">payload sonore</text>
+  <rect class="amber" x="310" y="328" width="210" height="76"/>
+  <text class="label" x="415" y="353">Envelope #3</text>
+  <text class="small" x="415" y="374">correlationId A</text>
+  <text class="tiny" x="415" y="393">payload métrique</text>
+  <rect class="red" x="310" y="434" width="210" height="76"/>
+  <text class="label" x="415" y="459">Envelope #4</text>
+  <text class="small" x="415" y="480">correlationId A</text>
+  <text class="tiny" x="415" y="499">priorité augmentée</text>
+
+  <rect class="purple" x="610" y="168" width="240" height="244"/>
+  <text class="label" x="730" y="198">Fenêtre d'attention A</text>
+  <text class="small" x="730" y="222">ttl, budget, objets actifs</text>
+  <text class="small" x="730" y="246">fragments reliés</text>
+  <line x1="650" y1="274" x2="810" y2="274" stroke="#c4b5fd" stroke-width="2"/>
+  <text class="tiny" x="730" y="302">ED prolonge ou ferme</text>
+  <text class="tiny" x="730" y="326">OAD maintient les objets</text>
+  <text class="tiny" x="730" y="350">WoV / WoS / WoB spécialisent</text>
+  <text class="tiny" x="730" y="374">ECAD choisit action ou arrêt</text>
+
+  <rect class="green" x="930" y="118" width="180" height="70"/>
+  <text class="label" x="1020" y="144">OAD</text>
+  <text class="small" x="1020" y="166">objets actifs</text>
+  <rect class="green" x="930" y="228" width="180" height="70"/>
+  <text class="label" x="1020" y="254">WoV / WoS / WoB</text>
+  <text class="small" x="1020" y="276">projections</text>
+  <rect class="green" x="930" y="338" width="180" height="70"/>
+  <text class="label" x="1020" y="364">ECAD</text>
+  <text class="small" x="1020" y="386">expert, action, arrêt</text>
+
+  <path class="arrow" d="M230 159 H310"/>
+  <path class="arrow" d="M230 253 H310"/>
+  <path class="arrow" d="M230 347 H310"/>
+  <path class="arrow" d="M230 441 H310"/>
+  <path class="arrow" d="M520 154 C565 160 580 200 610 214"/>
+  <path class="arrow" d="M520 260 H610"/>
+  <path class="arrow" d="M520 366 C565 360 580 342 610 326"/>
+  <path class="arrow" d="M520 472 C580 460 590 398 610 378"/>
+  <path class="arrow" d="M850 220 C890 185 900 160 930 154"/>
+  <path class="arrow" d="M850 290 H930"/>
+  <path class="arrow" d="M850 358 C890 362 900 372 930 374"/>
+
+  <path class="dash" d="M415 510 C500 600 690 615 730 412"/>
+  <text class="subtitle" x="52" y="618">Lecture : le volume ne devient pas automatiquement l'importance. La fenêtre regroupe les fragments, ED ajuste la priorité.</text>
+</svg>

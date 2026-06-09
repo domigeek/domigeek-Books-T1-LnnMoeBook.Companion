@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-008-001 - RNN déroulé dans le temps</title>
+  <desc id="desc">Schéma montrant une cellule RNN répétée dans le temps, avec entrées x_t, états cachés h_t, sorties y_t et poids partagés.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#334155"/>
+    </marker>
+    <style>
+      .title { font: 700 31px Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 16px Arial, sans-serif; fill: #475569; }
+      .label { font: 700 18px Arial, sans-serif; fill: #111827; }
+      .small { font: 15px Arial, sans-serif; fill: #334155; }
+      .mono { font: 15px Consolas, monospace; fill: #111827; }
+      .cell { rx: 18; ry: 18; stroke-width: 2.6; }
+      .input { rx: 14; ry: 14; stroke-width: 2.2; }
+      .edge { stroke: #334155; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .share { stroke: #7c3aed; stroke-width: 2.4; stroke-dasharray: 7 6; fill: none; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="650" fill="#ffffff"/>
+  <text x="60" y="58" class="title">RNN déroulé dans le temps</text>
+  <text x="60" y="88" class="subtitle">La même cellule récurrente est appliquée à chaque pas. Les poids sont partagés, l'état caché circule.</text>
+
+  <g id="cells">
+    <rect x="145" y="245" width="165" height="120" class="cell" fill="#eff6ff" stroke="#2563eb"/>
+    <rect x="385" y="245" width="165" height="120" class="cell" fill="#f5f3ff" stroke="#7c3aed"/>
+    <rect x="625" y="245" width="165" height="120" class="cell" fill="#ecfdf5" stroke="#059669"/>
+    <rect x="865" y="245" width="165" height="120" class="cell" fill="#fff7ed" stroke="#ea580c"/>
+  </g>
+
+  <text x="186" y="295" class="label">Cellule RNN</text>
+  <text x="184" y="327" class="mono">h_1=f(x_1,h_0)</text>
+  <text x="426" y="295" class="label">Cellule RNN</text>
+  <text x="424" y="327" class="mono">h_2=f(x_2,h_1)</text>
+  <text x="666" y="295" class="label">Cellule RNN</text>
+  <text x="664" y="327" class="mono">h_3=f(x_3,h_2)</text>
+  <text x="908" y="295" class="label">Cellule RNN</text>
+  <text x="902" y="327" class="mono">h_T=f(x_T,h_T-1)</text>
+
+  <rect x="165" y="445" width="125" height="58" class="input" fill="#dbeafe" stroke="#2563eb"/>
+  <rect x="405" y="445" width="125" height="58" class="input" fill="#ede9fe" stroke="#7c3aed"/>
+  <rect x="645" y="445" width="125" height="58" class="input" fill="#dcfce7" stroke="#059669"/>
+  <rect x="885" y="445" width="125" height="58" class="input" fill="#fed7aa" stroke="#ea580c"/>
+  <text x="211" y="481" class="mono">x_1</text>
+  <text x="451" y="481" class="mono">x_2</text>
+  <text x="691" y="481" class="mono">x_3</text>
+  <text x="932" y="481" class="mono">x_T</text>
+
+  <rect x="165" y="130" width="125" height="58" class="input" fill="#f8fafc" stroke="#64748b"/>
+  <rect x="405" y="130" width="125" height="58" class="input" fill="#f8fafc" stroke="#64748b"/>
+  <rect x="645" y="130" width="125" height="58" class="input" fill="#f8fafc" stroke="#64748b"/>
+  <rect x="885" y="130" width="125" height="58" class="input" fill="#f8fafc" stroke="#64748b"/>
+  <text x="211" y="166" class="mono">y_1</text>
+  <text x="451" y="166" class="mono">y_2</text>
+  <text x="691" y="166" class="mono">y_3</text>
+  <text x="932" y="166" class="mono">y_T</text>
+
+  <path class="edge" d="M 227 445 L 227 369"/>
+  <path class="edge" d="M 467 445 L 467 369"/>
+  <path class="edge" d="M 707 445 L 707 369"/>
+  <path class="edge" d="M 947 445 L 947 369"/>
+
+  <path class="edge" d="M 227 245 L 227 192"/>
+  <path class="edge" d="M 467 245 L 467 192"/>
+  <path class="edge" d="M 707 245 L 707 192"/>
+  <path class="edge" d="M 947 245 L 947 192"/>
+
+  <path class="edge" d="M 90 305 L 142 305"/>
+  <text x="62" y="299" class="mono">h_0</text>
+  <path class="edge" d="M 310 305 L 382 305"/>
+  <text x="327" y="290" class="mono">h_1</text>
+  <path class="edge" d="M 550 305 L 622 305"/>
+  <text x="567" y="290" class="mono">h_2</text>
+  <path class="edge" d="M 790 305 L 862 305"/>
+  <text x="807" y="290" class="mono">h_3</text>
+  <path class="edge" d="M 1030 305 L 1090 305"/>
+  <text x="1045" y="290" class="mono">h_T</text>
+
+  <path class="share" d="M 227 395 C 360 580, 805 580, 947 395"/>
+  <text x="445" y="585" class="label" fill="#7c3aed">mêmes paramètres W_x, W_h, b à chaque pas</text>
+
+  <text x="60" y="625" class="subtitle">Lecture : le déroulement sert à comprendre l'entraînement. Dans le modèle réel, la cellule est réutilisée, pas copiée avec de nouveaux poids.</text>
+</svg>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="760" viewBox="0 0 1240 760" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-030-002 - Expert parallelism</title>
+  <desc id="desc">Distribution d'experts MoE sur plusieurs appareils avec dispatch local, dispatch distant, combinaison et monitoring.</desc>
+  <defs>
+    <marker id="arrow2" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#334155"/>
+    </marker>
+    <style>
+      .title { font: 700 28px Arial, sans-serif; fill: #172033; }
+      .subtitle { font: 400 14px Arial, sans-serif; fill: #64748B; }
+      .label { font: 700 15px Arial, sans-serif; fill: #172033; }
+      .small { font: 400 12px Arial, sans-serif; fill: #334155; }
+      .tiny { font: 400 11px Arial, sans-serif; fill: #64748B; }
+      .box { stroke-width: 2; rx: 10; ry: 10; }
+      .panel { fill: #F8FAFC; stroke: #CBD5E1; stroke-width: 1.5; rx: 16; ry: 16; }
+      .arrow { stroke: #334155; stroke-width: 2.1; fill: none; marker-end: url(#arrow2); }
+      .remote { stroke: #E11D48; stroke-width: 2.2; fill: none; stroke-dasharray: 7 5; marker-end: url(#arrow2); }
+      .soft { stroke: #94A3B8; stroke-width: 1.6; fill: none; marker-end: url(#arrow2); }
+    </style>
+  </defs>
+
+  <rect width="1240" height="760" fill="#FFFFFF"/>
+  <text x="44" y="48" class="title">Expert parallelism</text>
+  <text x="44" y="73" class="subtitle">Dans un MoE distribué, le routage devient aussi un problème de placement, de réseau et de charge.</text>
+
+  <rect x="45" y="120" width="220" height="470" class="panel"/>
+  <text x="76" y="154" class="label">Entrée</text>
+  <rect x="78" y="220" width="154" height="92" class="box" fill="#E8F3FF" stroke="#2563EB"/>
+  <text x="115" y="254" class="label">Tokens</text>
+  <text x="102" y="278" class="small">batch distribué</text>
+  <text x="102" y="298" class="small">origines GPU</text>
+
+  <rect x="315" y="120" width="220" height="470" class="panel"/>
+  <text x="346" y="154" class="label">Routage</text>
+  <rect x="348" y="220" width="154" height="92" class="box" fill="#F3EAFF" stroke="#7C3AED"/>
+  <text x="387" y="254" class="label">Routeur</text>
+  <text x="371" y="278" class="small">scores + top-k</text>
+  <text x="371" y="298" class="small">par token</text>
+
+  <rect x="585" y="120" width="294" height="470" class="panel"/>
+  <text x="616" y="154" class="label">Experts placés</text>
+  <rect x="626" y="190" width="210" height="102" class="box" fill="#EAFBEF" stroke="#16A34A"/>
+  <text x="697" y="224" class="label">GPU 0</text>
+  <text x="683" y="248" class="small">Expert 0</text>
+  <text x="683" y="268" class="small">Expert 2</text>
+  <rect x="626" y="358" width="210" height="102" class="box" fill="#FFF7E6" stroke="#D97706"/>
+  <text x="697" y="392" class="label">GPU 1</text>
+  <text x="683" y="416" class="small">Expert 1</text>
+  <text x="683" y="436" class="small">Expert 3</text>
+
+  <rect x="928" y="120" width="220" height="470" class="panel"/>
+  <text x="959" y="154" class="label">Sortie et mesure</text>
+  <rect x="958" y="206" width="158" height="84" class="box" fill="#ECFDF5" stroke="#059669"/>
+  <text x="986" y="239" class="label">Combinaison</text>
+  <text x="985" y="263" class="small">logits pondérés</text>
+  <rect x="958" y="370" width="158" height="108" class="box" fill="#EEF2FF" stroke="#4F46E5"/>
+  <text x="991" y="403" class="label">Monitoring</text>
+  <text x="983" y="427" class="small">charge, overflow,</text>
+  <text x="983" y="447" class="small">latence, coût,</text>
+  <text x="983" y="467" class="small">dispatch distant</text>
+
+  <path class="arrow" d="M232 266 H348"/>
+  <path class="arrow" d="M502 255 C560 220 598 215 626 226"/>
+  <path class="remote" d="M502 285 C560 392 596 410 626 410"/>
+  <path class="arrow" d="M836 241 H958"/>
+  <path class="arrow" d="M836 409 C900 400 926 278 958 259"/>
+  <path class="soft" d="M425 312 C425 506 835 545 958 424"/>
+  <path class="soft" d="M731 292 C740 324 854 378 958 420"/>
+  <path class="soft" d="M731 460 C783 504 878 490 958 445"/>
+  <path class="soft" d="M1037 290 V370"/>
+
+  <rect x="348" y="640" width="544" height="50" fill="#F8FAFC" stroke="#CBD5E1" rx="14" ry="14"/>
+  <text x="383" y="670" class="small">Un expert sparse économise du calcul actif, mais peut acheter ce gain avec de la communication.</text>
+  <text x="515" y="724" class="subtitle">FIG-030-002 - Expert parallelism</text>
+</svg>

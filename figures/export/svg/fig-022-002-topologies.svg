@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-022-002 - Topologies d'experts</title>
+  <desc id="desc">Comparaison pédagogique entre experts concurrents, coopératifs, hiérarchiques et partagés dans une architecture MoE.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#0f172a" flood-opacity="0.10"/>
+    </filter>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font: 700 28px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 400 16px "Segoe UI", Arial, sans-serif; fill: #4b5563; }
+      .panel { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; filter: url(#shadow); }
+      .cell { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .input { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; }
+      .router { fill: #f5f3ff; stroke: #7c3aed; stroke-width: 2; }
+      .expert { fill: #ecfdf5; stroke: #047857; stroke-width: 2; }
+      .shared { fill: #fefce8; stroke: #ca8a04; stroke-width: 2; }
+      .mix { fill: #fff7ed; stroke: #ea580c; stroke-width: 2; }
+      .label { font: 700 16px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .heading { font: 700 20px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .small { font: 400 13px "Segoe UI", Arial, sans-serif; fill: #475569; }
+      .math { font: 600 13px "Consolas", "Cascadia Mono", monospace; fill: #111827; }
+      .line { fill: none; stroke: #334155; stroke-width: 2; marker-end: url(#arrow); }
+      .dash { fill: none; stroke: #64748b; stroke-width: 1.8; stroke-dasharray: 7 7; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="48" y="54">Topologies d'experts</text>
+  <text class="subtitle" x="48" y="82">Même famille MoE, mais des responsabilités et des risques différents.</text>
+
+  <rect class="panel" x="60" y="120" width="1080" height="525" rx="14"/>
+
+  <rect class="cell" x="95" y="155" width="500" height="225" rx="12"/>
+  <text class="heading" x="120" y="188">Concurrents</text>
+  <rect class="input" x="125" y="230" width="70" height="44" rx="8"/>
+  <text class="math" x="154" y="258">x</text>
+  <rect class="router" x="245" y="220" width="95" height="64" rx="10"/>
+  <text class="label" x="268" y="246">routeur</text>
+  <text class="small" x="271" y="267">choix</text>
+  <rect class="expert" x="410" y="185" width="100" height="44" rx="8"/>
+  <text class="small" x="430" y="211">expert A</text>
+  <rect class="expert" x="410" y="250" width="100" height="44" rx="8"/>
+  <text class="small" x="430" y="276">expert B</text>
+  <rect class="expert" x="410" y="315" width="100" height="44" rx="8"/>
+  <text class="small" x="430" y="341">expert C</text>
+  <path class="line" d="M195 252 H245"/>
+  <path class="line" d="M340 238 C370 215 385 207 410 207"/>
+  <path class="line" d="M340 252 H410"/>
+  <path class="line" d="M340 268 C370 300 385 337 410 337"/>
+  <text class="small" x="120" y="350">Risque : un expert absorbe le trafic.</text>
+
+  <rect class="cell" x="625" y="155" width="500" height="225" rx="12"/>
+  <text class="heading" x="650" y="188">Coopératifs</text>
+  <rect class="input" x="655" y="230" width="70" height="44" rx="8"/>
+  <text class="math" x="684" y="258">x</text>
+  <rect class="expert" x="795" y="185" width="100" height="44" rx="8"/>
+  <text class="small" x="815" y="211">expert A</text>
+  <rect class="expert" x="795" y="250" width="100" height="44" rx="8"/>
+  <text class="small" x="815" y="276">expert B</text>
+  <rect class="expert" x="795" y="315" width="100" height="44" rx="8"/>
+  <text class="small" x="815" y="341">expert C</text>
+  <rect class="mix" x="970" y="235" width="90" height="62" rx="10"/>
+  <text class="label" x="996" y="260">fusion</text>
+  <text class="math" x="993" y="281">Σ</text>
+  <path class="line" d="M725 252 C755 220 770 207 795 207"/>
+  <path class="line" d="M725 252 H795"/>
+  <path class="line" d="M725 252 C755 295 770 337 795 337"/>
+  <path class="line" d="M895 207 C930 215 945 250 970 254"/>
+  <path class="line" d="M895 272 H970"/>
+  <path class="line" d="M895 337 C930 325 945 292 970 278"/>
+  <text class="small" x="650" y="368">Risque : coût actif plus élevé; responsabilité floue.</text>
+
+  <rect class="cell" x="95" y="405" width="500" height="225" rx="12"/>
+  <text class="heading" x="120" y="438">Hiérarchiques</text>
+  <rect class="input" x="125" y="490" width="70" height="44" rx="8"/>
+  <text class="math" x="154" y="518">x</text>
+  <rect class="router" x="235" y="480" width="95" height="64" rx="10"/>
+  <text class="label" x="254" y="506">global</text>
+  <text class="small" x="263" y="527">groupe</text>
+  <rect class="router" x="385" y="442" width="90" height="50" rx="9"/>
+  <text class="small" x="410" y="470">local A</text>
+  <rect class="router" x="385" y="535" width="90" height="50" rx="9"/>
+  <text class="small" x="410" y="563">local B</text>
+  <rect class="expert" x="510" y="442" width="64" height="50" rx="8"/>
+  <text class="small" x="526" y="471">E1</text>
+  <rect class="expert" x="510" y="535" width="64" height="50" rx="8"/>
+  <text class="small" x="526" y="564">E2</text>
+  <path class="line" d="M195 512 H235"/>
+  <path class="line" d="M330 498 C356 475 370 467 385 467"/>
+  <path class="line" d="M330 526 C356 545 370 560 385 560"/>
+  <path class="line" d="M475 467 H510"/>
+  <path class="line" d="M475 560 H510"/>
+  <text class="small" x="120" y="603">Risque : une erreur amont bloque le bon expert.</text>
+
+  <rect class="cell" x="625" y="405" width="500" height="225" rx="12"/>
+  <text class="heading" x="650" y="438">Partagés + routés</text>
+  <rect class="input" x="655" y="490" width="70" height="44" rx="8"/>
+  <text class="math" x="684" y="518">x</text>
+  <rect class="shared" x="790" y="445" width="125" height="54" rx="9"/>
+  <text class="small" x="812" y="468">expert partagé</text>
+  <text class="math" x="835" y="488">toujours</text>
+  <rect class="router" x="790" y="535" width="110" height="54" rx="9"/>
+  <text class="small" x="815" y="558">routeur</text>
+  <text class="math" x="820" y="578">S(x)</text>
+  <rect class="expert" x="965" y="445" width="80" height="44" rx="8"/>
+  <text class="small" x="984" y="471">E routé</text>
+  <rect class="expert" x="965" y="535" width="80" height="44" rx="8"/>
+  <text class="small" x="984" y="561">E routé</text>
+  <path class="line" d="M725 512 C755 485 770 473 790 472"/>
+  <path class="line" d="M725 512 C755 540 770 562 790 562"/>
+  <path class="line" d="M915 472 H965"/>
+  <path class="line" d="M900 562 H965"/>
+  <text class="small" x="650" y="603">Risque : noyau commun trop lourd ou redondant.</text>
+
+  <text class="small" x="430" y="690">FIG-022-002 - Topologies d'experts</text>
+</svg>

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-000-001 - Carte générale du livre</title>
+  <desc id="desc">Carte reliant les fondements, les réseaux continus, les Mixture-of-Experts, les architectures modulaires, Qaya et le dépôt compagnon.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#394150"/>
+    </marker>
+    <style>
+      .title { font: 700 30px Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 400 16px Arial, sans-serif; fill: #4b5563; }
+      .group-label { font: 700 16px Arial, sans-serif; fill: #374151; }
+      .node-title { font: 700 18px Arial, sans-serif; fill: #111827; }
+      .node-text { font: 400 14px Arial, sans-serif; fill: #374151; }
+      .small { font: 400 13px Arial, sans-serif; fill: #4b5563; }
+      .edge { stroke: #394150; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+      .soft-edge { stroke: #6b7280; stroke-width: 1.8; fill: none; marker-end: url(#arrow); stroke-dasharray: 6 6; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="760" fill="#ffffff"/>
+  <text x="60" y="58" class="title">Carte générale du livre</text>
+  <text x="60" y="86" class="subtitle">Des fondements vers les dynamiques continues, les experts spécialisés et les architectures modulaires.</text>
+
+  <rect x="50" y="120" width="250" height="520" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="74" y="152" class="group-label">Base pedagogique</text>
+
+  <rect x="370" y="120" width="360" height="520" rx="12" fill="#faf7ff" stroke="#d8b4fe"/>
+  <text x="394" y="152" class="group-label">Axes techniques</text>
+
+  <rect x="800" y="120" width="350" height="520" rx="12" fill="#f3faf5" stroke="#bbf7d0"/>
+  <text x="824" y="152" class="group-label">Synthese et prototype</text>
+
+  <rect x="82" y="205" width="186" height="104" rx="10" fill="#eef6ff" stroke="#2f5c8f" stroke-width="2"/>
+  <text x="104" y="240" class="node-title">Fondements</text>
+  <text x="104" y="264" class="node-text">algebre, gradients,</text>
+  <text x="104" y="284" class="node-text">systèmes dynamiques</text>
+
+  <rect x="82" y="410" width="186" height="104" rx="10" fill="#eef6ff" stroke="#2f5c8f" stroke-width="2"/>
+  <text x="104" y="445" class="node-title">Socle discret</text>
+  <text x="104" y="469" class="node-text">MLP, RNN, LSTM,</text>
+  <text x="104" y="489" class="node-text">GRU, backpropagation</text>
+
+  <rect x="408" y="198" width="260" height="116" rx="10" fill="#f4f1ff" stroke="#5b4bb2" stroke-width="2"/>
+  <text x="432" y="236" class="node-title">Réseaux continus</text>
+  <text x="432" y="260" class="node-text">Neural ODE, CT-RNN,</text>
+  <text x="432" y="280" class="node-text">LTC et CfC</text>
+
+  <rect x="408" y="410" width="260" height="116" rx="10" fill="#f4f1ff" stroke="#5b4bb2" stroke-width="2"/>
+  <text x="432" y="448" class="node-title">Mixture-of-Experts</text>
+  <text x="432" y="472" class="node-text">routeurs, experts,</text>
+  <text x="432" y="492" class="node-text">coût actif et équilibrage</text>
+
+  <rect x="840" y="226" width="270" height="128" rx="10" fill="#ecf8f0" stroke="#2f7d4f" stroke-width="2"/>
+  <text x="864" y="266" class="node-title">Architecture modulaire</text>
+  <text x="864" y="290" class="node-text">mémoire, contexte,</text>
+  <text x="864" y="310" class="node-text">observabilité, contrats</text>
+
+  <rect x="840" y="462" width="270" height="112" rx="10" fill="#fff4e6" stroke="#b66a00" stroke-width="2"/>
+  <text x="864" y="500" class="node-title">Livre + dépôt</text>
+  <text x="864" y="524" class="node-text">figures reproductibles,</text>
+  <text x="864" y="544" class="node-text">prototypes et tests</text>
+
+  <path d="M 175 309 L 175 405" class="edge"/>
+  <path d="M 268 455 C 315 455, 325 256, 402 256" class="edge"/>
+  <path d="M 268 475 C 330 475, 335 468, 402 468" class="edge"/>
+  <path d="M 668 256 C 760 256, 770 274, 834 286" class="edge"/>
+  <path d="M 668 468 C 760 468, 770 326, 834 306" class="edge"/>
+  <path d="M 975 354 L 975 456" class="edge"/>
+
+  <path d="M 840 534 C 650 640, 265 642, 175 514" class="soft-edge"/>
+
+  <text x="386" y="660" class="small">Lecture recommandée : comprendre les bases, comparer les deux axes techniques, puis composer avec prudence.</text>
+  <text x="386" y="684" class="small">Qaya intervient comme étude de cas expérimentale, pas comme preuve scientifique générale.</text>
+</svg>

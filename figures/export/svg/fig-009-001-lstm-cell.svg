@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-009-001 - Cellule LSTM</title>
+  <desc id="desc">Schéma de la cellule LSTM avec état de cellule, état caché, portes d'entrée, d'oubli et de sortie.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+    <marker id="blueArrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="greenArrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#047857"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font: 700 28px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 400 16px "Segoe UI", Arial, sans-serif; fill: #4b5563; }
+      .section { font: 700 18px "Segoe UI", Arial, sans-serif; fill: #1f2937; }
+      .label { font: 600 16px "Segoe UI", Arial, sans-serif; fill: #1f2937; }
+      .small { font: 400 14px "Segoe UI", Arial, sans-serif; fill: #4b5563; }
+      .math { font: 600 17px "Consolas", "Cascadia Mono", monospace; fill: #111827; }
+      .mathSmall { font: 500 14px "Consolas", "Cascadia Mono", monospace; fill: #374151; }
+      .panel { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; }
+      .cell { fill: #f1f5f9; stroke: #64748b; stroke-width: 2; filter: url(#shadow); }
+      .state { fill: #ecfdf5; stroke: #047857; stroke-width: 2; }
+      .gate { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; }
+      .candidate { fill: #fff7ed; stroke: #ea580c; stroke-width: 2; }
+      .output { fill: #f5f3ff; stroke: #7c3aed; stroke-width: 2; }
+      .op { fill: #ffffff; stroke: #374151; stroke-width: 2; }
+      .line { fill: none; stroke: #374151; stroke-width: 2.2; marker-end: url(#arrow); }
+      .blueLine { fill: none; stroke: #2563eb; stroke-width: 2.2; marker-end: url(#blueArrow); }
+      .greenLine { fill: none; stroke: #047857; stroke-width: 2.5; marker-end: url(#greenArrow); }
+      .thin { fill: none; stroke: #94a3b8; stroke-width: 1.6; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="680"/>
+  <text class="title" x="48" y="54">Cellule LSTM : état transporté et portes de modulation</text>
+  <text class="subtitle" x="48" y="82">Les portes produisent des coefficients numériques. Elles modulent des vecteurs, elles ne prennent pas de décisions humaines.</text>
+
+  <rect class="panel" x="46" y="120" width="180" height="392" rx="10"/>
+  <text class="section" x="74" y="156">Entrées au pas t</text>
+
+  <rect class="state" x="76" y="190" width="120" height="54" rx="8"/>
+  <text class="math" x="116" y="224">x_t</text>
+  <text class="small" x="83" y="266">observation courante</text>
+
+  <rect class="output" x="76" y="300" width="120" height="54" rx="8"/>
+  <text class="math" x="103" y="334">h_{t-1}</text>
+  <text class="small" x="84" y="376">état caché précédent</text>
+
+  <rect class="state" x="76" y="410" width="120" height="54" rx="8"/>
+  <text class="math" x="103" y="444">c_{t-1}</text>
+  <text class="small" x="84" y="486">état de cellule précédent</text>
+
+  <rect class="cell" x="270" y="124" width="820" height="430" rx="18"/>
+  <text class="section" x="298" y="162">Intérieur de la cellule LSTM</text>
+
+  <path class="greenLine" d="M196 437 C235 437 238 222 300 222"/>
+  <path class="greenLine" d="M300 222 H430"/>
+  <circle class="op" cx="455" cy="222" r="23"/>
+  <text class="math" x="448" y="228">×</text>
+  <path class="greenLine" d="M478 222 H650"/>
+  <circle class="op" cx="680" cy="222" r="25"/>
+  <text class="math" x="672" y="228">+</text>
+  <path class="greenLine" d="M705 222 H1008"/>
+  <rect class="state" x="1008" y="195" width="84" height="54" rx="8"/>
+  <text class="math" x="1033" y="229">c_t</text>
+
+  <path class="line" d="M196 217 C235 217 233 385 290 385"/>
+  <path class="line" d="M196 327 C235 327 233 385 290 385"/>
+  <rect class="panel" x="290" y="355" width="160" height="60" rx="8"/>
+  <text class="mathSmall" x="318" y="381">[x_t, h_{t-1}]</text>
+  <text class="small" x="315" y="403">entrée concaténée</text>
+
+  <rect class="gate" x="330" y="455" width="150" height="64" rx="8"/>
+  <text class="label" x="370" y="482">Porte d'oubli</text>
+  <text class="mathSmall" x="382" y="505">f_t = σ(...)</text>
+
+  <rect class="gate" x="515" y="455" width="150" height="64" rx="8"/>
+  <text class="label" x="556" y="482">Porte d'entrée</text>
+  <text class="mathSmall" x="567" y="505">i_t = σ(...)</text>
+
+  <rect class="candidate" x="700" y="455" width="150" height="64" rx="8"/>
+  <text class="label" x="730" y="482">Candidat</text>
+  <text class="mathSmall" x="733" y="505">g_t = tanh(...)</text>
+
+  <rect class="gate" x="885" y="455" width="150" height="64" rx="8"/>
+  <text class="label" x="923" y="482">Porte de sortie</text>
+  <text class="mathSmall" x="939" y="505">o_t = σ(...)</text>
+
+  <path class="thin" d="M450 385 C470 385 405 430 405 455"/>
+  <path class="thin" d="M450 385 C515 385 590 430 590 455"/>
+  <path class="thin" d="M450 385 C580 385 775 430 775 455"/>
+  <path class="thin" d="M450 385 C640 385 960 430 960 455"/>
+
+  <path class="blueLine" d="M405 455 C405 380 455 315 455 245"/>
+  <circle class="op" cx="620" cy="300" r="23"/>
+  <text class="math" x="613" y="306">×</text>
+  <path class="blueLine" d="M590 455 C590 390 603 350 620 323"/>
+  <path class="line" d="M775 455 C775 390 650 350 620 323"/>
+  <path class="line" d="M643 300 C670 295 680 268 680 247"/>
+
+  <text class="math" x="492" y="205">c_t = f_t * c_{t-1} + i_t * g_t</text>
+
+  <path class="line" d="M835 222 C835 278 815 310 780 334"/>
+  <rect class="candidate" x="710" y="338" width="120" height="48" rx="8"/>
+  <text class="mathSmall" x="748" y="367">tanh(c_t)</text>
+  <circle class="op" cx="910" cy="362" r="23"/>
+  <text class="math" x="903" y="368">×</text>
+  <path class="line" d="M830 362 H887"/>
+  <path class="blueLine" d="M960 455 C960 420 935 395 910 385"/>
+  <path class="line" d="M933 362 H1010"/>
+  <rect class="output" x="1010" y="335" width="84" height="54" rx="8"/>
+  <text class="math" x="1035" y="369">h_t</text>
+
+  <rect class="panel" x="270" y="576" width="820" height="48" rx="8"/>
+  <text class="small" x="296" y="606">Lecture : l'état de cellule circule sur le chemin vert. Les portes bleues apprennent quoi réduire, ajouter et exposer.</text>
+  <text class="small" x="432" y="650">FIG-009-001 - Cellule LSTM</text>
+</svg>

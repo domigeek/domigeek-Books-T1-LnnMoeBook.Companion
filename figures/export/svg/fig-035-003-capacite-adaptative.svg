@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="650" viewBox="0 0 1180 650" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-035-003 - Capacité adaptative et cycle de vie des experts</title>
+  <desc id="desc">Schéma montrant comment une architecture peut choisir un trajet court, approfondi, augmenté ou arrêté, puis gouverner le cycle de vie des experts et couches.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#334155"/>
+    </marker>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 24px; fill: #0f172a; }
+      .subtitle { font-family: Arial, Helvetica, sans-serif; font-size: 14px; fill: #475569; }
+      .blue { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; rx: 12; }
+      .purple { fill: #faf5ff; stroke: #7c3aed; stroke-width: 2; rx: 12; }
+      .green { fill: #f0fdf4; stroke: #15803d; stroke-width: 2; rx: 12; }
+      .amber { fill: #fffbeb; stroke: #d97706; stroke-width: 2; rx: 12; }
+      .red { fill: #fff1f2; stroke: #be123c; stroke-width: 2; rx: 12; }
+      .gray { fill: #f8fafc; stroke: #475569; stroke-width: 2; rx: 12; }
+      .label { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 14px; fill: #0f172a; text-anchor: middle; }
+      .small { font-family: Arial, Helvetica, sans-serif; font-size: 12px; fill: #475569; text-anchor: middle; }
+      .tiny { font-family: Arial, Helvetica, sans-serif; font-size: 11px; fill: #64748b; text-anchor: middle; }
+      .arrow { stroke: #334155; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+      .dash { stroke: #64748b; stroke-width: 1.8; fill: none; marker-end: url(#arrow); stroke-dasharray: 6 6; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1180" height="650"/>
+  <text class="title" x="52" y="48">Capacité adaptative et cycle de vie des experts</text>
+  <text class="subtitle" x="52" y="72">L'architecture ajuste l'effort au signal au lieu d'appliquer la même profondeur à tous les problèmes.</text>
+
+  <rect class="blue" x="70" y="252" width="180" height="74"/>
+  <text class="label" x="160" y="276">Signal entrant</text>
+  <text class="small" x="160" y="298">événement, phrase,</text>
+  <text class="small" x="160" y="316">métrique ou scène</text>
+
+  <rect class="gray" x="330" y="242" width="210" height="94"/>
+  <text class="label" x="435" y="266">Évaluation</text>
+  <text class="small" x="435" y="288">simple, ambigu, complexe,</text>
+  <text class="small" x="435" y="306">bruité ou instable</text>
+  <text class="tiny" x="435" y="326">ED + OAD + ECAD</text>
+
+  <rect class="green" x="650" y="112" width="210" height="72"/>
+  <text class="label" x="755" y="137">Trajet court</text>
+  <text class="small" x="755" y="158">peu d'experts, coût bas</text>
+
+  <rect class="purple" x="650" y="232" width="210" height="72"/>
+  <text class="label" x="755" y="257">Trajet approfondi</text>
+  <text class="small" x="755" y="278">attention, mémoire, hypothèses</text>
+
+  <rect class="amber" x="650" y="352" width="210" height="72"/>
+  <text class="label" x="755" y="377">Capacité augmentée</text>
+  <text class="small" x="755" y="398">experts, couches, vérifications</text>
+
+  <rect class="red" x="650" y="472" width="210" height="72"/>
+  <text class="label" x="755" y="497">Réduction ou arrêt</text>
+  <text class="small" x="755" y="518">clarification, rollback, pause</text>
+
+  <rect class="amber" x="940" y="292" width="180" height="116"/>
+  <text class="label" x="1030" y="318">Cycle de vie</text>
+  <text class="small" x="1030" y="340">créer, tester</text>
+  <text class="small" x="1030" y="360">promouvoir, geler</text>
+  <text class="small" x="1030" y="380">fusionner, retirer</text>
+
+  <rect class="gray" x="940" y="470" width="180" height="86"/>
+  <text class="label" x="1030" y="496">Gouvernance</text>
+  <text class="small" x="1030" y="518">traces, coût, qualité</text>
+  <text class="small" x="1030" y="538">rollback et mesure</text>
+
+  <path class="arrow" d="M250 289 H330"/>
+  <path class="arrow" d="M540 270 C590 210 612 150 650 148"/>
+  <path class="arrow" d="M540 286 H650"/>
+  <path class="arrow" d="M540 304 C590 332 612 382 650 388"/>
+  <path class="arrow" d="M540 318 C590 410 612 500 650 508"/>
+  <path class="arrow" d="M860 388 H940"/>
+  <path class="arrow" d="M1030 408 V470"/>
+  <path class="dash" d="M940 520 C760 615 465 585 435 336"/>
+  <path class="dash" d="M860 148 C970 162 1080 232 1030 292"/>
+  <path class="dash" d="M860 268 C910 280 930 306 940 328"/>
+  <path class="dash" d="M860 508 H940"/>
+
+  <text class="subtitle" x="52" y="608">Lecture : ajouter de la capacité doit rester mesuré. Un expert ou une couche sans cycle de vie devient une dette.</text>
+</svg>

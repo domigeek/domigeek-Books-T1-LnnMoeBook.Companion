@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="620" viewBox="0 0 1180 620" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-036-003 - Ce qui va dans le livre et ce qui reste dans le dépôt</title>
+  <desc id="desc">Séparation entre contenu imprimé dans le livre et code complet conservé dans le dépôt Git compagnon.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#334155"/>
+    </marker>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 24px; fill: #0f172a; }
+      .subtitle { font-family: Arial, Helvetica, sans-serif; font-size: 14px; fill: #475569; }
+      .panel { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.8; rx: 18; }
+      .book { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; rx: 12; }
+      .repo { fill: #f0fdf4; stroke: #15803d; stroke-width: 2; rx: 12; }
+      .warn { fill: #fffbeb; stroke: #d97706; stroke-width: 2; rx: 12; }
+      .label { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 14px; fill: #0f172a; text-anchor: middle; }
+      .small { font-family: Arial, Helvetica, sans-serif; font-size: 12px; fill: #475569; text-anchor: middle; }
+      .head { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 18px; fill: #0f172a; text-anchor: middle; }
+      .arrow { stroke: #334155; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+      .dash { stroke: #64748b; stroke-width: 1.8; fill: none; marker-end: url(#arrow); stroke-dasharray: 6 6; }
+    </style>
+  </defs>
+  <rect class="bg" width="1180" height="620"/>
+  <text class="title" x="52" y="48">Livre vs dépôt compagnon</text>
+  <text class="subtitle" x="52" y="72">Le livre expose le mécanisme. Le dépôt garde le code complet, les tests et les mesures.</text>
+
+  <rect class="panel" x="70" y="118" width="460" height="370"/>
+  <text class="head" x="300" y="154">Dans le livre</text>
+  <rect class="book" x="125" y="190" width="150" height="58"/>
+  <text class="label" x="200" y="214">Problème</text>
+  <text class="small" x="200" y="234">pourquoi coder</text>
+  <rect class="book" x="325" y="190" width="150" height="58"/>
+  <text class="label" x="400" y="214">Intuition</text>
+  <text class="small" x="400" y="234">mécanisme</text>
+  <rect class="book" x="125" y="292" width="150" height="58"/>
+  <text class="label" x="200" y="316">Extrait court</text>
+  <text class="small" x="200" y="336">5 à 10 lignes</text>
+  <rect class="book" x="325" y="292" width="150" height="58"/>
+  <text class="label" x="400" y="316">Figure</text>
+  <text class="small" x="400" y="336">carte mentale</text>
+  <rect class="warn" x="225" y="394" width="150" height="58"/>
+  <text class="label" x="300" y="418">Limites</text>
+  <text class="small" x="300" y="438">pas de sur-claim</text>
+
+  <rect class="panel" x="650" y="118" width="460" height="370"/>
+  <text class="head" x="880" y="154">Dans le dépôt Git</text>
+  <rect class="repo" x="705" y="190" width="150" height="58"/>
+  <text class="label" x="780" y="214">Classe complète</text>
+  <text class="small" x="780" y="234">implémentation</text>
+  <rect class="repo" x="905" y="190" width="150" height="58"/>
+  <text class="label" x="980" y="214">Tests</text>
+  <text class="small" x="980" y="234">invariants</text>
+  <rect class="repo" x="705" y="292" width="150" height="58"/>
+  <text class="label" x="780" y="316">Rapports</text>
+  <text class="small" x="780" y="336">console</text>
+  <rect class="repo" x="905" y="292" width="150" height="58"/>
+  <text class="label" x="980" y="316">Données</text>
+  <text class="small" x="980" y="336">synthétiques</text>
+  <rect class="warn" x="805" y="394" width="150" height="58"/>
+  <text class="label" x="880" y="418">Benchmarks</text>
+  <text class="small" x="880" y="438">à consolider</text>
+
+  <path class="arrow" d="M475 219 H705"/>
+  <path class="arrow" d="M275 321 C430 255 560 255 705 321"/>
+  <path class="dash" d="M400 350 C540 420 680 430 805 423"/>
+  <path class="dash" d="M375 423 C560 500 795 505 880 452"/>
+  <path class="arrow" d="M855 219 H905"/>
+  <path class="arrow" d="M780 248 V292"/>
+  <path class="arrow" d="M980 248 V292"/>
+  <path class="arrow" d="M855 321 H905"/>
+
+  <text class="subtitle" x="52" y="568">Lecture : imprimer tout le code rend le livre moins clair. Le bon extrait pointe vers le bon fichier et le bon test.</text>
+</svg>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="640" viewBox="0 0 1120 640" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-029-002 - Transformer² dans la carte des architectures adaptatives</title>
+  <desc id="desc">Carte des principaux niveaux d'adaptation : prompt, adaptateurs, MoE, SSM, LNN, Transformer² et architecture modulaire.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#334155"/>
+    </marker>
+    <style>
+      .bg { fill: #ffffff; }
+      .root { fill: #f8fafc; stroke: #334155; stroke-width: 2; rx: 14; }
+      .prompt { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; rx: 12; }
+      .params { fill: #fef3c7; stroke: #d97706; stroke-width: 2; rx: 12; }
+      .moe { fill: #f0fdf4; stroke: #15803d; stroke-width: 2; rx: 12; }
+      .state { fill: #eef2ff; stroke: #4f46e5; stroke-width: 2; rx: 12; }
+      .t2 { fill: #faf5ff; stroke: #9333ea; stroke-width: 3; rx: 12; }
+      .system { fill: #fff1f2; stroke: #be123c; stroke-width: 2; rx: 12; }
+      .title { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 24px; fill: #0f172a; }
+      .subtitle { font-family: Arial, Helvetica, sans-serif; font-size: 14px; fill: #475569; }
+      .label { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 16px; fill: #0f172a; }
+      .small { font-family: Arial, Helvetica, sans-serif; font-size: 12px; fill: #475569; }
+      .note { font-family: Arial, Helvetica, sans-serif; font-size: 14px; fill: #334155; }
+      .arrow { stroke: #334155; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+      .dash { stroke-dasharray: 7 6; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1120" height="640"/>
+
+  <text class="title" x="56" y="48">Transformer² dans la carte des adaptations</text>
+  <text class="subtitle" x="56" y="72">L'adaptation peut agir sur le texte, les paramètres, le routage, l'état ou le système complet.</text>
+
+  <rect class="root" x="422" y="112" width="276" height="72"/>
+  <text class="label" x="478" y="142">Adaptation en IA</text>
+  <text class="small" x="452" y="163">choisir ce qui change selon la tâche</text>
+
+  <rect class="prompt" x="70" y="250" width="160" height="88"/>
+  <text class="label" x="118" y="280">Prompt</text>
+  <text class="small" x="94" y="304">consignes textuelles</text>
+  <text class="small" x="98" y="322">souples mais fragiles</text>
+
+  <rect class="params" x="258" y="250" width="168" height="88"/>
+  <text class="label" x="288" y="280">Adaptateurs</text>
+  <text class="small" x="284" y="304">paramètres spécialisés</text>
+  <text class="small" x="284" y="322">fine-tuning, LoRA</text>
+
+  <rect class="moe" x="454" y="250" width="168" height="88"/>
+  <text class="label" x="518" y="280">MoE</text>
+  <text class="small" x="486" y="304">routage vers experts</text>
+  <text class="small" x="488" y="322">spécialisation active</text>
+
+  <rect class="state" x="650" y="250" width="168" height="88"/>
+  <text class="label" x="697" y="280">SSM et LNN</text>
+  <text class="small" x="684" y="304">état dynamique</text>
+  <text class="small" x="682" y="322">temps, flux, mémoire courte</text>
+
+  <rect class="t2" x="846" y="250" width="188" height="88"/>
+  <text class="label" x="889" y="280">Transformer²</text>
+  <text class="small" x="878" y="304">composantes internes</text>
+  <text class="small" x="885" y="322">adaptées à la tâche</text>
+
+  <rect class="system" x="374" y="444" width="372" height="96"/>
+  <text class="label" x="446" y="477">Architecture modulaire</text>
+  <text class="small" x="417" y="502">événements, objets, concepts, mémoire, outils, experts</text>
+  <text class="small" x="449" y="522">l'adaptation devient une décision de système</text>
+
+  <path class="arrow" d="M450 184 C360 205 220 224 160 246"/>
+  <path class="arrow" d="M500 184 C440 210 384 226 350 246"/>
+  <path class="arrow" d="M560 184 V244"/>
+  <path class="arrow" d="M620 184 C666 210 704 226 725 246"/>
+  <path class="arrow" d="M674 184 C776 210 872 226 924 246"/>
+  <path class="arrow dash" d="M940 338 C910 414 760 468 750 492"/>
+  <path class="arrow dash" d="M538 338 V438"/>
+
+  <text class="note" x="260" y="586">Lecture : Transformer² ne remplace pas les autres formes d'adaptation.</text>
+  <text class="note" x="282" y="608">Il ajoute un niveau interne entre adaptateurs, MoE et orchestration système.</text>
+</svg>

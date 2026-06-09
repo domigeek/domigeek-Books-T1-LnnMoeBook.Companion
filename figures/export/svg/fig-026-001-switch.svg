@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="700" viewBox="0 0 1180 700" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-026-001 - Routage top-1 Switch</title>
+  <desc id="desc">Schéma du routage Switch : chaque token est évalué par un routeur, assigné à un seul expert actif, limité par une capacité d'expert, puis replacé dans l'ordre du batch.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <style>
+      .bg { fill: #fbfcff; }
+      .panel { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.4; }
+      .panel-router { fill: #f5f3ff; stroke: #8b5cf6; stroke-width: 1.6; }
+      .panel-active { fill: #ecfdf5; stroke: #16a34a; stroke-width: 1.7; }
+      .panel-idle { fill: #fff7ed; stroke: #f97316; stroke-width: 1.4; }
+      .panel-warn { fill: #fff1f2; stroke: #e11d48; stroke-width: 1.4; }
+      .title { font: 700 24px Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 13px Arial, sans-serif; fill: #475569; }
+      .label { font: 700 15px Arial, sans-serif; fill: #1e293b; }
+      .text { font: 400 13px Arial, sans-serif; fill: #334155; }
+      .small { font: 400 11px Arial, sans-serif; fill: #64748b; }
+      .token { fill: #dbeafe; stroke: #2563eb; stroke-width: 1.2; }
+      .token-hot { fill: #fee2e2; stroke: #dc2626; stroke-width: 1.2; }
+      .slot { fill: #ffffff; stroke: #94a3b8; stroke-width: 1; }
+      .slot-fill { fill: #bbf7d0; stroke: #16a34a; stroke-width: 1; }
+      .slot-drop { fill: #fecdd3; stroke: #e11d48; stroke-width: 1; stroke-dasharray: 4 3; }
+      .line { stroke: #334155; stroke-width: 1.8; fill: none; marker-end: url(#arrow); }
+      .line-soft { stroke: #94a3b8; stroke-width: 1.4; fill: none; marker-end: url(#arrow); }
+      .line-hot { stroke: #dc2626; stroke-width: 1.6; fill: none; stroke-dasharray: 5 4; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1180" height="700"/>
+  <text class="title" x="40" y="48">Routage top-1 Switch</text>
+  <text class="subtitle" x="40" y="72">Un token est assigné à un seul expert actif ; la capacité limite le nombre de tokens traités par expert.</text>
+
+  <rect class="panel" x="40" y="120" width="210" height="380" rx="8"/>
+  <text class="label" x="64" y="152">Batch de tokens</text>
+  <text class="small" x="64" y="174">Représentations après attention</text>
+  <rect class="token" x="72" y="210" width="104" height="34" rx="5"/>
+  <text class="text" x="96" y="232">token 1</text>
+  <rect class="token" x="72" y="258" width="104" height="34" rx="5"/>
+  <text class="text" x="96" y="280">token 2</text>
+  <rect class="token-hot" x="72" y="306" width="104" height="34" rx="5"/>
+  <text class="text" x="96" y="328">token 3</text>
+  <rect class="token" x="72" y="354" width="104" height="34" rx="5"/>
+  <text class="text" x="96" y="376">token 4</text>
+  <text class="small" x="64" y="440">Chaque token est routé</text>
+  <text class="small" x="64" y="456">indépendamment.</text>
+
+  <rect class="panel-router" x="330" y="140" width="230" height="340" rx="8"/>
+  <text class="label" x="365" y="174">Routeur Switch</text>
+  <text class="text" x="365" y="204">logits = Wᵣ x</text>
+  <text class="text" x="365" y="228">p = softmax(logits)</text>
+  <text class="text" x="365" y="252">expert = argmax(p)</text>
+  <line x1="365" y1="282" x2="525" y2="282" stroke="#8b5cf6" stroke-width="1.2"/>
+  <text class="small" x="365" y="312">Décision top-1 :</text>
+  <text class="small" x="365" y="332">un seul expert actif</text>
+  <text class="small" x="365" y="352">par token.</text>
+  <text class="small" x="365" y="404">La probabilité du routeur</text>
+  <text class="small" x="365" y="420">pondère encore la sortie.</text>
+
+  <rect class="panel-active" x="665" y="100" width="190" height="145" rx="8"/>
+  <text class="label" x="705" y="132">Expert 1</text>
+  <text class="small" x="705" y="154">actif pour token 1</text>
+  <rect class="slot-fill" x="705" y="176" width="34" height="28" rx="4"/>
+  <rect class="slot" x="747" y="176" width="34" height="28" rx="4"/>
+  <rect class="slot" x="789" y="176" width="34" height="28" rx="4"/>
+
+  <rect class="panel-active" x="665" y="270" width="190" height="145" rx="8"/>
+  <text class="label" x="705" y="302">Expert 2</text>
+  <text class="small" x="705" y="324">actif pour tokens 2, 3</text>
+  <rect class="slot-fill" x="705" y="346" width="34" height="28" rx="4"/>
+  <rect class="slot-fill" x="747" y="346" width="34" height="28" rx="4"/>
+  <rect class="slot-drop" x="789" y="346" width="34" height="28" rx="4"/>
+  <text class="small" x="705" y="396">capacité atteinte</text>
+
+  <rect class="panel-idle" x="665" y="440" width="190" height="120" rx="8"/>
+  <text class="label" x="705" y="472">Expert 3</text>
+  <text class="small" x="705" y="494">inactif pour ce batch</text>
+  <rect class="slot" x="705" y="516" width="34" height="28" rx="4"/>
+  <rect class="slot" x="747" y="516" width="34" height="28" rx="4"/>
+  <rect class="slot" x="789" y="516" width="34" height="28" rx="4"/>
+
+  <rect class="panel-warn" x="918" y="274" width="204" height="132" rx="8"/>
+  <text class="label" x="948" y="306">Débordement</text>
+  <text class="small" x="948" y="332">Si un expert reçoit trop</text>
+  <text class="small" x="948" y="350">de tokens, certains ne</text>
+  <text class="small" x="948" y="368">passent pas par l'expert.</text>
+
+  <rect class="panel" x="918" y="460" width="204" height="100" rx="8"/>
+  <text class="label" x="952" y="492">Recombinaison</text>
+  <text class="small" x="952" y="518">Les sorties reviennent</text>
+  <text class="small" x="952" y="536">dans l'ordre du batch.</text>
+
+  <path class="line" d="M 176 227 C 235 227, 265 210, 330 210"/>
+  <path class="line" d="M 176 275 C 245 275, 265 260, 330 260"/>
+  <path class="line" d="M 176 323 C 245 323, 265 314, 330 314"/>
+  <path class="line" d="M 176 371 C 245 371, 265 368, 330 368"/>
+
+  <path class="line" d="M 560 222 C 605 190, 625 178, 665 170"/>
+  <path class="line" d="M 560 292 C 610 310, 625 328, 665 342"/>
+  <path class="line-hot" d="M 560 332 C 610 344, 628 362, 665 374"/>
+  <path class="line-soft" d="M 560 382 C 610 450, 626 485, 665 500"/>
+
+  <path class="line-hot" d="M 825 360 C 860 354, 885 344, 918 340"/>
+  <path class="line-soft" d="M 855 190 C 902 268, 905 414, 950 462"/>
+  <path class="line-soft" d="M 855 355 C 890 430, 914 474, 950 502"/>
+
+  <text class="small" x="62" y="630">À retenir : Switch ne supprime pas le routage. Il impose un chemin expert unique par token, puis surveille capacité, débordements et équilibrage.</text>
+  <text class="small" x="478" y="668">FIG-026-001 - Routage top-1 Switch</text>
+</svg>

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="720" viewBox="0 0 1180 720" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-031-001 - Taxonomie mémoire</title>
+  <desc id="desc">Taxonomie pratique des mémoires dans un système d'IA : travail, épisodique, sémantique, persistante, lecture, écriture et oubli contrôlés.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <style>
+      .bg { fill: #fbfcff; }
+      .title { font: 700 24px Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 13px Arial, sans-serif; fill: #475569; }
+      .label { font: 700 15px Arial, sans-serif; fill: #1e293b; }
+      .text { font: 400 12px Arial, sans-serif; fill: #334155; }
+      .small { font: 400 11px Arial, sans-serif; fill: #64748b; }
+      .root { fill: #eef2ff; stroke: #4f46e5; stroke-width: 1.8; }
+      .work { fill: #dbeafe; stroke: #2563eb; stroke-width: 1.5; }
+      .episodic { fill: #fff7ed; stroke: #f97316; stroke-width: 1.5; }
+      .semantic { fill: #ecfdf5; stroke: #16a34a; stroke-width: 1.5; }
+      .persistent { fill: #f5f3ff; stroke: #8b5cf6; stroke-width: 1.5; }
+      .control { fill: #f8fafc; stroke: #94a3b8; stroke-width: 1.3; }
+      .line { stroke: #334155; stroke-width: 1.6; fill: none; marker-end: url(#arrow); }
+      .line-soft { stroke: #64748b; stroke-width: 1.4; fill: none; stroke-dasharray: 6 4; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1180" height="720"/>
+  <text class="title" x="42" y="48">Taxonomie mémoire</text>
+  <text class="subtitle" x="42" y="72">Une mémoire utile sépare durée de vie, provenance, validation et droit d'oubli.</text>
+
+  <rect class="root" x="420" y="105" width="340" height="78" rx="10"/>
+  <text class="label" x="500" y="138">Mémoire d'un système IA</text>
+  <text class="text" x="465" y="161">pas une seule base, mais plusieurs responsabilités</text>
+
+  <rect class="work" x="70" y="250" width="245" height="128" rx="9"/>
+  <text class="label" x="105" y="286">Mémoire de travail</text>
+  <text class="text" x="96" y="312">contexte actif</text>
+  <text class="text" x="96" y="334">objectif courant</text>
+  <text class="text" x="96" y="356">contraintes et documents lus</text>
+  <text class="small" x="96" y="376">durée : tâche ou session</text>
+
+  <rect class="episodic" x="355" y="250" width="245" height="128" rx="9"/>
+  <text class="label" x="392" y="286">Mémoire épisodique</text>
+  <text class="text" x="382" y="312">événements</text>
+  <text class="text" x="382" y="334">actions et décisions</text>
+  <text class="text" x="382" y="356">traces horodatées</text>
+  <text class="small" x="382" y="376">source et contexte</text>
+
+  <rect class="semantic" x="640" y="250" width="245" height="128" rx="9"/>
+  <text class="label" x="680" y="286">Mémoire sémantique</text>
+  <text class="text" x="668" y="312">faits validés</text>
+  <text class="text" x="668" y="334">concepts et relations</text>
+  <text class="text" x="668" y="356">règles et préférences</text>
+  <text class="small" x="668" y="376">consolidation + confiance</text>
+
+  <rect class="persistent" x="925" y="250" width="245" height="128" rx="9"/>
+  <text class="label" x="966" y="286">Mémoire persistante</text>
+  <text class="text" x="954" y="312">stockage durable</text>
+  <text class="text" x="954" y="334">contrôle d'accès</text>
+  <text class="text" x="954" y="356">audit et rétention</text>
+  <text class="small" x="954" y="376">survit aux sessions</text>
+
+  <rect class="control" x="120" y="500" width="250" height="88" rx="9"/>
+  <text class="label" x="162" y="534">Lecture contrôlée</text>
+  <text class="text" x="150" y="558">retrieval, filtres, contexte</text>
+
+  <rect class="control" x="455" y="500" width="250" height="88" rx="9"/>
+  <text class="label" x="495" y="534">Écriture contrôlée</text>
+  <text class="text" x="484" y="558">validation, source, durée de vie</text>
+
+  <rect class="control" x="790" y="500" width="250" height="88" rx="9"/>
+  <text class="label" x="838" y="534">Oubli contrôlé</text>
+  <text class="text" x="818" y="558">expiration, invalidation, effacement</text>
+
+  <path class="line" d="M 510 183 L 215 250"/>
+  <path class="line" d="M 560 183 L 475 250"/>
+  <path class="line" d="M 640 183 L 760 250"/>
+  <path class="line" d="M 690 183 L 1035 250"/>
+  <path class="line-soft" d="M 190 378 L 230 500"/>
+  <path class="line-soft" d="M 475 378 L 555 500"/>
+  <path class="line-soft" d="M 760 378 L 665 500"/>
+  <path class="line-soft" d="M 1038 378 L 940 500"/>
+  <path class="line-soft" d="M 705 544 L 790 544"/>
+
+  <text class="small" x="316" y="664">FIG-031-001 - La question n'est pas seulement où stocker, mais quoi écrire, relire, valider et oublier.</text>
+</svg>

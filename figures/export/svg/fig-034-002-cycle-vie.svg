@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="660" viewBox="0 0 1120 660" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-034-002 - Cycle de vie modèle, données, experts et configuration</title>
+  <desc id="desc">Cycle de vie gouverné depuis candidat et évaluation jusqu'à shadow mode, canary, production, monitoring, rollback et retrait.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#334155"/>
+    </marker>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 24px; fill: #0f172a; }
+      .subtitle { font-family: Arial, Helvetica, sans-serif; font-size: 14px; fill: #475569; }
+      .box { fill: #f8fafc; stroke: #334155; stroke-width: 2; rx: 12; }
+      .blue { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; rx: 12; }
+      .green { fill: #f0fdf4; stroke: #15803d; stroke-width: 2; rx: 12; }
+      .amber { fill: #fffbeb; stroke: #d97706; stroke-width: 2; rx: 12; }
+      .red { fill: #fff1f2; stroke: #be123c; stroke-width: 2; rx: 12; }
+      .purple { fill: #faf5ff; stroke: #9333ea; stroke-width: 2; rx: 12; }
+      .decision { fill: #ffffff; stroke: #334155; stroke-width: 2; }
+      .label { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 14px; fill: #0f172a; text-anchor: middle; }
+      .small { font-family: Arial, Helvetica, sans-serif; font-size: 12px; fill: #475569; text-anchor: middle; }
+      .note { font-family: Arial, Helvetica, sans-serif; font-size: 14px; fill: #334155; }
+      .arrow { stroke: #334155; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+      .dash { stroke-dasharray: 7 6; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1120" height="660"/>
+  <text class="title" x="56" y="48">Cycle de vie gouverné</text>
+  <text class="subtitle" x="56" y="72">Un modèle, un expert ou une politique ne devrait pas passer en production sans critères, surveillance et retrait possible.</text>
+
+  <rect class="blue" x="70" y="270" width="124" height="66"/>
+  <text class="label" x="132" y="297">Candidat</text>
+  <text class="small" x="132" y="316">prototype</text>
+
+  <rect class="blue" x="240" y="270" width="124" height="66"/>
+  <text class="label" x="302" y="297">Évaluation</text>
+  <text class="small" x="302" y="316">tests et métriques</text>
+
+  <path class="decision" d="M458 250 L548 303 L458 356 L368 303 Z"/>
+  <text class="label" x="458" y="296">Critères</text>
+  <text class="label" x="458" y="316">atteints ?</text>
+
+  <rect class="red" x="400" y="438" width="124" height="66"/>
+  <text class="label" x="462" y="465">Révision</text>
+  <text class="small" x="462" y="484">ou abandon</text>
+
+  <rect class="amber" x="600" y="270" width="124" height="66"/>
+  <text class="label" x="662" y="297">Shadow mode</text>
+  <text class="small" x="662" y="316">observer sans agir</text>
+
+  <rect class="amber" x="770" y="270" width="124" height="66"/>
+  <text class="label" x="832" y="297">Canary</text>
+  <text class="small" x="832" y="316">trafic limité</text>
+
+  <rect class="green" x="940" y="270" width="124" height="66"/>
+  <text class="label" x="1002" y="297">Production</text>
+  <text class="small" x="1002" y="316">version active</text>
+
+  <rect class="purple" x="940" y="430" width="124" height="66"/>
+  <text class="label" x="1002" y="457">Monitoring</text>
+  <text class="small" x="1002" y="476">qualité, coût</text>
+
+  <path class="decision" d="M760 410 L850 463 L760 516 L670 463 Z"/>
+  <text class="label" x="760" y="456">Dérive ou</text>
+  <text class="label" x="760" y="476">incident ?</text>
+
+  <rect class="red" x="560" y="430" width="124" height="66"/>
+  <text class="label" x="622" y="457">Rollback</text>
+  <text class="small" x="622" y="476">ou gel</text>
+
+  <rect class="box" x="940" y="548" width="124" height="66"/>
+  <text class="label" x="1002" y="575">Retrait</text>
+  <text class="small" x="1002" y="594">planifié</text>
+
+  <rect class="box" x="92" y="116" width="326" height="86"/>
+  <text class="label" x="255" y="144">Artefacts gouvernés</text>
+  <text class="small" x="255" y="166">datasets, modèles, experts, configuration</text>
+  <text class="small" x="255" y="184">prompts, politiques et index</text>
+
+  <path class="arrow" d="M194 303 H234"/>
+  <path class="arrow" d="M364 303 H374"/>
+  <path class="arrow" d="M548 303 H594"/>
+  <path class="arrow" d="M724 303 H764"/>
+  <path class="arrow" d="M894 303 H934"/>
+  <path class="arrow" d="M1002 336 V424"/>
+  <path class="arrow" d="M940 463 H856"/>
+  <path class="arrow" d="M670 463 H690"/>
+  <path class="arrow" d="M622 430 C560 380 504 350 480 344"/>
+  <path class="arrow" d="M400 470 C250 470 132 406 132 342"/>
+  <path class="arrow" d="M1002 496 V542"/>
+  <path class="arrow dash" d="M760 516 C812 560 908 562 934 560"/>
+  <path class="arrow dash" d="M418 174 C508 198 604 236 650 264"/>
+  <path class="arrow dash" d="M418 166 C600 180 840 220 988 264"/>
+
+  <text class="note" x="86" y="630">Lecture : la production n'est pas la fin du cycle. Monitoring, rollback, gel et retrait font partie de la gouvernance.</text>
+</svg>

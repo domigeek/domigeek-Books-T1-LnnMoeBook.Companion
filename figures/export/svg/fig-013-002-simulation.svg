@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-013-002 - Boucle de simulation numérique</title>
+  <desc id="desc">Boucle de simulation d'un CT-RNN : lecture de l'entrée, calcul de la dérivée, intégration, mise à jour de l'état et répétition.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font: 700 28px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 400 16px "Segoe UI", Arial, sans-serif; fill: #4b5563; }
+      .panel { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; filter: url(#shadow); }
+      .step { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; }
+      .calc { fill: #fff7ed; stroke: #ea580c; stroke-width: 2; }
+      .state { fill: #ecfdf5; stroke: #047857; stroke-width: 2; }
+      .out { fill: #f5f3ff; stroke: #7c3aed; stroke-width: 2; }
+      .warn { fill: #fff7ed; stroke: #ea580c; stroke-width: 1.7; }
+      .label { font: 700 18px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .small { font: 400 14px "Segoe UI", Arial, sans-serif; fill: #4b5563; }
+      .math { font: 600 15px "Consolas", "Cascadia Mono", monospace; fill: #111827; }
+      .line { fill: none; stroke: #374151; stroke-width: 2.2; marker-end: url(#arrow); }
+      .loop { fill: none; stroke: #047857; stroke-width: 2.6; marker-end: url(#arrow); stroke-dasharray: 8 7; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="700"/>
+  <text class="title" x="48" y="54">Boucle de simulation numérique d'un CT-RNN</text>
+  <text class="subtitle" x="48" y="82">L'équation est continue, mais l'exécution avance par pas numériques ou par solveur adaptatif.</text>
+
+  <rect class="panel" x="60" y="125" width="1080" height="505" rx="14"/>
+  <text class="label" x="90" y="165">Simulation de t à t + dt</text>
+
+  <rect class="state" x="105" y="255" width="160" height="72" rx="10"/>
+  <text class="math" x="150" y="286">h(t)</text>
+  <text class="small" x="130" y="308">état courant</text>
+
+  <rect class="step" x="330" y="220" width="185" height="80" rx="10"/>
+  <text class="math" x="372" y="252">x(t)</text>
+  <text class="small" x="358" y="276">lire ou interpoler</text>
+
+  <rect class="calc" x="330" y="365" width="185" height="88" rx="10"/>
+  <text class="math" x="363" y="397">dh = f(h,x,t)</text>
+  <text class="small" x="360" y="421">calcul de la dérivée</text>
+
+  <rect class="calc" x="600" y="310" width="220" height="90" rx="10"/>
+  <text class="math" x="626" y="345">h ← h + dt * dh</text>
+  <text class="small" x="628" y="370">Euler, Runge-Kutta</text>
+  <text class="small" x="628" y="390">ou solveur adaptatif</text>
+
+  <rect class="state" x="895" y="255" width="160" height="72" rx="10"/>
+  <text class="math" x="935" y="286">h(t+dt)</text>
+  <text class="small" x="920" y="308">état mis à jour</text>
+
+  <rect class="out" x="895" y="400" width="160" height="72" rx="10"/>
+  <text class="math" x="944" y="432">y(t)</text>
+  <text class="small" x="917" y="454">sortie optionnelle</text>
+
+  <path class="line" d="M265 291 H330"/>
+  <path class="line" d="M423 300 V365"/>
+  <path class="line" d="M515 409 C555 405 575 380 600 360"/>
+  <path class="line" d="M820 355 C850 330 870 305 895 291"/>
+  <path class="line" d="M975 327 V400"/>
+  <path class="loop" d="M975 255 C1015 170 750 170 520 180 C315 190 185 205 185 255"/>
+
+  <rect class="warn" x="110" y="500" width="445" height="58" rx="8"/>
+  <text class="small" x="132" y="524">Si dt est trop grand : risque d'instabilité ou d'approximation grossière.</text>
+  <text class="small" x="132" y="546">Si dt est trop petit : coût plus élevé.</text>
+
+  <rect class="step" x="625" y="500" width="385" height="58" rx="8"/>
+  <text class="small" x="648" y="524">Un solveur adaptatif ajuste les pas selon une tolérance.</text>
+  <text class="small" x="648" y="546">Ce choix influence le comportement effectif du modèle.</text>
+
+  <text class="math" x="522" y="246">t ← t + dt</text>
+  <text class="small" x="430" y="660">FIG-013-002 - Boucle de simulation numérique</text>
+</svg>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="760" viewBox="0 0 1240 760" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-036-001 - Solution TorchSharp compagnon</title>
+  <desc id="desc">Structure de la solution C# TorchSharp compagnon : Core, Examples, Tests, CLI, Benchmarks, données synthétiques et commandes.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#334155"/>
+    </marker>
+    <style>
+      .title { font: 700 28px Arial, sans-serif; fill: #172033; }
+      .subtitle { font: 400 14px Arial, sans-serif; fill: #64748B; }
+      .label { font: 700 15px Arial, sans-serif; fill: #172033; }
+      .small { font: 400 12px Arial, sans-serif; fill: #334155; }
+      .tiny { font: 400 11px Arial, sans-serif; fill: #64748B; }
+      .box { stroke-width: 2; rx: 10; ry: 10; }
+      .arrow { stroke: #334155; stroke-width: 2.1; fill: none; marker-end: url(#arrow); }
+      .soft { stroke: #94A3B8; stroke-width: 1.6; fill: none; marker-end: url(#arrow); }
+      .band { fill: #F8FAFC; stroke: #CBD5E1; stroke-width: 1.5; rx: 14; ry: 14; }
+    </style>
+  </defs>
+
+  <rect width="1240" height="760" fill="#FFFFFF"/>
+  <text x="44" y="48" class="title">Solution TorchSharp compagnon</text>
+  <text x="44" y="73" class="subtitle">Le code sert le livre : exemples lisibles, tests vérifiables, benchmarks préparés sans surpromesse.</text>
+
+  <rect x="44" y="117" width="294" height="500" class="band"/>
+  <text x="70" y="151" class="label">Solution</text>
+  <rect x="82" y="190" width="220" height="92" class="box" fill="#E8F3FF" stroke="#2563EB"/>
+  <text x="115" y="224" class="label">LnnMoeBook.sln</text>
+  <text x="115" y="248" class="small">cinq projets C#</text>
+  <text x="115" y="268" class="small">et un dépôt testable</text>
+
+  <rect x="82" y="368" width="220" height="118" class="box" fill="#F8FAFC" stroke="#64748B"/>
+  <text x="113" y="399" class="label">Commandes</text>
+  <text x="113" y="423" class="small">dotnet build</text>
+  <text x="113" y="443" class="small">dotnet test</text>
+  <text x="113" y="463" class="small">dotnet run --project</text>
+
+  <rect x="390" y="112" width="406" height="512" class="band"/>
+  <text x="416" y="147" class="label">Projets</text>
+  <rect x="430" y="180" width="142" height="92" class="box" fill="#EAF2FF" stroke="#2563EB"/>
+  <text x="461" y="212" class="label">Core</text>
+  <text x="455" y="236" class="small">diagnostics,</text>
+  <text x="455" y="256" class="small">contrats ODE</text>
+
+  <rect x="622" y="180" width="142" height="92" class="box" fill="#F3EAFF" stroke="#7C3AED"/>
+  <text x="650" y="212" class="label">Examples</text>
+  <text x="647" y="236" class="small">MLP, RNN,</text>
+  <text x="647" y="256" class="small">LTC, MoE</text>
+
+  <rect x="430" y="336" width="142" height="92" class="box" fill="#EAFBEF" stroke="#16A34A"/>
+  <text x="465" y="368" class="label">Tests</text>
+  <text x="455" y="392" class="small">xUnit, shapes,</text>
+  <text x="455" y="412" class="small">invariants</text>
+
+  <rect x="622" y="336" width="142" height="92" class="box" fill="#FFF7E6" stroke="#D97706"/>
+  <text x="670" y="368" class="label">CLI</text>
+  <text x="647" y="392" class="small">smoke test,</text>
+  <text x="647" y="412" class="small">diagnostics</text>
+
+  <rect x="526" y="492" width="142" height="92" class="box" fill="#FFF1F2" stroke="#E11D48"/>
+  <text x="548" y="524" class="label">Benchmarks</text>
+  <text x="553" y="548" class="small">initialisé,</text>
+  <text x="553" y="568" class="small">à consolider</text>
+
+  <rect x="860" y="117" width="326" height="500" class="band"/>
+  <text x="886" y="151" class="label">Rôle pédagogique</text>
+  <rect x="900" y="190" width="246" height="96" class="box" fill="#ECFDF5" stroke="#059669"/>
+  <text x="931" y="224" class="label">Données synthétiques</text>
+  <text x="931" y="248" class="small">générées en mémoire :</text>
+  <text x="931" y="268" class="small">XOR, séries, tokens</text>
+
+  <rect x="900" y="352" width="246" height="96" class="box" fill="#F8FAFC" stroke="#475569"/>
+  <text x="931" y="386" class="label">Livre</text>
+  <text x="931" y="410" class="small">extraits courts,</text>
+  <text x="931" y="430" class="small">renvois vers le dépôt</text>
+
+  <rect x="900" y="516" width="246" height="74" class="box" fill="#EEF2FF" stroke="#4F46E5"/>
+  <text x="931" y="549" class="label">Statut</text>
+  <text x="931" y="573" class="small">atelier reproductible</text>
+
+  <path class="arrow" d="M302 236 H430"/>
+  <path class="arrow" d="M302 236 C354 236 360 382 430 382"/>
+  <path class="arrow" d="M572 226 H622"/>
+  <path class="soft" d="M572 382 H622"/>
+  <path class="soft" d="M501 428 V454 C501 488 541 498 573 507"/>
+  <path class="soft" d="M693 428 V454 C693 488 653 498 621 507"/>
+  <path class="arrow" d="M764 226 H900"/>
+  <path class="soft" d="M764 382 C821 380 858 386 900 400"/>
+  <path class="soft" d="M668 538 H900"/>
+  <path class="arrow" d="M192 282 V368"/>
+  <path class="soft" d="M900 552 C760 648 354 642 192 486"/>
+
+  <text x="48" y="684" class="tiny">Le chapitre ne regénère pas les exemples : il explique ce qui existe déjà et garde les benchmarks dans leur statut actuel.</text>
+  <text x="486" y="724" class="subtitle">FIG-036-001 - Solution TorchSharp compagnon</text>
+</svg>

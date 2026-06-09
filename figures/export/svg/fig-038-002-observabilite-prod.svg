@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-038-002 - Observabilité production</title>
+  <desc id="desc">Schéma des signaux d'observabilité d'un service d'inférence : logs, métriques, traces, événements, filtrage, alertes et runbooks.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#475569"/>
+    </marker>
+    <style>
+      .box { fill: #f8fafc; stroke: #334155; stroke-width: 2; rx: 10; }
+      .blue { fill: #e8f3ff; }
+      .violet { fill: #f3eaff; }
+      .green { fill: #ecfdf5; }
+      .amber { fill: #fff7e6; }
+      .red { fill: #fff1f2; }
+      .title { font: 700 30px Arial, sans-serif; fill: #1e293b; }
+      .label { font: 700 18px Arial, sans-serif; fill: #1e293b; }
+      .small { font: 14px Arial, sans-serif; fill: #475569; }
+      .caption { font: 15px Arial, sans-serif; fill: #64748b; }
+      .edge { stroke: #475569; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+      .dash { stroke: #64748b; stroke-width: 2; stroke-dasharray: 7 6; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="760" fill="#ffffff"/>
+  <text x="60" y="58" class="title">Observabilité d'un service IA en production</text>
+  <text x="60" y="84" class="caption">Les signaux doivent expliquer une requête sans exposer de secrets ni noyer l'opérateur dans le bruit.</text>
+
+  <rect x="80" y="140" width="175" height="90" class="box blue"/>
+  <text x="168" y="171" text-anchor="middle" class="label">Requête</text>
+  <text x="168" y="198" text-anchor="middle" class="small">requestId</text>
+  <text x="168" y="217" text-anchor="middle" class="small">version modèle</text>
+
+  <rect x="350" y="130" width="220" height="110" class="box violet"/>
+  <text x="460" y="164" text-anchor="middle" class="label">Service d'inférence</text>
+  <text x="460" y="191" text-anchor="middle" class="small">API, routeur</text>
+  <text x="460" y="210" text-anchor="middle" class="small">mémoire, outils</text>
+
+  <rect x="720" y="95" width="185" height="90" class="box"/>
+  <text x="813" y="125" text-anchor="middle" class="label">Logs</text>
+  <text x="813" y="152" text-anchor="middle" class="small">erreurs, étapes</text>
+  <text x="813" y="171" text-anchor="middle" class="small">versions</text>
+
+  <rect x="965" y="95" width="185" height="90" class="box green"/>
+  <text x="1058" y="125" text-anchor="middle" class="label">Métriques</text>
+  <text x="1058" y="152" text-anchor="middle" class="small">latence, débit</text>
+  <text x="1058" y="171" text-anchor="middle" class="small">erreurs, files</text>
+
+  <rect x="720" y="265" width="185" height="90" class="box"/>
+  <text x="813" y="295" text-anchor="middle" class="label">Traces</text>
+  <text x="813" y="322" text-anchor="middle" class="small">chemin</text>
+  <text x="813" y="341" text-anchor="middle" class="small">de la requête</text>
+
+  <rect x="965" y="265" width="185" height="90" class="box amber"/>
+  <text x="1058" y="295" text-anchor="middle" class="label">Événements IA</text>
+  <text x="1058" y="322" text-anchor="middle" class="small">routage, mémoire</text>
+  <text x="1058" y="341" text-anchor="middle" class="small">outils, fallback</text>
+
+  <rect x="720" y="455" width="205" height="95" class="box red"/>
+  <text x="823" y="486" text-anchor="middle" class="label">Filtrage</text>
+  <text x="823" y="513" text-anchor="middle" class="small">secrets</text>
+  <text x="823" y="532" text-anchor="middle" class="small">données sensibles</text>
+
+  <rect x="965" y="455" width="185" height="95" class="box green"/>
+  <text x="1058" y="486" text-anchor="middle" class="label">Dashboards</text>
+  <text x="1058" y="513" text-anchor="middle" class="small">état</text>
+  <text x="1058" y="532" text-anchor="middle" class="small">production</text>
+
+  <rect x="460" y="610" width="195" height="90" class="box violet"/>
+  <text x="558" y="640" text-anchor="middle" class="label">Analyse incident</text>
+  <text x="558" y="667" text-anchor="middle" class="small">corrélation</text>
+  <text x="558" y="686" text-anchor="middle" class="small">diagnostic</text>
+
+  <rect x="730" y="610" width="170" height="90" class="box amber"/>
+  <text x="815" y="640" text-anchor="middle" class="label">Alertes</text>
+  <text x="815" y="667" text-anchor="middle" class="small">seuils</text>
+  <text x="815" y="686" text-anchor="middle" class="small">actionnables</text>
+
+  <rect x="970" y="610" width="170" height="90" class="box blue"/>
+  <text x="1055" y="640" text-anchor="middle" class="label">Runbooks</text>
+  <text x="1055" y="667" text-anchor="middle" class="small">actions</text>
+  <text x="1055" y="686" text-anchor="middle" class="small">initiales</text>
+
+  <rect x="80" y="610" width="215" height="90" class="box green"/>
+  <text x="188" y="640" text-anchor="middle" class="label">Maintenance</text>
+  <text x="188" y="667" text-anchor="middle" class="small">correctif, rollback</text>
+  <text x="188" y="686" text-anchor="middle" class="small">ou seuils révisés</text>
+
+  <path d="M255 185 H350" class="edge"/>
+  <path d="M570 158 H655 V140 H720" class="edge"/>
+  <path d="M570 175 H640 V220 H1058 V185" class="edge"/>
+  <path d="M570 205 H655 V310 H720" class="edge"/>
+  <path d="M570 222 H675 V372 H1058 V355" class="edge"/>
+  <path d="M813 185 V455" class="edge"/>
+  <path d="M813 355 V455" class="edge"/>
+  <path d="M1058 185 V455" class="edge"/>
+  <path d="M1058 355 V455" class="edge"/>
+  <path d="M925 502 H965" class="edge"/>
+  <path d="M823 550 C790 590 700 610 655 645" class="edge"/>
+  <path d="M1058 550 V610" class="edge"/>
+  <path d="M900 655 H970" class="edge"/>
+  <path d="M970 655 H900" class="dash"/>
+  <path d="M460 655 H295" class="edge"/>
+
+  <text x="600" y="736" text-anchor="middle" class="caption">FIG-038-002 - Observabilité production</text>
+</svg>

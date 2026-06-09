@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-035-001 - Architecture événementielle Qaya</title>
+  <desc id="desc">Architecture où toutes les sources passent par une enveloppe d'événement, puis par ED, avant d'alimenter attention, langage, projections du monde, causalité, experts, actions et observabilité.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#334155"/>
+    </marker>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 25px; fill: #0f172a; }
+      .subtitle { font-family: Arial, Helvetica, sans-serif; font-size: 14px; fill: #475569; }
+      .lane { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; rx: 16; }
+      .blue { fill: #eff6ff; stroke: #2563eb; stroke-width: 2.2; rx: 12; }
+      .purple { fill: #faf5ff; stroke: #7c3aed; stroke-width: 2.2; rx: 12; }
+      .green { fill: #f0fdf4; stroke: #15803d; stroke-width: 2.2; rx: 12; }
+      .amber { fill: #fffbeb; stroke: #d97706; stroke-width: 2.2; rx: 12; }
+      .red { fill: #fff1f2; stroke: #be123c; stroke-width: 2.2; rx: 12; }
+      .gray { fill: #f8fafc; stroke: #475569; stroke-width: 2.2; rx: 12; }
+      .label { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 14px; fill: #0f172a; text-anchor: middle; }
+      .small { font-family: Arial, Helvetica, sans-serif; font-size: 12px; fill: #475569; text-anchor: middle; }
+      .tiny { font-family: Arial, Helvetica, sans-serif; font-size: 11px; fill: #64748b; text-anchor: middle; }
+      .arrow { stroke: #334155; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+      .obs { stroke: #64748b; stroke-width: 1.7; fill: none; marker-end: url(#arrow); stroke-dasharray: 6 6; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1280" height="760"/>
+  <text class="title" x="54" y="48">Architecture événementielle Qaya</text>
+  <text class="subtitle" x="54" y="72">Tous les flux sont normalisés en enveloppes d'événements avant d'alimenter les modules spécialisés.</text>
+
+  <rect class="lane" x="40" y="106" width="1200" height="96"/>
+  <text class="tiny" x="96" y="128">Entrée</text>
+  <rect class="blue" x="90" y="142" width="220" height="58"/>
+  <text class="label" x="200" y="164">Sources multimodales</text>
+  <text class="small" x="200" y="184">texte, vidéo, son, métriques</text>
+  <rect class="gray" x="390" y="142" width="210" height="58"/>
+  <text class="label" x="495" y="164">Fragments</text>
+  <text class="small" x="495" y="184">paquets, logs, datagrammes</text>
+  <rect class="amber" x="690" y="132" width="280" height="78"/>
+  <text class="label" x="830" y="154">EventEnvelope</text>
+  <text class="small" x="830" y="174">eventId, source, type, payload</text>
+  <text class="small" x="830" y="193">timestamp, correlationId, budget</text>
+
+  <rect class="lane" x="40" y="252" width="1200" height="238"/>
+  <text class="tiny" x="112" y="275">Runtime dynamique</text>
+  <rect class="blue" x="130" y="326" width="210" height="78"/>
+  <text class="label" x="235" y="350">ED</text>
+  <text class="small" x="235" y="370">Event Driven LNN</text>
+  <text class="small" x="235" y="390">porte d'entrée commune</text>
+
+  <rect class="purple" x="430" y="274" width="230" height="78"/>
+  <text class="label" x="545" y="298">Fenêtre d'attention</text>
+  <text class="small" x="545" y="318">correlationId, ttl</text>
+  <text class="small" x="545" y="338">priorité et budget</text>
+
+  <rect class="purple" x="430" y="392" width="230" height="78"/>
+  <text class="label" x="545" y="416">OAD</text>
+  <text class="small" x="545" y="436">objets et concepts actifs</text>
+  <text class="small" x="545" y="456">attention évolutive</text>
+
+  <rect class="amber" x="745" y="274" width="230" height="78"/>
+  <text class="label" x="860" y="298">LOTAD</text>
+  <text class="small" x="860" y="318">tokens, liens, concepts</text>
+  <text class="small" x="860" y="338">intention et contraintes</text>
+
+  <rect class="green" x="745" y="392" width="230" height="78"/>
+  <text class="label" x="860" y="416">WoE / WoB / WoG</text>
+  <text class="small" x="860" y="436">WoV / WoS</text>
+  <text class="small" x="860" y="456">projections du monde</text>
+
+  <rect class="green" x="1040" y="326" width="170" height="78"/>
+  <text class="label" x="1125" y="350">ECAD</text>
+  <text class="small" x="1125" y="370">causalité, experts</text>
+  <text class="small" x="1125" y="390">décision ou arrêt</text>
+
+  <rect class="lane" x="40" y="540" width="1200" height="124"/>
+  <text class="tiny" x="108" y="562">Sortie et contrôle</text>
+  <rect class="red" x="250" y="584" width="250" height="60"/>
+  <text class="label" x="375" y="608">Experts dynamiques</text>
+  <text class="small" x="375" y="628">modèles, outils, règles, vérificateurs</text>
+  <rect class="green" x="595" y="584" width="220" height="60"/>
+  <text class="label" x="705" y="608">Actions contrôlées</text>
+  <text class="small" x="705" y="628">réponse, outil, clarification</text>
+  <rect class="gray" x="910" y="584" width="220" height="60"/>
+  <text class="label" x="1020" y="608">Observabilité</text>
+  <text class="small" x="1020" y="628">traces, métriques, replay</text>
+
+  <path class="arrow" d="M310 171 H390"/>
+  <path class="arrow" d="M600 171 H690"/>
+  <path class="arrow" d="M830 210 C830 242 235 258 235 326"/>
+  <path class="arrow" d="M340 356 C380 330 390 315 430 313"/>
+  <path class="arrow" d="M340 374 C380 398 390 428 430 431"/>
+  <path class="arrow" d="M340 356 C585 238 700 288 745 304"/>
+  <path class="arrow" d="M340 386 C575 500 700 450 745 434"/>
+  <path class="arrow" d="M660 431 C700 420 710 335 745 326"/>
+  <path class="arrow" d="M975 313 C1008 315 1018 343 1040 356"/>
+  <path class="arrow" d="M975 431 C1010 420 1018 390 1040 378"/>
+  <path class="arrow" d="M1125 404 C1068 540 492 540 405 584"/>
+  <path class="arrow" d="M500 614 H595"/>
+  <path class="arrow" d="M815 614 H910"/>
+  <path class="arrow" d="M500 595 C650 528 950 528 1070 404"/>
+
+  <path class="obs" d="M830 210 C900 255 1000 510 1018 584"/>
+  <path class="obs" d="M235 404 C335 520 810 555 984 584"/>
+  <path class="obs" d="M860 470 C895 520 945 552 996 584"/>
+
+  <text class="subtitle" x="54" y="720">Lecture : ED reçoit tout. Les modules spécialisés ne contournent pas le contrat commun d'événement, de corrélation et de trace.</text>
+</svg>

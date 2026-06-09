@@ -1,0 +1,42 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Secrets and local config
+.env
+.env.*
+*.pem
+*.ppk
+*.pk
+*.key
+id_rsa*
+id_ed25519*
+
+# .NET
+bin/
+obj/
+TestResults/
+*.nupkg
+*.snupkg
+
+# Logs and temporary outputs
+*.log
+*.tmp
+*.cache
+artifacts/
+exports/pdf/qa/
+exports/_generated_figures/
+
+# Python
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+
+# Node
+node_modules/
+package-lock.json

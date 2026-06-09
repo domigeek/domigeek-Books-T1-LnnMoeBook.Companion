@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="760" viewBox="0 0 1240 760" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-028-003 - Hypothèses non démontrées</title>
+  <desc id="desc">Carte des statuts pour Qaya : faits observables, choix d'architecture, hypothèses et validations à produire.</desc>
+  <defs>
+    <marker id="arrow3" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#334155"/>
+    </marker>
+    <style>
+      .title { font: 700 28px Arial, sans-serif; fill: #172033; }
+      .subtitle { font: 400 14px Arial, sans-serif; fill: #64748B; }
+      .head { font: 700 17px Arial, sans-serif; fill: #172033; }
+      .label { font: 700 13px Arial, sans-serif; fill: #172033; }
+      .small { font: 400 12px Arial, sans-serif; fill: #334155; }
+      .tiny { font: 400 11px Arial, sans-serif; fill: #64748B; }
+      .panel { stroke-width: 2; rx: 14; ry: 14; }
+      .item { stroke-width: 1.4; rx: 9; ry: 9; }
+      .arrow { stroke: #334155; stroke-width: 2.2; fill: none; marker-end: url(#arrow3); }
+    </style>
+  </defs>
+
+  <rect width="1240" height="760" fill="#FFFFFF"/>
+  <text x="44" y="48" class="title">Hypothèses non démontrées dans Qaya</text>
+  <text x="44" y="73" class="subtitle">La discipline du chapitre : distinguer ce qui est observé, choisi, supposé et encore à prouver.</text>
+
+  <rect x="54" y="125" width="260" height="456" class="panel" fill="#E8F3FF" stroke="#2563EB"/>
+  <text x="82" y="162" class="head">Faits observables</text>
+  <rect x="82" y="196" width="204" height="78" class="item" fill="#FFFFFF" stroke="#93C5FD"/>
+  <text x="106" y="221" class="label">Modules présents</text>
+  <text x="106" y="242" class="small">ED, OAD, LOTAD,</text>
+  <text x="106" y="260" class="small">ECAD, WoE</text>
+  <rect x="82" y="286" width="204" height="78" class="item" fill="#FFFFFF" stroke="#93C5FD"/>
+  <text x="106" y="311" class="label">Contrats et traces</text>
+  <text x="106" y="332" class="small">snapshots, queues,</text>
+  <text x="106" y="350" class="small">journaux, plugins</text>
+  <rect x="82" y="376" width="204" height="78" class="item" fill="#FFFFFF" stroke="#93C5FD"/>
+  <text x="106" y="401" class="label">Exemples testables</text>
+  <text x="106" y="422" class="small">contrats pédagogiques,</text>
+  <text x="106" y="440" class="small">données synthétiques</text>
+
+  <rect x="350" y="125" width="260" height="456" class="panel" fill="#F3EAFF" stroke="#7C3AED"/>
+  <text x="378" y="162" class="head">Choix d'architecture</text>
+  <rect x="378" y="196" width="204" height="78" class="item" fill="#FFFFFF" stroke="#C4B5FD"/>
+  <text x="402" y="221" class="label">Responsabilités séparées</text>
+  <text x="402" y="242" class="small">observation, attention,</text>
+  <text x="402" y="260" class="small">décision, mémoire</text>
+  <rect x="378" y="286" width="204" height="78" class="item" fill="#FFFFFF" stroke="#C4B5FD"/>
+  <text x="402" y="311" class="label">Experts remplaçables</text>
+  <text x="402" y="332" class="small">contrats, quotas,</text>
+  <text x="402" y="350" class="small">circuit breakers</text>
+  <rect x="378" y="376" width="204" height="78" class="item" fill="#FFFFFF" stroke="#C4B5FD"/>
+  <text x="402" y="401" class="label">Mémoire gouvernée</text>
+  <text x="402" y="422" class="small">provenance, statut,</text>
+  <text x="402" y="440" class="small">rétention, oubli</text>
+
+  <rect x="646" y="125" width="260" height="456" class="panel" fill="#FFF7E6" stroke="#D97706"/>
+  <text x="674" y="162" class="head">Hypothèses</text>
+  <rect x="674" y="196" width="204" height="78" class="item" fill="#FFFFFF" stroke="#FDBA74"/>
+  <text x="698" y="221" class="label">OAD v2</text>
+  <text x="698" y="242" class="small">meilleure dynamique</text>
+  <text x="698" y="260" class="small">attentionnelle</text>
+  <rect x="674" y="286" width="204" height="78" class="item" fill="#FFFFFF" stroke="#FDBA74"/>
+  <text x="698" y="311" class="label">Modularité utile</text>
+  <text x="698" y="332" class="small">maintenance et</text>
+  <text x="698" y="350" class="small">observabilité accrues</text>
+  <rect x="674" y="376" width="204" height="78" class="item" fill="#FFFFFF" stroke="#FDBA74"/>
+  <text x="698" y="401" class="label">Continuité contextuelle</text>
+  <text x="698" y="422" class="small">meilleure sous</text>
+  <text x="698" y="440" class="small">contraintes mesurées</text>
+
+  <rect x="942" y="125" width="244" height="456" class="panel" fill="#ECFDF5" stroke="#059669"/>
+  <text x="970" y="162" class="head">À démontrer</text>
+  <rect x="970" y="196" width="188" height="78" class="item" fill="#FFFFFF" stroke="#86EFAC"/>
+  <text x="994" y="221" class="label">Baselines</text>
+  <text x="994" y="242" class="small">pipelines simples,</text>
+  <text x="994" y="260" class="small">versions ablatées</text>
+  <rect x="970" y="286" width="188" height="78" class="item" fill="#FFFFFF" stroke="#86EFAC"/>
+  <text x="994" y="311" class="label">Métriques</text>
+  <text x="994" y="332" class="small">latence, coût, erreurs,</text>
+  <text x="994" y="350" class="small">qualité, robustesse</text>
+  <rect x="970" y="376" width="188" height="78" class="item" fill="#FFFFFF" stroke="#86EFAC"/>
+  <text x="994" y="401" class="label">Incidents contrôlés</text>
+  <text x="994" y="422" class="small">saturation, mémoire</text>
+  <text x="994" y="440" class="small">contaminée, panne</text>
+
+  <path class="arrow" d="M314 353 H350"/>
+  <path class="arrow" d="M610 353 H646"/>
+  <path class="arrow" d="M906 353 H942"/>
+
+  <rect x="185" y="632" width="870" height="54" fill="#F8FAFC" stroke="#CBD5E1" rx="14" ry="14"/>
+  <text x="219" y="655" class="label">Règle de lecture</text>
+  <text x="219" y="675" class="small">Une hypothèse devient crédible seulement après protocole, mesure, comparaison et limites explicites.</text>
+
+  <text x="488" y="724" class="subtitle">FIG-028-003 - Hypothèses non démontrées</text>
+</svg>

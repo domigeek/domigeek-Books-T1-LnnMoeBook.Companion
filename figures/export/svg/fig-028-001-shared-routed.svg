@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="720" viewBox="0 0 1180 720" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-028-001 - Experts partagés et routés</title>
+  <desc id="desc">Schéma DeepSeekMoE montrant une entrée token, des experts partagés toujours actifs, un routeur vers des experts routés sélectionnés, puis une somme avec résiduel.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <style>
+      .bg { fill: #fbfcff; }
+      .panel { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.4; }
+      .input { fill: #dbeafe; stroke: #2563eb; stroke-width: 1.6; }
+      .shared { fill: #ecfdf5; stroke: #16a34a; stroke-width: 1.8; }
+      .router { fill: #f5f3ff; stroke: #8b5cf6; stroke-width: 1.8; }
+      .routed { fill: #fff7ed; stroke: #f97316; stroke-width: 1.6; }
+      .idle { fill: #ffffff; stroke: #94a3b8; stroke-width: 1.2; }
+      .combine { fill: #fffbeb; stroke: #f59e0b; stroke-width: 1.8; }
+      .output { fill: #e0f2fe; stroke: #0284c7; stroke-width: 1.6; }
+      .title { font: 700 24px Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 13px Arial, sans-serif; fill: #475569; }
+      .label { font: 700 15px Arial, sans-serif; fill: #1e293b; }
+      .text { font: 400 13px Arial, sans-serif; fill: #334155; }
+      .small { font: 400 11px Arial, sans-serif; fill: #64748b; }
+      .line { stroke: #334155; stroke-width: 1.8; fill: none; marker-end: url(#arrow); }
+      .line-shared { stroke: #16a34a; stroke-width: 1.8; fill: none; marker-end: url(#arrow); }
+      .line-routed { stroke: #f97316; stroke-width: 1.8; fill: none; marker-end: url(#arrow); }
+      .line-idle { stroke: #94a3b8; stroke-width: 1.4; fill: none; stroke-dasharray: 5 4; marker-end: url(#arrow); }
+      .line-residual { stroke: #64748b; stroke-width: 1.5; fill: none; stroke-dasharray: 6 4; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1180" height="720"/>
+  <text class="title" x="42" y="48">Experts partagés et experts routés</text>
+  <text class="subtitle" x="42" y="72">DeepSeekMoE sépare une capacité commune toujours active et une capacité spécialisée sélectionnée par routage.</text>
+
+  <rect class="input" x="58" y="285" width="165" height="95" rx="8"/>
+  <text class="label" x="90" y="322">Entrée FFN</text>
+  <text class="text" x="95" y="350">token u_t</text>
+
+  <rect class="shared" x="345" y="115" width="230" height="130" rx="8"/>
+  <text class="label" x="394" y="154">Experts partagés</text>
+  <text class="text" x="394" y="184">toujours actifs</text>
+  <text class="small" x="394" y="210">capacité commune</text>
+
+  <rect class="router" x="345" y="315" width="230" height="140" rx="8"/>
+  <text class="label" x="418" y="354">Routeur</text>
+  <text class="text" x="394" y="382">scores sur experts routés</text>
+  <text class="small" x="394" y="410">sélection top-k spécialisée</text>
+
+  <rect class="routed" x="705" y="250" width="220" height="115" rx="8"/>
+  <text class="label" x="748" y="292">Experts routés</text>
+  <text class="text" x="748" y="320">sélectionnés</text>
+  <text class="small" x="748" y="344">capacité spécialisée</text>
+
+  <rect class="idle" x="705" y="405" width="220" height="95" rx="8"/>
+  <text class="label" x="742" y="442">Experts non actifs</text>
+  <text class="small" x="742" y="468">poids nul pour ce token</text>
+
+  <rect class="combine" x="760" y="575" width="210" height="90" rx="8"/>
+  <text class="label" x="806" y="612">Somme</text>
+  <text class="small" x="806" y="638">u_t + partagé + routé</text>
+
+  <rect class="output" x="1030" y="585" width="120" height="75" rx="8"/>
+  <text class="label" x="1068" y="620">Sortie</text>
+  <text class="small" x="1062" y="642">h'_t</text>
+
+  <path class="line-shared" d="M 223 320 C 270 210, 300 180, 345 178"/>
+  <path class="line" d="M 223 340 C 275 368, 300 384, 345 386"/>
+  <path class="line-routed" d="M 575 386 C 640 348, 660 314, 705 310"/>
+  <path class="line-idle" d="M 575 410 C 640 438, 665 452, 705 452"/>
+  <path class="line-shared" d="M 575 180 C 650 310, 720 500, 790 575"/>
+  <path class="line-routed" d="M 815 365 C 825 445, 840 522, 852 575"/>
+  <path class="line-residual" d="M 140 380 C 245 590, 585 628, 760 625"/>
+  <path class="line" d="M 970 625 L 1030 625"/>
+
+  <rect class="panel" x="70" y="500" width="330" height="100" rx="8"/>
+  <text class="label" x="98" y="535">Lecture correcte</text>
+  <text class="small" x="98" y="562">Le partagé n'est pas routé.</text>
+  <text class="small" x="98" y="580">Le routé porte la capacité spécialisée.</text>
+  <text class="small" x="235" y="490">résiduel depuis u_t</text>
+
+  <text class="small" x="266" y="692">FIG-028-001 - Experts partagés et routés : commun toujours actif, spécifique sélectionné.</text>
+</svg>

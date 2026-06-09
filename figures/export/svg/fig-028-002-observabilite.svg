@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="760" viewBox="0 0 1240 760" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-028-002 - Observabilité Qaya</title>
+  <desc id="desc">Schéma de l'observabilité Qaya : modules observés, traces, sanitisation, métriques, tableaux de bord, tests et révision des contrats.</desc>
+  <defs>
+    <marker id="arrow2" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#334155"/>
+    </marker>
+    <style>
+      .title { font: 700 28px Arial, sans-serif; fill: #172033; }
+      .subtitle { font: 400 14px Arial, sans-serif; fill: #64748B; }
+      .label { font: 700 15px Arial, sans-serif; fill: #172033; }
+      .small { font: 400 12px Arial, sans-serif; fill: #334155; }
+      .tiny { font: 400 11px Arial, sans-serif; fill: #64748B; }
+      .box { stroke-width: 2; rx: 10; ry: 10; }
+      .arrow { stroke: #334155; stroke-width: 2.2; fill: none; marker-end: url(#arrow2); }
+      .soft { stroke: #94A3B8; stroke-width: 1.6; fill: none; marker-end: url(#arrow2); }
+      .band { fill: #F8FAFC; stroke: #CBD5E1; stroke-width: 1.5; rx: 14; ry: 14; }
+    </style>
+  </defs>
+
+  <rect width="1240" height="760" fill="#FFFFFF"/>
+  <text x="44" y="48" class="title">Observabilité Qaya</text>
+  <text x="44" y="73" class="subtitle">Les traces rendent les décisions inspectables sans transformer le livre en documentation interne.</text>
+
+  <rect x="44" y="116" width="262" height="510" class="band"/>
+  <text x="70" y="151" class="label">Modules observés</text>
+  <rect x="78" y="180" width="82" height="44" class="box" fill="#EAF2FF" stroke="#2563EB"/>
+  <text x="106" y="208" class="label">ED</text>
+  <rect x="190" y="180" width="82" height="44" class="box" fill="#F3EAFF" stroke="#7C3AED"/>
+  <text x="214" y="208" class="label">OAD</text>
+  <rect x="78" y="252" width="82" height="44" class="box" fill="#FFF7E6" stroke="#D97706"/>
+  <text x="98" y="280" class="label">LOTAD</text>
+  <rect x="190" y="252" width="82" height="44" class="box" fill="#EAFBEF" stroke="#16A34A"/>
+  <text x="210" y="280" class="label">ECAD</text>
+  <rect x="78" y="324" width="82" height="44" class="box" fill="#EEF8F1" stroke="#15803D"/>
+  <text x="104" y="352" class="label">WoE</text>
+  <rect x="190" y="324" width="82" height="44" class="box" fill="#FFF1F2" stroke="#E11D48"/>
+  <text x="204" y="352" class="label">Plugins</text>
+  <rect x="78" y="430" width="194" height="92" class="box" fill="#FFFFFF" stroke="#64748B"/>
+  <text x="101" y="462" class="label">Événement runtime</text>
+  <text x="101" y="487" class="small">corrélation, source,</text>
+  <text x="101" y="507" class="small">type, horodatage</text>
+
+  <rect x="360" y="172" width="192" height="90" class="box" fill="#F8FAFC" stroke="#475569"/>
+  <text x="394" y="204" class="label">Trace structurée</text>
+  <text x="394" y="228" class="small">composant, étape,</text>
+  <text x="394" y="248" class="small">payload, erreur</text>
+
+  <rect x="360" y="338" width="192" height="90" class="box" fill="#F1F5F9" stroke="#64748B"/>
+  <text x="398" y="370" class="label">Sanitisation</text>
+  <text x="398" y="394" class="small">réduction du bruit,</text>
+  <text x="398" y="414" class="small">données sensibles</text>
+
+  <rect x="626" y="136" width="196" height="92" class="box" fill="#EEF2FF" stroke="#4F46E5"/>
+  <text x="661" y="169" class="label">Journaux</text>
+  <text x="661" y="193" class="small">LNN, ECAD, replay,</text>
+  <text x="661" y="213" class="small">erreurs corrélées</text>
+
+  <rect x="626" y="278" width="196" height="92" class="box" fill="#ECFEFF" stroke="#0891B2"/>
+  <text x="660" y="311" class="label">Snapshots runtime</text>
+  <text x="660" y="335" class="small">queues, fenêtres,</text>
+  <text x="660" y="355" class="small">experts, mémoire</text>
+
+  <rect x="626" y="420" width="196" height="92" class="box" fill="#F0FDF4" stroke="#16A34A"/>
+  <text x="666" y="453" class="label">Métriques</text>
+  <text x="666" y="477" class="small">latence, pression,</text>
+  <text x="666" y="497" class="small">coût, erreurs</text>
+
+  <rect x="906" y="203" width="226" height="96" class="box" fill="#FFF7ED" stroke="#EA580C"/>
+  <text x="943" y="236" class="label">Viewer et tableaux</text>
+  <text x="943" y="260" class="small">inspection, alertes,</text>
+  <text x="943" y="280" class="small">diagnostic opérateur</text>
+
+  <rect x="906" y="390" width="226" height="96" class="box" fill="#F8FAFC" stroke="#334155"/>
+  <text x="942" y="423" class="label">Révision technique</text>
+  <text x="942" y="447" class="small">contrats, tests,</text>
+  <text x="942" y="467" class="small">scénarios d'échec</text>
+
+  <path class="soft" d="M160 224 C215 218 286 209 360 212"/>
+  <path class="soft" d="M272 224 C306 221 330 218 360 216"/>
+  <path class="soft" d="M160 296 C223 285 288 247 360 227"/>
+  <path class="soft" d="M272 296 C310 283 336 248 360 231"/>
+  <path class="soft" d="M160 368 C227 358 292 288 360 241"/>
+  <path class="soft" d="M272 368 C318 349 341 290 360 248"/>
+  <path class="arrow" d="M272 476 C316 425 337 361 360 356"/>
+  <path class="arrow" d="M456 262 V338"/>
+  <path class="arrow" d="M552 383 C585 348 603 324 626 324"/>
+  <path class="arrow" d="M552 383 C588 246 593 183 626 182"/>
+  <path class="arrow" d="M552 383 C591 424 602 464 626 466"/>
+  <path class="arrow" d="M822 182 C870 191 885 228 906 241"/>
+  <path class="arrow" d="M822 324 C869 312 887 276 906 260"/>
+  <path class="arrow" d="M822 466 C884 449 888 412 906 410"/>
+  <path class="arrow" d="M1019 299 V390"/>
+
+  <text x="48" y="684" class="tiny">À lire comme un circuit d'inspection : la trace aide à comprendre le comportement et à corriger le système.</text>
+  <text x="517" y="724" class="subtitle">FIG-028-002 - Observabilité Qaya</text>
+</svg>

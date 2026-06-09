@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="620" viewBox="0 0 1400 620" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-001-001 - Frise historique des réseaux neuronaux</title>
+  <desc id="desc">Frise simplifiée reliant McCulloch-Pitts, Hebb, Rosenblatt, la backpropagation, les LSTM, Transformers, MoE et réseaux continus.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <style>
+      .title { font: 700 30px Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 16px Arial, sans-serif; fill: #475569; }
+      .year { font: 700 16px Arial, sans-serif; fill: #0f172a; }
+      .label { font: 400 14px Arial, sans-serif; fill: #334155; }
+      .axis { stroke: #334155; stroke-width: 3; marker-end: url(#arrow); }
+      .tick { stroke: #334155; stroke-width: 2; }
+      .card { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; }
+      .early { fill: #eef6ff; stroke: #2f5c8f; }
+      .deep { fill: #f4f1ff; stroke: #5b4bb2; }
+      .modern { fill: #ecf8f0; stroke: #2f7d4f; }
+      .future { fill: #fff4e6; stroke: #b66a00; }
+    </style>
+  </defs>
+  <rect width="1400" height="620" fill="#ffffff"/>
+  <text x="60" y="58" class="title">Frise historique des réseaux neuronaux</text>
+  <text x="60" y="86" class="subtitle">Une trajectoire de problèmes : calcul, apprentissage, profondeur, mémoire, routage et temps continu.</text>
+  <line x1="90" y1="315" x2="1310" y2="315" class="axis"/>
+
+  <g transform="translate(120,0)">
+    <line x1="0" y1="285" x2="0" y2="345" class="tick"/>
+    <rect x="-70" y="160" width="150" height="82" rx="10" class="early"/>
+    <text x="-48" y="190" class="year">1943</text>
+    <text x="-48" y="214" class="label">McCulloch-Pitts</text>
+    <text x="-48" y="234" class="label">neurone logique</text>
+  </g>
+
+  <g transform="translate(255,0)">
+    <line x1="0" y1="285" x2="0" y2="345" class="tick"/>
+    <rect x="-70" y="380" width="150" height="82" rx="10" class="early"/>
+    <text x="-48" y="410" class="year">1949</text>
+    <text x="-48" y="434" class="label">Hebb</text>
+    <text x="-48" y="454" class="label">connexions adaptatives</text>
+  </g>
+
+  <g transform="translate(390,0)">
+    <line x1="0" y1="285" x2="0" y2="345" class="tick"/>
+    <rect x="-70" y="160" width="150" height="82" rx="10" class="early"/>
+    <text x="-48" y="190" class="year">1958</text>
+    <text x="-48" y="214" class="label">Rosenblatt</text>
+    <text x="-48" y="234" class="label">perceptron</text>
+  </g>
+
+  <g transform="translate(525,0)">
+    <line x1="0" y1="285" x2="0" y2="345" class="tick"/>
+    <rect x="-70" y="380" width="150" height="82" rx="10" class="card"/>
+    <text x="-48" y="410" class="year">1969</text>
+    <text x="-48" y="434" class="label">Limites formalisées</text>
+    <text x="-48" y="454" class="label">perceptrons simples</text>
+  </g>
+
+  <g transform="translate(670,0)">
+    <line x1="0" y1="285" x2="0" y2="345" class="tick"/>
+    <rect x="-70" y="160" width="150" height="82" rx="10" class="deep"/>
+    <text x="-48" y="190" class="year">1986</text>
+    <text x="-48" y="214" class="label">Backpropagation</text>
+    <text x="-48" y="234" class="label">réseaux multicouches</text>
+  </g>
+
+  <g transform="translate(805,0)">
+    <line x1="0" y1="285" x2="0" y2="345" class="tick"/>
+    <rect x="-70" y="380" width="150" height="82" rx="10" class="deep"/>
+    <text x="-48" y="410" class="year">1997</text>
+    <text x="-48" y="434" class="label">LSTM</text>
+    <text x="-48" y="454" class="label">mémoire avec portes</text>
+  </g>
+
+  <g transform="translate(940,0)">
+    <line x1="0" y1="285" x2="0" y2="345" class="tick"/>
+    <rect x="-70" y="160" width="150" height="82" rx="10" class="deep"/>
+    <text x="-48" y="190" class="year">2012</text>
+    <text x="-48" y="214" class="label">ImageNet + GPU</text>
+    <text x="-48" y="234" class="label">changement d'échelle</text>
+  </g>
+
+  <g transform="translate(1085,0)">
+    <line x1="0" y1="285" x2="0" y2="345" class="tick"/>
+    <rect x="-70" y="380" width="150" height="82" rx="10" class="modern"/>
+    <text x="-48" y="410" class="year">2017</text>
+    <text x="-48" y="434" class="label">Transformers</text>
+    <text x="-48" y="454" class="label">attention et MoE</text>
+  </g>
+
+  <g transform="translate(1230,0)">
+    <line x1="0" y1="285" x2="0" y2="345" class="tick"/>
+    <rect x="-70" y="160" width="170" height="92" rx="10" class="future"/>
+    <text x="-48" y="190" class="year">2018-2024</text>
+    <text x="-48" y="214" class="label">Neural ODE, LTC,</text>
+    <text x="-48" y="234" class="label">MoE et modularité</text>
+  </g>
+
+  <text x="70" y="552" class="subtitle">Cette frise simplifie volontairement : elle sert à situer les ruptures pédagogiques, pas à remplacer une histoire complète de l'IA.</text>
+</svg>

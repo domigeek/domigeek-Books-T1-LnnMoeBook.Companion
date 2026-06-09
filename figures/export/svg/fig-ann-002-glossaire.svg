@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="430" viewBox="0 0 1050 430" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-ANN-002 - Glossaire visuel</title>
+  <desc id="desc">Figure p&#233;dagogique du Tome I.</desc>
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; fill: #1f2937; }
+    .title { font-size: 22px; font-weight: 700; }
+    .subtitle { font-size: 12px; fill: #64748b; }
+    .box-title { font-size: 15px; font-weight: 700; }
+    .box-text { font-size: 12px; fill: #334155; }
+    .small { font-size: 11px; fill: #475569; }
+    .arrow { stroke: #64748b; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#64748b" />
+    </marker>
+  </defs>
+  <text class="title" x="40" y="42">Glossaire visuel des familles de concepts</text>
+  <text class="subtitle" x="40" y="64">Un rappel rapide des liens entre dynamique, experts, m&#233;moire et architecture.</text>
+  <rect x="435" y="170" width="190" height="82" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="1.5"/>
+  <text class="box-title" x="449" y="196">Architecture modulaire</text>
+  <text class="box-text" x="449" y="218">orchestrer sans</text>
+  <text class="box-text" x="449" y="236">anthropomorphiser</text>
+  <rect x="70" y="110" width="190" height="82" rx="8" fill="#eef3ff" stroke="#5368b5" stroke-width="1.5"/>
+  <text class="box-title" x="84" y="136">LNN</text>
+  <text class="box-text" x="84" y="158">&#233;tat dynamique</text>
+  <text class="box-text" x="84" y="176">temps continu</text>
+  <path class="arrow" d="M260,151 L435,211"/>
+  <rect x="70" y="245" width="190" height="82" rx="8" fill="#eef3ff" stroke="#5368b5" stroke-width="1.5"/>
+  <text class="box-title" x="84" y="271">LTC / CfC</text>
+  <text class="box-text" x="84" y="293">constantes &#964;</text>
+  <text class="box-text" x="84" y="311">forme ferm&#233;e</text>
+  <path class="arrow" d="M260,286 L435,211"/>
+  <rect x="760" y="110" width="190" height="82" rx="8" fill="#fff6df" stroke="#c48a1f" stroke-width="1.5"/>
+  <text class="box-title" x="774" y="136">MoE</text>
+  <text class="box-text" x="774" y="158">routeur</text>
+  <text class="box-text" x="774" y="176">experts actifs</text>
+  <path class="arrow" d="M760,151 L625,211"/>
+  <rect x="760" y="245" width="190" height="82" rx="8" fill="#e8f5f0" stroke="#2f7d5a" stroke-width="1.5"/>
+  <text class="box-title" x="774" y="271">M&#233;moire / RAG</text>
+  <text class="box-text" x="774" y="293">retrieval</text>
+  <text class="box-text" x="774" y="311">oubli contr&#244;l&#233;</text>
+  <path class="arrow" d="M760,286 L625,211"/>
+</svg>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-011-002 - Limites systémiques autour d'un Transformer</title>
+  <desc id="desc">Schéma montrant qu'un Transformer ne gère pas automatiquement le temps irrégulier, la mémoire persistante, la causalité, les outils, l'observabilité et la gouvernance.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <marker id="dashArrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ea580c"/>
+    </marker>
+    <filter id="shadow" x="-18%" y="-18%" width="136%" height="136%">
+      <feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font: 700 28px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 400 16px "Segoe UI", Arial, sans-serif; fill: #475569; }
+      .core { fill: #eef2ff; stroke: #4f46e5; stroke-width: 2.2; filter: url(#shadow); }
+      .io { fill: #ecfdf5; stroke: #059669; stroke-width: 2; filter: url(#shadow); }
+      .concern { fill: #fff7ed; stroke: #ea580c; stroke-width: 2; filter: url(#shadow); }
+      .panel { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.4; }
+      .label { font: 700 17px "Segoe UI", Arial, sans-serif; fill: #1e293b; }
+      .small { font: 400 14px "Segoe UI", Arial, sans-serif; fill: #475569; }
+      .math { font: 600 14px "Consolas", "Cascadia Mono", monospace; fill: #334155; }
+      .line { fill: none; stroke: #334155; stroke-width: 2.2; marker-end: url(#arrow); }
+      .dash { fill: none; stroke: #ea580c; stroke-width: 1.9; stroke-dasharray: 7 7; marker-end: url(#dashArrow); }
+      .note { font: 600 13px "Segoe UI", Arial, sans-serif; fill: #9a3412; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="48" y="54">Un Transformer n'est pas toute l'architecture</text>
+  <text class="subtitle" x="48" y="82">Le modèle traite une séquence. Le système autour doit gérer état, permissions, mémoire, traces et décisions d'exploitation.</text>
+
+  <rect class="io" x="72" y="305" width="210" height="86" rx="12"/>
+  <text class="label" x="116" y="337">Entrée</text>
+  <text class="small" x="100" y="361">prompt, documents,</text>
+  <text class="small" x="103" y="380">événements, tokens</text>
+
+  <rect class="core" x="475" y="270" width="250" height="156" rx="18"/>
+  <text class="label" x="548" y="316">Transformer</text>
+  <text class="small" x="527" y="346">attention + MLP</text>
+  <text class="small" x="520" y="368">paramètres appris</text>
+  <text class="math" x="526" y="394">Y = softmax(QK^T)V</text>
+
+  <rect class="io" x="918" y="305" width="210" height="86" rx="12"/>
+  <text class="label" x="976" y="337">Sortie</text>
+  <text class="small" x="952" y="361">réponse, décision</text>
+  <text class="small" x="962" y="380">ou représentation</text>
+
+  <path class="line" d="M282 348 C350 348 405 348 475 348"/>
+  <path class="line" d="M725 348 C795 348 850 348 918 348"/>
+
+  <rect class="concern" x="74" y="135" width="246" height="86" rx="12"/>
+  <text class="label" x="116" y="166">Temps irrégulier</text>
+  <text class="small" x="105" y="190">délais, horloge réelle,</text>
+  <text class="small" x="128" y="209">événements rares</text>
+
+  <rect class="concern" x="74" y="500" width="246" height="86" rx="12"/>
+  <text class="label" x="112" y="531">Mémoire persistante</text>
+  <text class="small" x="105" y="555">écrire, corriger, oublier,</text>
+  <text class="small" x="143" y="574">auditer</text>
+
+  <rect class="concern" x="476" y="105" width="246" height="86" rx="12"/>
+  <text class="label" x="551" y="136">Causalité</text>
+  <text class="small" x="511" y="160">preuve, protocole,</text>
+  <text class="small" x="514" y="179">contrefactuels</text>
+
+  <rect class="concern" x="476" y="530" width="246" height="86" rx="12"/>
+  <text class="label" x="518" y="561">Outils et permissions</text>
+  <text class="small" x="514" y="585">API, fichiers, actions,</text>
+  <text class="small" x="542" y="604">sandboxing</text>
+
+  <rect class="concern" x="880" y="135" width="246" height="86" rx="12"/>
+  <text class="label" x="944" y="166">Observabilité</text>
+  <text class="small" x="919" y="190">traces, métriques,</text>
+  <text class="small" x="945" y="209">audits, coûts</text>
+
+  <rect class="concern" x="880" y="500" width="246" height="86" rx="12"/>
+  <text class="label" x="947" y="531">Gouvernance</text>
+  <text class="small" x="918" y="555">versions, données,</text>
+  <text class="small" x="927" y="574">rollback, contrats</text>
+
+  <path class="dash" d="M320 178 C390 200 430 260 488 303"/>
+  <text class="note" x="328" y="218">à modéliser autour</text>
+
+  <path class="dash" d="M320 543 C392 520 430 457 493 397"/>
+  <text class="note" x="324" y="512">à gouverner autour</text>
+
+  <path class="dash" d="M599 191 L599 270"/>
+  <text class="note" x="616" y="235">à vérifier autour</text>
+
+  <path class="dash" d="M599 530 L599 426"/>
+  <text class="note" x="616" y="488">à contrôler autour</text>
+
+  <path class="dash" d="M880 178 C814 200 772 260 713 303"/>
+  <text class="note" x="745" y="218">à instrumenter autour</text>
+
+  <path class="dash" d="M880 543 C808 520 770 457 707 397"/>
+  <text class="note" x="743" y="512">à organiser autour</text>
+
+  <rect class="panel" x="142" y="645" width="916" height="42" rx="10"/>
+  <text class="small" x="188" y="672">La question d'ingénierie n'est pas seulement « quel modèle ? », mais « dans quel système, avec quelles limites ? »</text>
+  <text class="small" x="444" y="706">FIG-011-002 - Limites systémiques autour d'un Transformer</text>
+</svg>

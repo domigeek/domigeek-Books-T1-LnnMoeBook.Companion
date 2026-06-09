@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-010-002 - GRU vs LSTM</title>
+  <desc id="desc">Comparaison visuelle entre LSTM et GRU : états, portes, complexité et compromis d'usage.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font: 700 28px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 400 16px "Segoe UI", Arial, sans-serif; fill: #4b5563; }
+      .h { font: 700 21px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .rowTitle { font: 700 16px "Segoe UI", Arial, sans-serif; fill: #1f2937; }
+      .text { font: 400 15px "Segoe UI", Arial, sans-serif; fill: #374151; }
+      .small { font: 400 13px "Segoe UI", Arial, sans-serif; fill: #4b5563; }
+      .math { font: 600 15px "Consolas", "Cascadia Mono", monospace; fill: #111827; }
+      .panel { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; filter: url(#shadow); }
+      .lstm { fill: #f5f3ff; stroke: #7c3aed; stroke-width: 2; }
+      .gru { fill: #ecfdf5; stroke: #047857; stroke-width: 2; }
+      .neutral { fill: #f1f5f9; stroke: #94a3b8; stroke-width: 1.5; }
+      .warn { fill: #fff7ed; stroke: #ea580c; stroke-width: 1.8; }
+      .line { stroke: #cbd5e1; stroke-width: 1.2; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="680"/>
+  <text class="title" x="48" y="54">GRU vs LSTM : même famille, compromis différent</text>
+  <text class="subtitle" x="48" y="82">Les deux utilisent des portes. Le LSTM sépare davantage les responsabilités ; le GRU compacte la cellule.</text>
+
+  <rect class="panel" x="60" y="120" width="1080" height="500" rx="14"/>
+
+  <rect class="lstm" x="280" y="150" width="320" height="62" rx="10"/>
+  <text class="h" x="426" y="187">LSTM</text>
+
+  <rect class="gru" x="720" y="150" width="320" height="62" rx="10"/>
+  <text class="h" x="867" y="187">GRU</text>
+
+  <line class="line" x1="240" y1="235" x2="1090" y2="235"/>
+  <line class="line" x1="240" y1="315" x2="1090" y2="315"/>
+  <line class="line" x1="240" y1="395" x2="1090" y2="395"/>
+  <line class="line" x1="240" y1="475" x2="1090" y2="475"/>
+  <line class="line" x1="680" y1="130" x2="680" y2="560"/>
+
+  <text class="rowTitle" x="92" y="272">États</text>
+  <text class="math" x="310" y="262">c_t</text>
+  <text class="text" x="350" y="262">état de cellule interne</text>
+  <text class="math" x="310" y="288">h_t</text>
+  <text class="text" x="350" y="288">état caché exposé</text>
+
+  <text class="math" x="760" y="274">h_t</text>
+  <text class="text" x="805" y="274">un seul état caché principal</text>
+
+  <text class="rowTitle" x="92" y="352">Portes</text>
+  <text class="text" x="310" y="342">entrée, oubli, sortie</text>
+  <text class="math" x="310" y="367">i_t, f_t, o_t</text>
+  <text class="text" x="760" y="342">reset et update</text>
+  <text class="math" x="760" y="367">r_t, z_t</text>
+
+  <text class="rowTitle" x="92" y="432">Mise à jour</text>
+  <text class="math" x="310" y="423">c_t = f_t*c_{t-1} + i_t*g_t</text>
+  <text class="text" x="310" y="448">puis sortie modulée par o_t</text>
+  <text class="math" x="760" y="423">h_t = (1-z_t)*h_{t-1} + z_t*g_t</text>
+  <text class="text" x="760" y="448">mélange direct ancien/candidat</text>
+
+  <text class="rowTitle" x="92" y="512">Compromis</text>
+  <rect class="warn" x="300" y="492" width="290" height="58" rx="8"/>
+  <text class="text" x="320" y="516">Plus explicite, souvent plus lourd.</text>
+  <text class="small" x="320" y="538">Utile si la séparation mémoire/sortie aide.</text>
+
+  <rect class="warn" x="750" y="492" width="290" height="58" rx="8"/>
+  <text class="text" x="770" y="516">Plus compact, souvent plus simple.</text>
+  <text class="small" x="770" y="538">À valider selon tâche et protocole.</text>
+
+  <rect class="neutral" x="155" y="575" width="890" height="42" rx="8"/>
+  <text class="small" x="182" y="601">Règle pratique : comparer avec même dataset, même budget, même métrique et plusieurs seeds quand c'est possible.</text>
+  <text class="small" x="450" y="652">FIG-010-002 - GRU vs LSTM</text>
+</svg>

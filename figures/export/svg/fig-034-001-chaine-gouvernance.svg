@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="640" viewBox="0 0 1180 640" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-034-001 - Chaîne de gouvernance IA</title>
+  <desc id="desc">Chaîne reliant données, transformations, modèles, configuration, routage, inférence, observabilité, audit et amélioration.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#334155"/>
+    </marker>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 24px; fill: #0f172a; }
+      .subtitle { font-family: Arial, Helvetica, sans-serif; font-size: 14px; fill: #475569; }
+      .box { fill: #f8fafc; stroke: #334155; stroke-width: 2; rx: 12; }
+      .blue { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; rx: 12; }
+      .green { fill: #f0fdf4; stroke: #15803d; stroke-width: 2; rx: 12; }
+      .amber { fill: #fffbeb; stroke: #d97706; stroke-width: 2; rx: 12; }
+      .red { fill: #fff1f2; stroke: #be123c; stroke-width: 2; rx: 12; }
+      .purple { fill: #faf5ff; stroke: #9333ea; stroke-width: 2; rx: 12; }
+      .label { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 14px; fill: #0f172a; text-anchor: middle; }
+      .small { font-family: Arial, Helvetica, sans-serif; font-size: 12px; fill: #475569; text-anchor: middle; }
+      .note { font-family: Arial, Helvetica, sans-serif; font-size: 14px; fill: #334155; }
+      .arrow { stroke: #334155; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+      .dash { stroke-dasharray: 7 6; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1180" height="640"/>
+  <text class="title" x="56" y="48">Chaîne de gouvernance IA</text>
+  <text class="subtitle" x="56" y="72">La gouvernance suit tout ce qui peut influencer une sortie : données, modèles, prompts, outils, mémoire, actions et traces.</text>
+
+  <rect class="blue" x="56" y="246" width="126" height="72"/>
+  <text class="label" x="119" y="276">Données</text>
+  <text class="small" x="119" y="298">sources, licences</text>
+
+  <rect class="blue" x="220" y="246" width="142" height="72"/>
+  <text class="label" x="291" y="276">Transformations</text>
+  <text class="small" x="291" y="298">nettoyage, splits</text>
+
+  <rect class="green" x="400" y="246" width="142" height="72"/>
+  <text class="label" x="471" y="276">Modèles</text>
+  <text class="small" x="471" y="298">et experts</text>
+
+  <rect class="amber" x="580" y="246" width="142" height="72"/>
+  <text class="label" x="651" y="276">Configuration</text>
+  <text class="small" x="651" y="298">prompts, seuils</text>
+
+  <rect class="amber" x="760" y="246" width="142" height="72"/>
+  <text class="label" x="831" y="276">Routage</text>
+  <text class="small" x="831" y="298">outils, mémoire</text>
+
+  <rect class="red" x="940" y="246" width="142" height="72"/>
+  <text class="label" x="1011" y="276">Inférence</text>
+  <text class="small" x="1011" y="298">ou action</text>
+
+  <rect class="purple" x="760" y="430" width="142" height="72"/>
+  <text class="label" x="831" y="460">Observabilité</text>
+  <text class="small" x="831" y="482">traces, métriques</text>
+
+  <rect class="purple" x="400" y="430" width="142" height="72"/>
+  <text class="label" x="471" y="460">Audit</text>
+  <text class="small" x="471" y="482">amélioration</text>
+
+  <path class="arrow" d="M182 282 H214"/>
+  <path class="arrow" d="M362 282 H394"/>
+  <path class="arrow" d="M542 282 H574"/>
+  <path class="arrow" d="M722 282 H754"/>
+  <path class="arrow" d="M902 282 H934"/>
+  <path class="arrow" d="M1011 318 C1011 392 914 456 908 466"/>
+  <path class="arrow" d="M760 466 H548"/>
+  <path class="arrow" d="M400 466 C250 466 120 394 119 324"/>
+
+  <rect class="box" x="96" y="116" width="156" height="62"/>
+  <text class="label" x="174" y="142">Versionnement</text>
+  <text class="small" x="174" y="162">artefacts et politiques</text>
+
+  <rect class="box" x="304" y="116" width="156" height="62"/>
+  <text class="label" x="382" y="142">Provenance</text>
+  <text class="small" x="382" y="162">origine et transformations</text>
+
+  <rect class="box" x="720" y="116" width="156" height="62"/>
+  <text class="label" x="798" y="142">Garde-fous</text>
+  <text class="small" x="798" y="162">permissions, budgets</text>
+
+  <rect class="box" x="928" y="116" width="156" height="62"/>
+  <text class="label" x="1006" y="142">Rollback</text>
+  <text class="small" x="1006" y="162">retour contrôlé</text>
+
+  <path class="arrow dash" d="M174 178 C150 208 130 228 122 242"/>
+  <path class="arrow dash" d="M174 178 C286 208 420 228 468 242"/>
+  <path class="arrow dash" d="M382 178 C348 214 318 230 300 242"/>
+  <path class="arrow dash" d="M382 178 C260 208 164 230 126 242"/>
+  <path class="arrow dash" d="M798 178 C808 208 820 230 826 242"/>
+  <path class="arrow dash" d="M798 178 C902 208 980 230 1006 242"/>
+  <path class="arrow dash" d="M1006 178 V240"/>
+  <path class="arrow dash" d="M1006 178 C838 204 562 228 476 242"/>
+
+  <text class="note" x="92" y="584">Lecture : la gouvernance n'est pas une étape finale. C'est une chaîne qui accompagne les données, les modèles, les décisions et les retours arrière.</text>
+</svg>

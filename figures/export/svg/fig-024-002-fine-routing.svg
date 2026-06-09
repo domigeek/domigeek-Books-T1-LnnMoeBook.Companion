@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="720" viewBox="0 0 1180 720" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-024-002 - Routage fin</title>
+  <desc id="desc">Comparaison entre un MoE classique à experts plus gros et DeepSeekMoE avec experts segmentés plus fins, plus de combinaisons possibles et contraintes de communication.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <style>
+      .bg { fill: #fbfcff; }
+      .title { font: 700 24px Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 13px Arial, sans-serif; fill: #475569; }
+      .label { font: 700 15px Arial, sans-serif; fill: #1e293b; }
+      .text { font: 400 13px Arial, sans-serif; fill: #334155; }
+      .small { font: 400 11px Arial, sans-serif; fill: #64748b; }
+      .panel-classic { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; }
+      .panel-fine { fill: #f5f3ff; stroke: #8b5cf6; stroke-width: 1.7; }
+      .expert-big { fill: #dbeafe; stroke: #2563eb; stroke-width: 1.3; }
+      .expert-small { fill: #ecfdf5; stroke: #16a34a; stroke-width: 1.2; }
+      .expert-active { fill: #bbf7d0; stroke: #16a34a; stroke-width: 1.7; }
+      .warning { fill: #fff7ed; stroke: #f97316; stroke-width: 1.5; }
+      .router { fill: #fffbeb; stroke: #f59e0b; stroke-width: 1.7; }
+      .line { stroke: #334155; stroke-width: 1.8; fill: none; marker-end: url(#arrow); }
+      .line-soft { stroke: #64748b; stroke-width: 1.5; fill: none; marker-end: url(#arrow); }
+      .line-active { stroke: #16a34a; stroke-width: 1.8; fill: none; marker-end: url(#arrow); }
+      .dash { stroke-dasharray: 5 4; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1180" height="720"/>
+  <text class="title" x="42" y="48">Routage fin dans DeepSeekMoE</text>
+  <text class="subtitle" x="42" y="72">Segmenter les experts augmente la granularité du routage, mais ajoute des contraintes de communication et d'équilibrage.</text>
+
+  <rect class="router" x="480" y="110" width="220" height="95" rx="8"/>
+  <text class="label" x="546" y="145">Routeur</text>
+  <text class="small" x="528" y="172">affinités token-expert</text>
+
+  <rect class="panel-classic" x="60" y="275" width="460" height="270" rx="10"/>
+  <text class="label" x="90" y="312">MoE classique</text>
+  <text class="small" x="90" y="334">Moins d'experts, experts plus gros</text>
+  <rect class="expert-big" x="96" y="380" width="92" height="72" rx="8"/>
+  <text class="text" x="123" y="420">E1</text>
+  <rect class="expert-big" x="210" y="380" width="92" height="72" rx="8"/>
+  <text class="text" x="237" y="420">E2</text>
+  <rect class="expert-big" x="324" y="380" width="92" height="72" rx="8"/>
+  <text class="text" x="351" y="420">E3</text>
+  <text class="small" x="90" y="500">Exemple : top-2 sur N experts</text>
+  <text class="small" x="90" y="518">Chemins moins nombreux, responsabilité plus large.</text>
+
+  <rect class="panel-fine" x="610" y="275" width="520" height="270" rx="10"/>
+  <text class="label" x="640" y="312">DeepSeekMoE</text>
+  <text class="small" x="640" y="334">Plus d'experts, experts plus fins</text>
+  <g>
+    <rect class="expert-active" x="646" y="372" width="54" height="44" rx="6"/><text class="small" x="664" y="399">e1</text>
+    <rect class="expert-small" x="712" y="372" width="54" height="44" rx="6"/><text class="small" x="730" y="399">e2</text>
+    <rect class="expert-active" x="778" y="372" width="54" height="44" rx="6"/><text class="small" x="796" y="399">e3</text>
+    <rect class="expert-small" x="844" y="372" width="54" height="44" rx="6"/><text class="small" x="862" y="399">e4</text>
+    <rect class="expert-active" x="910" y="372" width="54" height="44" rx="6"/><text class="small" x="928" y="399">e5</text>
+    <rect class="expert-small" x="976" y="372" width="54" height="44" rx="6"/><text class="small" x="994" y="399">e6</text>
+    <rect class="expert-active" x="1042" y="372" width="54" height="44" rx="6"/><text class="small" x="1057" y="399">e7</text>
+  </g>
+  <text class="small" x="640" y="500">Exemple : top-mK sur mN experts</text>
+  <text class="small" x="640" y="518">Plus de combinaisons, spécialisation potentiellement plus fine.</text>
+
+  <rect class="warning" x="390" y="600" width="400" height="70" rx="8"/>
+  <text class="label" x="464" y="628">Coût du raffinement</text>
+  <text class="small" x="464" y="650">communication, load balancing, observabilité, placement matériel</text>
+
+  <path class="line" d="M 560 205 C 450 238, 360 250, 290 275"/>
+  <path class="line" d="M 640 205 C 740 238, 820 250, 870 275"/>
+  <path class="line-soft" d="M 290 545 C 350 580, 420 604, 488 612"/>
+  <path class="line-active" d="M 870 545 C 815 578, 760 604, 700 612"/>
+
+  <text class="small" x="236" y="695">FIG-024-002 - Routage fin : plus de granularité ne supprime pas les contraintes système.</text>
+</svg>

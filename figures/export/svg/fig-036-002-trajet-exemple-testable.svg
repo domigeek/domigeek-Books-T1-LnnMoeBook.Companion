@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="560" viewBox="0 0 1180 560" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-036-002 - Trajet d'un exemple testable</title>
+  <desc id="desc">Flux pédagogique reliant un concept du chapitre à une classe C#, des données synthétiques, une exécution, un rapport, des tests et une limite explicite.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#334155"/>
+    </marker>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 24px; fill: #0f172a; }
+      .subtitle { font-family: Arial, Helvetica, sans-serif; font-size: 14px; fill: #475569; }
+      .blue { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; rx: 12; }
+      .green { fill: #f0fdf4; stroke: #15803d; stroke-width: 2; rx: 12; }
+      .amber { fill: #fffbeb; stroke: #d97706; stroke-width: 2; rx: 12; }
+      .purple { fill: #faf5ff; stroke: #7c3aed; stroke-width: 2; rx: 12; }
+      .red { fill: #fff1f2; stroke: #be123c; stroke-width: 2; rx: 12; }
+      .gray { fill: #f8fafc; stroke: #475569; stroke-width: 2; rx: 12; }
+      .label { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 14px; fill: #0f172a; text-anchor: middle; }
+      .small { font-family: Arial, Helvetica, sans-serif; font-size: 12px; fill: #475569; text-anchor: middle; }
+      .arrow { stroke: #334155; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+      .dash { stroke: #64748b; stroke-width: 1.8; fill: none; marker-end: url(#arrow); stroke-dasharray: 6 6; }
+    </style>
+  </defs>
+  <rect class="bg" width="1180" height="560"/>
+  <text class="title" x="52" y="48">Trajet d'un exemple testable</text>
+  <text class="subtitle" x="52" y="72">Un exemple utile relie une idée du livre à une exécution locale et à une limite claire.</text>
+
+  <rect class="blue" x="60" y="190" width="150" height="76"/>
+  <text class="label" x="135" y="216">Concept</text>
+  <text class="small" x="135" y="238">chapitre du livre</text>
+  <rect class="green" x="255" y="190" width="150" height="76"/>
+  <text class="label" x="330" y="216">Classe C#</text>
+  <text class="small" x="330" y="238">exemple ciblé</text>
+  <rect class="amber" x="450" y="190" width="170" height="76"/>
+  <text class="label" x="535" y="216">Données</text>
+  <text class="small" x="535" y="238">synthétiques</text>
+  <rect class="purple" x="665" y="190" width="150" height="76"/>
+  <text class="label" x="740" y="216">Exécution</text>
+  <text class="small" x="740" y="238">locale</text>
+  <rect class="green" x="860" y="190" width="150" height="76"/>
+  <text class="label" x="935" y="216">Rapport</text>
+  <text class="small" x="935" y="238">perte, score</text>
+
+  <rect class="purple" x="450" y="348" width="170" height="82"/>
+  <text class="label" x="535" y="374">Test xUnit</text>
+  <text class="small" x="535" y="396">shape, invariant</text>
+  <text class="small" x="535" y="414">cas invalide</text>
+  <rect class="red" x="860" y="348" width="180" height="82"/>
+  <text class="label" x="950" y="374">Limite explicite</text>
+  <text class="small" x="950" y="396">preuve locale</text>
+  <text class="small" x="950" y="414">pas claim général</text>
+
+  <path class="arrow" d="M210 228 H255"/>
+  <path class="arrow" d="M405 228 H450"/>
+  <path class="arrow" d="M620 228 H665"/>
+  <path class="arrow" d="M815 228 H860"/>
+  <path class="dash" d="M330 266 C360 330 400 370 450 389"/>
+  <path class="dash" d="M535 266 V348"/>
+  <path class="dash" d="M620 389 H860"/>
+  <path class="arrow" d="M935 266 V348"/>
+
+  <text class="subtitle" x="52" y="510">Lecture : le test ne prouve pas une supériorité générale. Il vérifie que le mécanisme local tient debout.</text>
+</svg>

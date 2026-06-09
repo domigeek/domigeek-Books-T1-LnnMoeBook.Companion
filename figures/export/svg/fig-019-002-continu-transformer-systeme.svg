@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-019-002 - Modèle continu et Transformer dans une vue système</title>
+  <desc id="desc">Comparaison système entre un Transformer classique et un modèle liquide hybride, tous deux soumis aux mêmes contraintes de runtime, mémoire externe et évaluation.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <marker id="orangeArrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ea580c"/>
+    </marker>
+    <filter id="shadow" x="-18%" y="-18%" width="136%" height="136%">
+      <feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font: 700 28px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 400 16px "Segoe UI", Arial, sans-serif; fill: #475569; }
+      .panelT { fill: #f8f7ff; stroke: #a5b4fc; stroke-width: 1.5; }
+      .panelL { fill: #f0fdf4; stroke: #86efac; stroke-width: 1.5; }
+      .t { fill: #eef2ff; stroke: #4f46e5; stroke-width: 2; filter: url(#shadow); }
+      .l { fill: #ecfdf5; stroke: #059669; stroke-width: 2; filter: url(#shadow); }
+      .sys { fill: #fff7ed; stroke: #ea580c; stroke-width: 2; filter: url(#shadow); }
+      .label { font: 700 17px "Segoe UI", Arial, sans-serif; fill: #1e293b; }
+      .small { font: 400 14px "Segoe UI", Arial, sans-serif; fill: #475569; }
+      .math { font: 600 14px "Consolas", "Cascadia Mono", monospace; fill: #0f172a; }
+      .line { fill: none; stroke: #334155; stroke-width: 2.1; marker-end: url(#arrow); }
+      .sysLine { fill: none; stroke: #ea580c; stroke-width: 1.9; stroke-dasharray: 7 7; marker-end: url(#orangeArrow); }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="48" y="54">LFM hybride ou Transformer : le système décide du compromis</text>
+  <text class="subtitle" x="48" y="82">Les deux familles doivent être jugées avec les mêmes contraintes : qualité, latence, mémoire, outils et runtime.</text>
+
+  <rect class="panelT" x="58" y="128" width="498" height="342" rx="18"/>
+  <text class="label" x="218" y="164">Transformer classique</text>
+
+  <rect class="t" x="96" y="220" width="108" height="64" rx="10"/>
+  <text class="label" x="128" y="248">Tokens</text>
+  <text class="small" x="121" y="270">contexte</text>
+
+  <rect class="t" x="258" y="206" width="154" height="92" rx="10"/>
+  <text class="label" x="301" y="238">Attention</text>
+  <text class="small" x="284" y="262">dense, sparse</text>
+  <text class="small" x="288" y="281">ou optimisée</text>
+
+  <rect class="t" x="455" y="220" width="76" height="64" rx="10"/>
+  <text class="label" x="473" y="248">MLP</text>
+  <text class="small" x="463" y="270">résiduel</text>
+
+  <rect class="t" x="230" y="360" width="154" height="64" rx="10"/>
+  <text class="label" x="281" y="388">Sortie</text>
+  <text class="small" x="261" y="410">texte, vecteur</text>
+
+  <path class="line" d="M204 252 L258 252"/>
+  <path class="line" d="M412 252 L455 252"/>
+  <path class="line" d="M493 284 C476 342 410 378 384 392"/>
+
+  <rect class="panelL" x="644" y="128" width="498" height="342" rx="18"/>
+  <text class="label" x="825" y="164">LFM hybride</text>
+
+  <rect class="l" x="682" y="220" width="108" height="64" rx="10"/>
+  <text class="label" x="714" y="248">Entrée</text>
+  <text class="small" x="703" y="270">tokens/signaux</text>
+
+  <rect class="l" x="840" y="196" width="146" height="74" rx="10"/>
+  <text class="label" x="889" y="226">Gating</text>
+  <text class="small" x="864" y="249">dépendant entrée</text>
+
+  <rect class="l" x="1018" y="196" width="94" height="74" rx="10"/>
+  <text class="label" x="1030" y="226">Conv.</text>
+  <text class="small" x="1035" y="249">courte</text>
+
+  <rect class="l" x="840" y="328" width="146" height="74" rx="10"/>
+  <text class="label" x="889" y="358">GQA</text>
+  <text class="small" x="858" y="381">attention limitée</text>
+
+  <rect class="l" x="1018" y="328" width="94" height="74" rx="10"/>
+  <text class="label" x="1042" y="358">Sortie</text>
+  <text class="small" x="1030" y="381">réponse</text>
+
+  <path class="line" d="M790 252 L840 233"/>
+  <path class="line" d="M986 233 L1018 233"/>
+  <path class="line" d="M1065 270 C1065 302 1014 329 986 365"/>
+  <path class="line" d="M986 365 L1018 365"/>
+
+  <rect class="sys" x="88" y="540" width="250" height="78" rx="12"/>
+  <text class="label" x="143" y="572">Contraintes système</text>
+  <text class="small" x="126" y="596">latence, mémoire, CPU/GPU/NPU</text>
+
+  <rect class="sys" x="474" y="540" width="250" height="78" rx="12"/>
+  <text class="label" x="553" y="572">Mémoire externe</text>
+  <text class="small" x="520" y="596">RAG, audit, oubli contrôlé</text>
+
+  <rect class="sys" x="860" y="540" width="250" height="78" rx="12"/>
+  <text class="label" x="936" y="572">Évaluation</text>
+  <text class="small" x="894" y="596">qualité, robustesse, coût réel</text>
+
+  <path class="sysLine" d="M213 540 C230 500 255 482 307 470"/>
+  <path class="sysLine" d="M213 540 C380 500 690 500 893 470"/>
+  <path class="sysLine" d="M599 540 C540 500 432 480 335 470"/>
+  <path class="sysLine" d="M599 540 C650 500 773 480 913 470"/>
+  <path class="sysLine" d="M985 540 C838 505 690 490 520 470"/>
+  <path class="sysLine" d="M985 540 C946 503 920 488 893 470"/>
+
+  <text class="small" x="407" y="684">FIG-019-002 - Modèle continu et Transformer dans une vue système</text>
+</svg>

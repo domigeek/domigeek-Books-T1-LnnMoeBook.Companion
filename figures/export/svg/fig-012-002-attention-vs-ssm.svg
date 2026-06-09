@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-012-002 - Attention vs State Space Model</title>
+  <desc id="desc">Comparaison visuelle entre attention Transformer, qui construit une matrice n par n, et State Space Model, qui propage un état compact par scan séquentiel.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <filter id="shadow" x="-18%" y="-18%" width="136%" height="136%">
+      <feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font: 700 28px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 400 16px "Segoe UI", Arial, sans-serif; fill: #475569; }
+      .panelA { fill: #f8f7ff; stroke: #a5b4fc; stroke-width: 1.5; }
+      .panelS { fill: #f0fdf4; stroke: #86efac; stroke-width: 1.5; }
+      .att { fill: #eef2ff; stroke: #4f46e5; stroke-width: 2; filter: url(#shadow); }
+      .ssm { fill: #ecfdf5; stroke: #059669; stroke-width: 2; filter: url(#shadow); }
+      .note { fill: #fff7ed; stroke: #ea580c; stroke-width: 2; filter: url(#shadow); }
+      .label { font: 700 17px "Segoe UI", Arial, sans-serif; fill: #1e293b; }
+      .small { font: 400 14px "Segoe UI", Arial, sans-serif; fill: #475569; }
+      .math { font: 600 15px "Consolas", "Cascadia Mono", monospace; fill: #0f172a; }
+      .line { fill: none; stroke: #334155; stroke-width: 2.2; marker-end: url(#arrow); }
+      .grid { fill: #dbeafe; stroke: #93c5fd; stroke-width: 1; }
+      .gridDark { fill: #2563eb; stroke: #1d4ed8; stroke-width: 1; }
+      .stateDot { fill: #10b981; stroke: #047857; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="48" y="54">Deux façons de lire une longue séquence</text>
+  <text class="subtitle" x="48" y="82">L'attention compare explicitement les positions ; un SSM propage un état compact.</text>
+
+  <rect class="panelA" x="58" y="126" width="510" height="438" rx="18"/>
+  <text class="label" x="232" y="164">Transformer avec attention</text>
+
+  <rect class="att" x="105" y="216" width="130" height="74" rx="10"/>
+  <text class="label" x="140" y="246">Tokens</text>
+  <text class="small" x="131" y="269">n positions</text>
+
+  <g transform="translate(316,190)">
+    <rect class="att" x="-18" y="-30" width="190" height="190" rx="12"/>
+    <text class="label" x="24" y="-2">Attention</text>
+    <text class="math" x="40" y="22">n x n</text>
+    <rect class="grid" x="18" y="48" width="24" height="24"/>
+    <rect class="gridDark" x="44" y="48" width="24" height="24"/>
+    <rect class="grid" x="70" y="48" width="24" height="24"/>
+    <rect class="grid" x="96" y="48" width="24" height="24"/>
+    <rect class="grid" x="18" y="74" width="24" height="24"/>
+    <rect class="grid" x="44" y="74" width="24" height="24"/>
+    <rect class="gridDark" x="70" y="74" width="24" height="24"/>
+    <rect class="grid" x="96" y="74" width="24" height="24"/>
+    <rect class="gridDark" x="18" y="100" width="24" height="24"/>
+    <rect class="grid" x="44" y="100" width="24" height="24"/>
+    <rect class="grid" x="70" y="100" width="24" height="24"/>
+    <rect class="grid" x="96" y="100" width="24" height="24"/>
+  </g>
+
+  <rect class="att" x="105" y="392" width="366" height="74" rx="10"/>
+  <text class="label" x="183" y="423">Représentations contextualisées</text>
+  <text class="small" x="175" y="446">force : accès explicite aux positions pertinentes</text>
+
+  <path class="line" d="M235 253 C266 253 277 253 298 253"/>
+  <path class="line" d="M393 350 C374 377 340 392 288 392"/>
+
+  <rect class="note" x="126" y="498" width="320" height="44" rx="9"/>
+  <text class="small" x="166" y="525">Coût typique : relations quadratiques</text>
+
+  <rect class="panelS" x="632" y="126" width="510" height="438" rx="18"/>
+  <text class="label" x="810" y="164">State Space Model</text>
+
+  <rect class="ssm" x="680" y="216" width="130" height="74" rx="10"/>
+  <text class="label" x="708" y="246">Entrées</text>
+  <text class="small" x="708" y="269">flux de n pas</text>
+
+  <rect class="ssm" x="890" y="216" width="170" height="74" rx="10"/>
+  <text class="label" x="933" y="246">Scan d'état</text>
+  <text class="math" x="921" y="269">s_t = f(s, u_t)</text>
+
+  <g transform="translate(720,354)">
+    <circle class="stateDot" cx="0" cy="0" r="13"/>
+    <circle class="stateDot" cx="62" cy="0" r="13"/>
+    <circle class="stateDot" cx="124" cy="0" r="13"/>
+    <circle class="stateDot" cx="186" cy="0" r="13"/>
+    <circle class="stateDot" cx="248" cy="0" r="13"/>
+    <path class="line" d="M13 0 L47 0"/>
+    <path class="line" d="M75 0 L109 0"/>
+    <path class="line" d="M137 0 L171 0"/>
+    <path class="line" d="M199 0 L233 0"/>
+    <text class="small" x="64" y="48">état compact propagé</text>
+  </g>
+
+  <rect class="ssm" x="780" y="432" width="260" height="74" rx="10"/>
+  <text class="label" x="850" y="463">Sorties</text>
+  <text class="small" x="819" y="486">force : streaming et longues séquences</text>
+
+  <path class="line" d="M810 253 L890 253"/>
+  <path class="line" d="M975 290 C975 324 962 337 968 354"/>
+  <path class="line" d="M844 367 C842 396 862 413 910 432"/>
+
+  <rect class="note" x="748" y="530" width="320" height="44" rx="9"/>
+  <text class="small" x="779" y="557">Risque : compression trop forte du passé</text>
+
+  <rect class="note" x="206" y="604" width="788" height="48" rx="10"/>
+  <text class="small" x="245" y="633">Aucune famille ne gagne partout : la tâche, le mode d'inférence, le matériel et l'écosystème décident du compromis.</text>
+
+  <text class="small" x="455" y="690">FIG-012-002 - Attention vs State Space Model</text>
+</svg>

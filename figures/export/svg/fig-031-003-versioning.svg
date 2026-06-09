@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-031-003 - Versionnement de modèle</title>
+  <desc id="desc">Schéma d'un manifeste de modèle reliant artefact, données, code, configuration, évaluation, sécurité, bundle, canary, production et rollback.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#475569"/>
+    </marker>
+    <style>
+      .box { fill: #f8fafc; stroke: #334155; stroke-width: 2; rx: 10; }
+      .blue { fill: #e8f3ff; }
+      .violet { fill: #f3eaff; }
+      .green { fill: #ecfdf5; }
+      .amber { fill: #fff7e6; }
+      .red { fill: #fff1f2; }
+      .main { fill: #e0f2fe; stroke-width: 3; }
+      .bundle { fill: #ede9fe; stroke-width: 3; }
+      .title { font: 700 30px Arial, sans-serif; fill: #1e293b; }
+      .label { font: 700 18px Arial, sans-serif; fill: #1e293b; }
+      .small { font: 14px Arial, sans-serif; fill: #475569; }
+      .caption { font: 15px Arial, sans-serif; fill: #64748b; }
+      .edge { stroke: #475569; stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+      .dash { stroke: #64748b; stroke-width: 2; stroke-dasharray: 7 6; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="760" fill="#ffffff"/>
+  <text x="60" y="58" class="title">Versionnement de modèle</text>
+  <text x="60" y="84" class="caption">Un modèle de production se versionne avec ses données, son code, sa configuration, son runtime et ses preuves d'évaluation.</text>
+
+  <rect x="70" y="125" width="180" height="82" class="box blue"/>
+  <text x="160" y="154" text-anchor="middle" class="label">Artefact modèle</text>
+  <text x="160" y="181" text-anchor="middle" class="small">poids</text>
+  <text x="160" y="199" text-anchor="middle" class="small">hash</text>
+
+  <rect x="70" y="240" width="180" height="82" class="box violet"/>
+  <text x="160" y="269" text-anchor="middle" class="label">Données</text>
+  <text x="160" y="296" text-anchor="middle" class="small">version</text>
+  <text x="160" y="314" text-anchor="middle" class="small">split</text>
+
+  <rect x="70" y="355" width="180" height="82" class="box green"/>
+  <text x="160" y="384" text-anchor="middle" class="label">Code</text>
+  <text x="160" y="411" text-anchor="middle" class="small">commit</text>
+  <text x="160" y="429" text-anchor="middle" class="small">dépôt</text>
+
+  <rect x="70" y="470" width="180" height="82" class="box amber"/>
+  <text x="160" y="499" text-anchor="middle" class="label">Configuration</text>
+  <text x="160" y="526" text-anchor="middle" class="small">hyperparamètres</text>
+  <text x="160" y="544" text-anchor="middle" class="small">runtime</text>
+
+  <rect x="315" y="185" width="190" height="82" class="box"/>
+  <text x="410" y="214" text-anchor="middle" class="label">Évaluation</text>
+  <text x="410" y="241" text-anchor="middle" class="small">métriques</text>
+  <text x="410" y="259" text-anchor="middle" class="small">limites</text>
+
+  <rect x="315" y="365" width="190" height="82" class="box red"/>
+  <text x="410" y="394" text-anchor="middle" class="label">Sécurité</text>
+  <text x="410" y="421" text-anchor="middle" class="small">permissions</text>
+  <text x="410" y="439" text-anchor="middle" class="small">traces</text>
+
+  <rect x="585" y="260" width="215" height="125" class="box main"/>
+  <text x="693" y="301" text-anchor="middle" class="label">ModelManifest</text>
+  <text x="693" y="329" text-anchor="middle" class="small">identité + statut</text>
+  <text x="693" y="349" text-anchor="middle" class="small">reproductibilité</text>
+  <text x="693" y="369" text-anchor="middle" class="small">rollback possible</text>
+
+  <rect x="875" y="260" width="220" height="125" class="box bundle"/>
+  <text x="985" y="301" text-anchor="middle" class="label">Bundle</text>
+  <text x="985" y="329" text-anchor="middle" class="small">modèle</text>
+  <text x="985" y="349" text-anchor="middle" class="small">config + contrat</text>
+  <text x="985" y="369" text-anchor="middle" class="small">runtime attendu</text>
+
+  <rect x="585" y="520" width="160" height="85" class="box green"/>
+  <text x="665" y="550" text-anchor="middle" class="label">Canary</text>
+  <text x="665" y="577" text-anchor="middle" class="small">trafic limité</text>
+  <text x="665" y="596" text-anchor="middle" class="small">métriques OK ?</text>
+
+  <rect x="835" y="520" width="170" height="85" class="box green"/>
+  <text x="920" y="550" text-anchor="middle" class="label">Production</text>
+  <text x="920" y="577" text-anchor="middle" class="small">version active</text>
+  <text x="920" y="596" text-anchor="middle" class="small">surveillée</text>
+
+  <rect x="1035" y="520" width="135" height="85" class="box amber"/>
+  <text x="1102" y="550" text-anchor="middle" class="label">Rollback</text>
+  <text x="1102" y="577" text-anchor="middle" class="small">version</text>
+  <text x="1102" y="596" text-anchor="middle" class="small">précédente</text>
+
+  <rect x="835" y="650" width="170" height="65" class="box"/>
+  <text x="920" y="678" text-anchor="middle" class="label">Deprecated</text>
+  <text x="920" y="702" text-anchor="middle" class="small">retrait contrôlé</text>
+
+  <path d="M250 166 H560 V300 H585" class="edge"/>
+  <path d="M250 281 H560 V315 H585" class="edge"/>
+  <path d="M250 396 H285 V455 H560 V340 H585" class="edge"/>
+  <path d="M250 511 H560 V360 H585" class="edge"/>
+  <path d="M505 226 C555 240 575 270 585 292" class="edge"/>
+  <path d="M505 406 C555 390 575 365 585 350" class="edge"/>
+  <path d="M800 322 H875" class="edge"/>
+  <path d="M985 385 C965 470 760 470 685 520" class="edge"/>
+  <path d="M745 562 H835" class="edge"/>
+  <path d="M1005 562 H1035" class="edge"/>
+  <path d="M920 605 V650" class="edge"/>
+  <path d="M1035 562 C925 475 735 485 705 520" class="dash"/>
+  <text x="960" y="496" class="small">incident ou dégradation</text>
+
+  <text x="600" y="742" text-anchor="middle" class="caption">FIG-031-003 - Versionnement de modèle</text>
+</svg>

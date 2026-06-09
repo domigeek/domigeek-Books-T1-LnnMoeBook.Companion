@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-018-001 - Décomposition de tâches en experts</title>
+  <desc id="desc">Schéma pédagogique montrant qu'une tâche globale peut être décomposée en régions, régimes ou responsabilités routées vers plusieurs experts.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font: 700 28px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 400 16px "Segoe UI", Arial, sans-serif; fill: #4b5563; }
+      .panel { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; filter: url(#shadow); }
+      .space { fill: #ffffff; stroke: #334155; stroke-width: 2; }
+      .regionA { fill: #dbeafe; stroke: #2563eb; stroke-width: 2; }
+      .regionB { fill: #dcfce7; stroke: #047857; stroke-width: 2; }
+      .regionC { fill: #ffedd5; stroke: #ea580c; stroke-width: 2; }
+      .regionD { fill: #f5f3ff; stroke: #7c3aed; stroke-width: 2; }
+      .router { fill: #fefce8; stroke: #ca8a04; stroke-width: 2; }
+      .expert { fill: #ecfdf5; stroke: #047857; stroke-width: 2; }
+      .warn { fill: #fff7ed; stroke: #ea580c; stroke-width: 2; }
+      .label { font: 700 18px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .small { font: 400 14px "Segoe UI", Arial, sans-serif; fill: #475569; }
+      .math { font: 600 14px "Consolas", "Cascadia Mono", monospace; fill: #111827; }
+      .line { fill: none; stroke: #334155; stroke-width: 2.2; marker-end: url(#arrow); }
+      .dash { fill: none; stroke: #64748b; stroke-width: 2; stroke-dasharray: 7 7; marker-end: url(#arrow); }
+      .axis { stroke: #94a3b8; stroke-width: 1.5; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="48" y="54">Décomposer une tâche en experts</text>
+  <text class="subtitle" x="48" y="82">La décomposition peut être par domaine, régime, structure ou rôle architectural. Elle doit rester mesurable.</text>
+
+  <rect class="panel" x="60" y="125" width="1080" height="520" rx="14"/>
+
+  <rect class="space" x="100" y="175" width="360" height="320" rx="12"/>
+  <line class="axis" x1="130" y1="455" x2="430" y2="455"/>
+  <line class="axis" x1="130" y1="455" x2="130" y2="205"/>
+  <text class="small" x="322" y="482">dimension latente 1</text>
+  <text class="small" x="108" y="200">dimension latente 2</text>
+
+  <path class="regionA" d="M140 435 C165 350 210 315 265 315 C310 315 335 350 350 430 Z"/>
+  <path class="regionB" d="M205 210 C285 190 360 210 420 260 C395 305 330 325 265 315 C235 285 212 255 205 210 Z"/>
+  <path class="regionC" d="M140 220 C175 205 198 215 205 250 C212 290 190 330 150 350 C128 315 126 260 140 220 Z"/>
+  <path class="regionD" d="M300 330 C360 315 420 335 430 405 C405 450 360 460 350 430 C340 390 325 360 300 330 Z"/>
+
+  <text class="label" x="185" y="390">régime A</text>
+  <text class="label" x="286" y="258">régime B</text>
+  <text class="label" x="144" y="292">régime C</text>
+  <text class="label" x="345" y="398">régime D</text>
+
+  <rect class="router" x="535" y="270" width="165" height="100" rx="14"/>
+  <text class="label" x="583" y="306">Routeur</text>
+  <text class="small" x="565" y="331">scores ou poids</text>
+  <text class="math" x="570" y="354">g(x), top-k</text>
+
+  <rect class="expert" x="825" y="160" width="210" height="72" rx="12"/>
+  <text class="label" x="875" y="190">Expert A</text>
+  <text class="small" x="854" y="214">cas simples ou fréquents</text>
+
+  <rect class="expert" x="825" y="265" width="210" height="72" rx="12"/>
+  <text class="label" x="875" y="295">Expert B</text>
+  <text class="small" x="854" y="319">régime long ou bruité</text>
+
+  <rect class="expert" x="825" y="370" width="210" height="72" rx="12"/>
+  <text class="label" x="875" y="400">Expert C</text>
+  <text class="small" x="854" y="424">cas rares ou spécialisés</text>
+
+  <rect class="expert" x="825" y="475" width="210" height="72" rx="12"/>
+  <text class="label" x="875" y="505">Expert D</text>
+  <text class="small" x="854" y="529">traitement de contrôle</text>
+
+  <path class="line" d="M460 335 H535"/>
+  <path class="line" d="M700 300 C760 265 782 200 825 196"/>
+  <path class="line" d="M700 318 C760 305 785 302 825 301"/>
+  <path class="line" d="M700 338 C760 360 785 405 825 406"/>
+  <path class="line" d="M700 356 C760 420 785 505 825 511"/>
+
+  <rect class="warn" x="145" y="545" width="900" height="54" rx="10"/>
+  <text class="small" x="176" y="570">Point de contrôle : une décomposition plausible ne suffit pas.</text>
+  <text class="small" x="176" y="592">Il faut vérifier utilisation, performance par sous-domaine, ablations, stabilité et baseline dense.</text>
+
+  <text class="small" x="403" y="690">FIG-018-001 - Décomposition de tâches en experts</text>
+</svg>

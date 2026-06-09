@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-019-001 - De LTC/CfC vers modèle fondation continu</title>
+  <desc id="desc">Schéma montrant le passage des briques LTC et CfC vers des idées transférables, un backbone hybride, un pipeline d'entraînement, un déploiement contraint et un modèle de fondation liquide.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <filter id="shadow" x="-18%" y="-18%" width="136%" height="136%">
+      <feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font: 700 28px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 400 16px "Segoe UI", Arial, sans-serif; fill: #475569; }
+      .source { fill: #eef2ff; stroke: #4f46e5; stroke-width: 2; filter: url(#shadow); }
+      .bridge { fill: #fff7ed; stroke: #ea580c; stroke-width: 2; filter: url(#shadow); }
+      .system { fill: #ecfdf5; stroke: #059669; stroke-width: 2; filter: url(#shadow); }
+      .warning { fill: #f8fafc; stroke: #64748b; stroke-width: 2; filter: url(#shadow); }
+      .label { font: 700 17px "Segoe UI", Arial, sans-serif; fill: #1e293b; }
+      .small { font: 400 14px "Segoe UI", Arial, sans-serif; fill: #475569; }
+      .line { fill: none; stroke: #334155; stroke-width: 2.2; marker-end: url(#arrow); }
+      .soft { fill: none; stroke: #94a3b8; stroke-width: 1.8; stroke-dasharray: 6 6; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="700"/>
+  <text class="title" x="48" y="54">Du module liquide au modèle de fondation : changement d'échelle</text>
+  <text class="subtitle" x="48" y="82">Une cellule continue ne suffit pas : il faut architecture, données, entraînement, évaluation et déploiement.</text>
+
+  <rect class="source" x="70" y="168" width="190" height="92" rx="12"/>
+  <text class="label" x="148" y="200">LTC</text>
+  <text class="small" x="99" y="224">dynamique continue</text>
+  <text class="small" x="96" y="243">constantes temporelles</text>
+
+  <rect class="source" x="70" y="358" width="190" height="92" rx="12"/>
+  <text class="label" x="148" y="390">CfC</text>
+  <text class="small" x="103" y="414">formulation fermée</text>
+  <text class="small" x="116" y="433">coût réduit</text>
+
+  <rect class="bridge" x="335" y="260" width="205" height="112" rx="14"/>
+  <text class="label" x="373" y="292">Idées transférables</text>
+  <text class="small" x="383" y="319">gating, état latent,</text>
+  <text class="small" x="372" y="339">efficacité, dynamique</text>
+
+  <rect class="bridge" x="615" y="234" width="230" height="164" rx="16"/>
+  <text class="label" x="663" y="268">Backbone hybride</text>
+  <text class="small" x="665" y="298">convolutions courtes</text>
+  <text class="small" x="684" y="320">attention limitée</text>
+  <text class="small" x="672" y="342">gates et résiduels</text>
+  <text class="small" x="653" y="364">pas un LTC géant</text>
+
+  <rect class="system" x="915" y="126" width="220" height="114" rx="14"/>
+  <text class="label" x="961" y="160">Entraînement</text>
+  <text class="small" x="951" y="188">données, distillation,</text>
+  <text class="small" x="961" y="207">post-training</text>
+
+  <rect class="system" x="915" y="310" width="220" height="114" rx="14"/>
+  <text class="label" x="973" y="344">Déploiement</text>
+  <text class="small" x="956" y="372">latence, mémoire,</text>
+  <text class="small" x="960" y="391">runtime, matériel</text>
+
+  <rect class="warning" x="615" y="502" width="520" height="82" rx="14"/>
+  <text class="label" x="768" y="535">Modèle de fondation liquide</text>
+  <text class="small" x="690" y="562">Rapport technique utile ; pas une preuve générale de supériorité.</text>
+
+  <path class="line" d="M260 214 C292 226 310 270 335 292"/>
+  <path class="line" d="M260 404 C292 392 310 352 335 334"/>
+  <path class="line" d="M540 316 L615 316"/>
+  <path class="line" d="M845 292 C882 260 893 205 915 184"/>
+  <path class="line" d="M845 340 C882 350 893 360 915 367"/>
+  <path class="line" d="M1025 240 L1025 310"/>
+  <path class="line" d="M1025 424 C1008 470 958 502 875 502"/>
+  <path class="soft" d="M730 398 C746 448 780 480 815 502"/>
+
+  <rect class="warning" x="112" y="600" width="976" height="44" rx="10"/>
+  <text class="small" x="178" y="627">À retenir : le passage à l'échelle transforme une idée de cellule en problème complet de plateforme modèle.</text>
+  <text class="small" x="420" y="678">FIG-019-001 - De LTC/CfC vers modèle fondation continu</text>
+</svg>

@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="760" viewBox="0 0 1180 760" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-022-002 - Top-1 vs top-k</title>
+  <desc id="desc">Comparaison visuelle entre le routage Switch top-1 et un routage top-k : chemin d'exécution, coût, robustesse, recombinaison et risques.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <style>
+      .bg { fill: #fbfcff; }
+      .column1 { fill: #ecfdf5; stroke: #16a34a; stroke-width: 1.8; }
+      .column2 { fill: #f5f3ff; stroke: #8b5cf6; stroke-width: 1.8; }
+      .mini { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.2; }
+      .token { fill: #dbeafe; stroke: #2563eb; stroke-width: 1.2; }
+      .expert-green { fill: #bbf7d0; stroke: #16a34a; stroke-width: 1.2; }
+      .expert-purple { fill: #ddd6fe; stroke: #7c3aed; stroke-width: 1.2; }
+      .expert-orange { fill: #fed7aa; stroke: #f97316; stroke-width: 1.2; }
+      .title { font: 700 24px Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 13px Arial, sans-serif; fill: #475569; }
+      .heading { font: 700 18px Arial, sans-serif; fill: #111827; }
+      .label { font: 700 14px Arial, sans-serif; fill: #1f2937; }
+      .text { font: 400 13px Arial, sans-serif; fill: #334155; }
+      .small { font: 400 11px Arial, sans-serif; fill: #64748b; }
+      .table-head { fill: #e2e8f0; stroke: #cbd5e1; stroke-width: 1; }
+      .row { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1; }
+      .line { stroke: #334155; stroke-width: 1.7; fill: none; marker-end: url(#arrow); }
+      .line-soft { stroke: #64748b; stroke-width: 1.4; fill: none; marker-end: url(#arrow); }
+      .line-purple { stroke: #7c3aed; stroke-width: 1.5; fill: none; marker-end: url(#arrow); }
+      .line-green { stroke: #16a34a; stroke-width: 1.5; fill: none; marker-end: url(#arrow); }
+      .dash { stroke-dasharray: 5 4; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1180" height="760"/>
+  <text class="title" x="40" y="48">Switch top-1 vs routage top-k</text>
+  <text class="subtitle" x="40" y="72">Le top-1 réduit le nombre de chemins actifs ; le top-k garde plus de flexibilité mais augmente coordination et coût.</text>
+
+  <rect class="column1" x="48" y="110" width="520" height="285" rx="10"/>
+  <text class="heading" x="78" y="145">Switch top-1</text>
+  <text class="small" x="78" y="166">Un token, un expert actif.</text>
+  <rect class="token" x="96" y="222" width="92" height="36" rx="6"/>
+  <text class="text" x="121" y="245">token</text>
+  <rect class="mini" x="250" y="205" width="112" height="70" rx="7"/>
+  <text class="label" x="282" y="232">Routeur</text>
+  <text class="small" x="277" y="254">argmax(p)</text>
+  <rect class="expert-green" x="430" y="156" width="100" height="46" rx="6"/>
+  <text class="text" x="455" y="184">Expert A</text>
+  <rect class="mini" x="430" y="232" width="100" height="46" rx="6"/>
+  <text class="text" x="455" y="260">Expert B</text>
+  <rect class="mini" x="430" y="308" width="100" height="46" rx="6"/>
+  <text class="text" x="455" y="336">Expert C</text>
+  <path class="line" d="M 188 240 L 250 240"/>
+  <path class="line-green" d="M 362 240 C 386 216, 402 190, 430 180"/>
+  <path class="line-soft dash" d="M 362 244 C 390 252, 405 254, 430 254"/>
+  <path class="line-soft dash" d="M 362 248 C 390 296, 406 320, 430 330"/>
+  <text class="small" x="76" y="360">Chemin court : dispatch unique, sortie unique, recombinaison directe.</text>
+
+  <rect class="column2" x="632" y="110" width="520" height="285" rx="10"/>
+  <text class="heading" x="662" y="145">Routage top-k</text>
+  <text class="small" x="662" y="166">Un token peut activer plusieurs experts.</text>
+  <rect class="token" x="680" y="222" width="92" height="36" rx="6"/>
+  <text class="text" x="705" y="245">token</text>
+  <rect class="mini" x="834" y="205" width="112" height="70" rx="7"/>
+  <text class="label" x="866" y="232">Routeur</text>
+  <text class="small" x="859" y="254">top-k(p)</text>
+  <rect class="expert-purple" x="1014" y="156" width="100" height="46" rx="6"/>
+  <text class="text" x="1039" y="184">Expert A</text>
+  <rect class="expert-orange" x="1014" y="232" width="100" height="46" rx="6"/>
+  <text class="text" x="1039" y="260">Expert B</text>
+  <rect class="mini" x="1014" y="308" width="100" height="46" rx="6"/>
+  <text class="text" x="1039" y="336">Expert C</text>
+  <path class="line" d="M 772 240 L 834 240"/>
+  <path class="line-purple" d="M 946 236 C 970 210, 986 190, 1014 180"/>
+  <path class="line-purple" d="M 946 244 C 975 250, 988 254, 1014 254"/>
+  <path class="line-soft dash" d="M 946 248 C 972 295, 988 320, 1014 330"/>
+  <text class="small" x="660" y="360">Chemin flexible : plusieurs sorties, pondération, fusion et coordination.</text>
+
+  <rect class="table-head" x="70" y="438" width="300" height="42" rx="4"/>
+  <rect class="table-head" x="370" y="438" width="290" height="42" rx="4"/>
+  <rect class="table-head" x="660" y="438" width="470" height="42" rx="4"/>
+  <text class="label" x="92" y="464">Axe</text>
+  <text class="label" x="392" y="464">Switch top-1</text>
+  <text class="label" x="682" y="464">Top-k</text>
+
+  <rect class="row" x="70" y="480" width="300" height="54"/>
+  <rect class="row" x="370" y="480" width="290" height="54"/>
+  <rect class="row" x="660" y="480" width="470" height="54"/>
+  <text class="text" x="92" y="511">Experts actifs par token</text>
+  <text class="text" x="392" y="511">1</text>
+  <text class="text" x="682" y="511">k, souvent 2 ou plus</text>
+
+  <rect class="row" x="70" y="534" width="300" height="54"/>
+  <rect class="row" x="370" y="534" width="290" height="54"/>
+  <rect class="row" x="660" y="534" width="470" height="54"/>
+  <text class="text" x="92" y="565">Coût de dispatch</text>
+  <text class="text" x="392" y="565">plus faible, chemin unique</text>
+  <text class="text" x="682" y="565">plus élevé, copies multiples possibles</text>
+
+  <rect class="row" x="70" y="588" width="300" height="54"/>
+  <rect class="row" x="370" y="588" width="290" height="54"/>
+  <rect class="row" x="660" y="588" width="470" height="54"/>
+  <text class="text" x="92" y="619">Recombinaison</text>
+  <text class="text" x="392" y="619">sortie unique pondérée</text>
+  <text class="text" x="682" y="619">somme pondérée de plusieurs sorties</text>
+
+  <rect class="row" x="70" y="642" width="300" height="54"/>
+  <rect class="row" x="370" y="642" width="290" height="54"/>
+  <rect class="row" x="660" y="642" width="470" height="54"/>
+  <text class="text" x="92" y="673">Risque principal</text>
+  <text class="text" x="392" y="673">mauvais choix ou débordement</text>
+  <text class="text" x="682" y="673">complexité, communication, capacité plus coûteuse</text>
+
+  <text class="small" x="296" y="732">FIG-022-002 - Top-1 vs top-k : il faut comparer qualité, coût, stabilité et observabilité, pas seulement le nombre d'experts.</text>
+</svg>

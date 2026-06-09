@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="520" viewBox="0 0 1120 520" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-029-001 - Adaptation interne Transformer² vs routage MoE</title>
+  <desc id="desc">Comparaison visuelle entre une adaptation interne en deux passes et un routage Mixture-of-Experts.</desc>
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#15803d"/>
+    </marker>
+    <style>
+      .bg { fill: #ffffff; }
+      .panel-blue { fill: #eff6ff; stroke: #93c5fd; stroke-width: 2; rx: 16; }
+      .panel-green { fill: #f0fdf4; stroke: #86efac; stroke-width: 2; rx: 16; }
+      .box-blue { fill: #ffffff; stroke: #2563eb; stroke-width: 2; rx: 10; }
+      .box-green { fill: #ffffff; stroke: #15803d; stroke-width: 2; rx: 10; }
+      .soft-blue { fill: #dbeafe; stroke: #2563eb; stroke-width: 2; rx: 10; }
+      .soft-green { fill: #dcfce7; stroke: #15803d; stroke-width: 2; rx: 10; }
+      .title { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 24px; fill: #0f172a; }
+      .subtitle { font-family: Arial, Helvetica, sans-serif; font-size: 14px; fill: #475569; }
+      .panel-title { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 18px; fill: #0f172a; }
+      .label { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 15px; fill: #0f172a; }
+      .small { font-family: Arial, Helvetica, sans-serif; font-size: 12px; fill: #475569; }
+      .arrow-blue { stroke: #2563eb; stroke-width: 2.4; fill: none; marker-end: url(#arrow-blue); }
+      .arrow-green { stroke: #15803d; stroke-width: 2.4; fill: none; marker-end: url(#arrow-green); }
+      .dash { stroke-dasharray: 7 6; }
+      .caption { font-family: Arial, Helvetica, sans-serif; font-size: 14px; fill: #334155; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1120" height="520"/>
+
+  <text class="title" x="56" y="48">Adaptation interne Transformer² vs routage Mixture-of-Experts</text>
+  <text class="subtitle" x="56" y="72">Deux mécanismes de spécialisation, mais pas au même niveau de l'architecture.</text>
+
+  <rect class="panel-blue" x="56" y="104" width="480" height="330"/>
+  <text class="panel-title" x="82" y="138">Transformer² : adapter le modèle</text>
+  <text class="small" x="82" y="160">La tâche choisit une modulation interne avant la génération finale.</text>
+
+  <rect class="box-blue" x="86" y="195" width="120" height="58"/>
+  <text class="label" x="118" y="219">Requête</text>
+  <text class="small" x="104" y="238">prompt courant</text>
+
+  <rect class="box-blue" x="248" y="188" width="148" height="72"/>
+  <text class="label" x="279" y="213">Passe 1</text>
+  <text class="small" x="272" y="234">dispatch de tâche</text>
+
+  <rect class="soft-blue" x="248" y="304" width="148" height="72"/>
+  <text class="label" x="266" y="329">Vecteurs experts</text>
+  <text class="small" x="268" y="350">adaptation compacte</text>
+
+  <rect class="box-blue" x="430" y="226" width="78" height="110"/>
+  <text class="label" x="449" y="267">W'</text>
+  <text class="small" x="446" y="289">poids</text>
+  <text class="small" x="439" y="306">modulés</text>
+
+  <rect class="box-blue" x="248" y="390" width="148" height="58"/>
+  <text class="label" x="279" y="413">Passe 2</text>
+  <text class="small" x="270" y="432">sortie adaptée</text>
+
+  <path class="arrow-blue" d="M206 224 H242"/>
+  <path class="arrow-blue" d="M322 260 V298"/>
+  <path class="arrow-blue" d="M396 340 C425 340 425 286 428 281"/>
+  <path class="arrow-blue" d="M430 281 C410 372 390 410 398 420"/>
+  <path class="arrow-blue" d="M322 376 V386"/>
+
+  <rect class="panel-green" x="584" y="104" width="480" height="330"/>
+  <text class="panel-title" x="610" y="138">MoE : router vers des experts</text>
+  <text class="small" x="610" y="160">Les représentations sont envoyées vers des modules spécialisés.</text>
+
+  <rect class="box-green" x="620" y="212" width="138" height="58"/>
+  <text class="label" x="649" y="236">Token</text>
+  <text class="small" x="638" y="255">ou représentation</text>
+
+  <rect class="box-green" x="800" y="212" width="104" height="58"/>
+  <text class="label" x="825" y="236">Routeur</text>
+  <text class="small" x="819" y="255">scores top-k</text>
+
+  <rect class="soft-green" x="950" y="174" width="88" height="44"/>
+  <text class="label" x="970" y="202">Expert A</text>
+
+  <rect class="soft-green" x="950" y="238" width="88" height="44"/>
+  <text class="label" x="970" y="266">Expert B</text>
+
+  <rect class="soft-green" x="950" y="302" width="88" height="44"/>
+  <text class="label" x="970" y="330">Expert C</text>
+
+  <rect class="box-green" x="800" y="344" width="104" height="58"/>
+  <text class="label" x="819" y="367">Combiner</text>
+  <text class="small" x="824" y="386">sorties</text>
+
+  <path class="arrow-green" d="M758 241 H794"/>
+  <path class="arrow-green" d="M904 241 C930 241 928 196 944 196"/>
+  <path class="arrow-green" d="M904 241 H944"/>
+  <path class="arrow-green" d="M904 241 C930 241 928 324 944 324"/>
+  <path class="arrow-green" d="M994 218 C994 374 916 373 910 373"/>
+  <path class="arrow-green" d="M994 282 C994 373 916 373 910 373"/>
+  <path class="arrow-green" d="M994 346 C994 373 916 373 910 373"/>
+
+  <path class="arrow-blue dash" d="M536 236 C560 226 564 226 584 226"/>
+  <text class="caption" x="82" y="474">Transformer² module le comportement interne du modèle.</text>
+  <text class="caption" x="610" y="474">Le MoE choisit quels modules experts traitent les représentations.</text>
+</svg>

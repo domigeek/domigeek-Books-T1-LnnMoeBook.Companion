@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-021-001 - Sharding GShard</title>
+  <desc id="desc">Schéma pédagogique montrant un routeur qui dispatch des tokens vers des experts répartis sur plusieurs devices, puis recombine les sorties.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font: 700 28px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 400 16px "Segoe UI", Arial, sans-serif; fill: #4b5563; }
+      .panel { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; filter: url(#shadow); }
+      .tokens { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; }
+      .router { fill: #f5f3ff; stroke: #7c3aed; stroke-width: 2; }
+      .device { fill: #ffffff; stroke: #94a3b8; stroke-width: 1.8; }
+      .expert { fill: #ecfdf5; stroke: #047857; stroke-width: 2; }
+      .compile { fill: #fefce8; stroke: #ca8a04; stroke-width: 2; }
+      .mix { fill: #fff7ed; stroke: #ea580c; stroke-width: 2; }
+      .label { font: 700 17px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .small { font: 400 13px "Segoe UI", Arial, sans-serif; fill: #475569; }
+      .math { font: 600 13px "Consolas", "Cascadia Mono", monospace; fill: #111827; }
+      .line { fill: none; stroke: #334155; stroke-width: 2.1; marker-end: url(#arrow); }
+      .dash { fill: none; stroke: #64748b; stroke-width: 1.8; stroke-dasharray: 7 7; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="48" y="54">GShard : experts distribués sur plusieurs devices</text>
+  <text class="subtitle" x="48" y="82">Le routage MoE devient un problème de placement, dispatch, communication et recombinaison.</text>
+
+  <rect class="panel" x="60" y="120" width="1080" height="520" rx="14"/>
+
+  <rect class="tokens" x="95" y="275" width="120" height="110" rx="12"/>
+  <text class="label" x="125" y="310">Tokens</text>
+  <text class="math" x="122" y="340">t0...tN</text>
+  <text class="small" x="116" y="365">batch</text>
+
+  <rect class="router" x="275" y="255" width="145" height="150" rx="14"/>
+  <text class="label" x="322" y="292">Routeur</text>
+  <text class="math" x="313" y="323">top-k</text>
+  <text class="math" x="313" y="348">capacité</text>
+  <text class="small" x="306" y="377">scores par token</text>
+
+  <rect class="compile" x="485" y="155" width="190" height="80" rx="12"/>
+  <text class="label" x="525" y="190">Annotations</text>
+  <text class="small" x="520" y="213">sharding + compilateur</text>
+
+  <rect class="device" x="520" y="290" width="165" height="160" rx="12"/>
+  <text class="label" x="562" y="318">Device 0</text>
+  <rect class="expert" x="548" y="340" width="110" height="36" rx="8"/>
+  <text class="small" x="582" y="363">Expert 1</text>
+  <rect class="expert" x="548" y="390" width="110" height="36" rx="8"/>
+  <text class="small" x="582" y="413">Expert 2</text>
+
+  <rect class="device" x="735" y="180" width="165" height="160" rx="12"/>
+  <text class="label" x="777" y="208">Device 1</text>
+  <rect class="expert" x="763" y="230" width="110" height="36" rx="8"/>
+  <text class="small" x="798" y="253">Expert 3</text>
+  <rect class="expert" x="763" y="280" width="110" height="36" rx="8"/>
+  <text class="small" x="798" y="303">Expert 4</text>
+
+  <rect class="device" x="735" y="410" width="165" height="145" rx="12"/>
+  <text class="label" x="777" y="438">Device 2</text>
+  <rect class="expert" x="763" y="458" width="110" height="36" rx="8"/>
+  <text class="small" x="798" y="481">Expert 5</text>
+  <rect class="expert" x="763" y="505" width="110" height="36" rx="8"/>
+  <text class="small" x="798" y="528">Expert 6</text>
+
+  <rect class="mix" x="985" y="300" width="105" height="110" rx="12"/>
+  <text class="label" x="1005" y="335">Recom-</text>
+  <text class="label" x="1005" y="357">binaison</text>
+  <text class="small" x="1010" y="382">sorties</text>
+
+  <path class="line" d="M215 330 H275"/>
+  <path class="line" d="M420 330 H520"/>
+  <path class="dash" d="M420 315 C470 260 500 220 535 235"/>
+  <path class="line" d="M420 325 C525 230 640 225 735 250"/>
+  <path class="line" d="M420 360 C535 455 650 485 735 485"/>
+  <path class="line" d="M685 370 C770 360 895 342 985 342"/>
+  <path class="line" d="M900 260 C945 280 965 320 985 330"/>
+  <path class="line" d="M900 485 C945 465 965 390 985 375"/>
+
+  <rect class="compile" x="260" y="565" width="850" height="46" rx="9"/>
+  <text class="small" x="295" y="593">Lecture : GShard vise à exprimer le sharding sans écrire manuellement tout le programme distribué.</text>
+
+  <text class="small" x="425" y="690">FIG-021-001 - Sharding GShard</text>
+</svg>

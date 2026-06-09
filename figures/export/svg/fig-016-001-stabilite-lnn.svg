@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-016-001 - Stabilité et robustesse LNN</title>
+  <desc id="desc">Carte synthèse des dimensions à vérifier pour évaluer stabilité, robustesse, OOD, interprétabilité et coût des LNN.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font: 700 28px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 400 16px "Segoe UI", Arial, sans-serif; fill: #4b5563; }
+      .panel { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; filter: url(#shadow); }
+      .core { fill: #ecfdf5; stroke: #047857; stroke-width: 2.5; }
+      .blue { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; }
+      .orange { fill: #fff7ed; stroke: #ea580c; stroke-width: 2; }
+      .purple { fill: #f5f3ff; stroke: #7c3aed; stroke-width: 2; }
+      .slate { fill: #f1f5f9; stroke: #64748b; stroke-width: 2; }
+      .label { font: 700 18px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .small { font: 400 14px "Segoe UI", Arial, sans-serif; fill: #4b5563; }
+      .math { font: 600 14px "Consolas", "Cascadia Mono", monospace; fill: #111827; }
+      .line { fill: none; stroke: #374151; stroke-width: 2; marker-end: url(#arrow); }
+      .dash { fill: none; stroke: #94a3b8; stroke-width: 1.8; stroke-dasharray: 7 7; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="48" y="54">Stabilité et robustesse des LNN : carte de vérification</text>
+  <text class="subtitle" x="48" y="82">Une propriété mathématique locale ne suffit pas : il faut tester dynamique, solveur, données, coût et système.</text>
+
+  <rect class="panel" x="60" y="125" width="1080" height="530" rx="14"/>
+
+  <rect class="core" x="470" y="285" width="260" height="108" rx="16"/>
+  <text class="label" x="548" y="325">LNN</text>
+  <text class="small" x="505" y="352">état latent continu</text>
+  <text class="math" x="500" y="376">h(t), τ_effectif, solveur</text>
+
+  <rect class="blue" x="110" y="170" width="260" height="100" rx="12"/>
+  <text class="label" x="145" y="204">Stabilité</text>
+  <text class="small" x="145" y="230">état borné, gradients,</text>
+  <text class="small" x="145" y="252">tolérances, longues séquences</text>
+
+  <rect class="orange" x="110" y="430" width="260" height="100" rx="12"/>
+  <text class="label" x="145" y="464">Robustesse</text>
+  <text class="small" x="145" y="490">bruit, délais, valeurs</text>
+  <text class="small" x="145" y="512">manquantes, perturbations</text>
+
+  <rect class="purple" x="820" y="170" width="260" height="100" rx="12"/>
+  <text class="label" x="855" y="204">OOD</text>
+  <text class="small" x="855" y="230">domaines séparés, dérive,</text>
+  <text class="small" x="855" y="252">calibration, erreurs nouvelles</text>
+
+  <rect class="slate" x="820" y="430" width="260" height="100" rx="12"/>
+  <text class="label" x="855" y="464">Coût</text>
+  <text class="small" x="855" y="490">latence, mémoire, NFE,</text>
+  <text class="small" x="855" y="512">portage, débogage</text>
+
+  <rect class="blue" x="470" y="150" width="260" height="82" rx="12"/>
+  <text class="label" x="515" y="185">Interprétabilité</text>
+  <text class="small" x="505" y="210">trajectoires, états, logs</text>
+
+  <rect class="orange" x="470" y="470" width="260" height="82" rx="12"/>
+  <text class="label" x="525" y="505">Baselines</text>
+  <text class="small" x="500" y="530">GRU, LSTM, CT-RNN, Δt</text>
+
+  <path class="line" d="M370 220 C430 230 455 270 500 300"/>
+  <path class="line" d="M370 480 C430 465 455 410 500 380"/>
+  <path class="line" d="M820 220 C760 230 735 270 700 300"/>
+  <path class="line" d="M820 480 C760 465 735 410 700 380"/>
+  <path class="line" d="M600 232 V285"/>
+  <path class="line" d="M600 470 V393"/>
+
+  <rect class="slate" x="250" y="585" width="700" height="46" rx="8"/>
+  <text class="small" x="282" y="613">Question centrale : quelle propriété est démontrée, dans quel cadre, et jusqu'où peut-on l'utiliser ?</text>
+
+  <text class="small" x="400" y="690">FIG-016-001 - Stabilité et robustesse LNN</text>
+</svg>

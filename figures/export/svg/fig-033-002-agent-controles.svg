@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="640" viewBox="0 0 1120 640" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-033-002 - Outils, mémoire, budgets et observabilité</title>
+  <desc id="desc">Vue des contrôles qui encadrent un agent : mémoire de travail, outils, permissions, budgets et observabilité.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#334155"/>
+    </marker>
+    <style>
+      .bg { fill: #ffffff; }
+      .center { fill: #f8fafc; stroke: #0f172a; stroke-width: 2.5; rx: 16; }
+      .memory { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; rx: 12; }
+      .tools { fill: #fffbeb; stroke: #d97706; stroke-width: 2; rx: 12; }
+      .perm { fill: #fff1f2; stroke: #be123c; stroke-width: 2; rx: 12; }
+      .budget { fill: #f0fdf4; stroke: #15803d; stroke-width: 2; rx: 12; }
+      .obs { fill: #faf5ff; stroke: #9333ea; stroke-width: 2; rx: 12; }
+      .title { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 24px; fill: #0f172a; }
+      .subtitle { font-family: Arial, Helvetica, sans-serif; font-size: 14px; fill: #475569; }
+      .label { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 16px; fill: #0f172a; text-anchor: middle; }
+      .small { font-family: Arial, Helvetica, sans-serif; font-size: 12px; fill: #475569; text-anchor: middle; }
+      .note { font-family: Arial, Helvetica, sans-serif; font-size: 14px; fill: #334155; }
+      .arrow { stroke: #334155; stroke-width: 2.1; fill: none; marker-end: url(#arrow); }
+      .dash { stroke-dasharray: 7 6; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1120" height="640"/>
+  <text class="title" x="56" y="48">Contrôles autour d'un agent</text>
+  <text class="subtitle" x="56" y="72">Les capacités agentiques deviennent exploitables quand elles sont encadrées par des contrats et des limites.</text>
+
+  <rect class="center" x="448" y="248" width="224" height="108"/>
+  <text class="label" x="560" y="290">Agent</text>
+  <text class="small" x="560" y="314">boucle d'exécution</text>
+  <text class="small" x="560" y="332">bornée et traçable</text>
+
+  <rect class="memory" x="86" y="150" width="230" height="96"/>
+  <text class="label" x="201" y="182">Mémoire de travail</text>
+  <text class="small" x="201" y="207">objectif, hypothèses, observations</text>
+  <text class="small" x="201" y="225">contexte borné</text>
+
+  <rect class="tools" x="390" y="124" width="230" height="96"/>
+  <text class="label" x="505" y="156">Outils</text>
+  <text class="small" x="505" y="181">schémas, résultats, erreurs</text>
+  <text class="small" x="505" y="199">effets de bord</text>
+
+  <rect class="perm" x="694" y="150" width="230" height="96"/>
+  <text class="label" x="809" y="182">Permissions</text>
+  <text class="small" x="809" y="207">lecture, écriture, action sensible</text>
+  <text class="small" x="809" y="225">consentement et contrôle</text>
+
+  <rect class="budget" x="250" y="438" width="230" height="96"/>
+  <text class="label" x="365" y="470">Budgets</text>
+  <text class="small" x="365" y="495">étapes, temps, coût, appels</text>
+  <text class="small" x="365" y="513">conditions d'arrêt</text>
+
+  <rect class="obs" x="630" y="438" width="230" height="96"/>
+  <text class="label" x="745" y="470">Observabilité</text>
+  <text class="small" x="745" y="495">traces, versions, replay</text>
+  <text class="small" x="745" y="513">audit et diagnostic</text>
+
+  <path class="arrow" d="M316 198 C390 214 428 244 456 266"/>
+  <path class="arrow" d="M505 220 C520 238 538 244 548 248"/>
+  <path class="arrow" d="M694 198 C632 216 594 240 578 248"/>
+  <path class="arrow" d="M390 438 C420 382 446 354 472 334"/>
+  <path class="arrow" d="M630 438 C606 382 584 354 572 356"/>
+
+  <path class="arrow dash" d="M694 200 C646 172 600 164 620 174"/>
+  <text class="note" x="626" y="142">les permissions filtrent les outils</text>
+  <path class="arrow dash" d="M482 486 C552 520 640 514 634 500"/>
+  <text class="note" x="502" y="558">les budgets limitent ; l'observabilité rend les décisions relisibles</text>
+
+  <text class="note" x="116" y="594">Lecture : l'agent est au centre, mais la qualité réelle dépend des contrôles périphériques.</text>
+</svg>

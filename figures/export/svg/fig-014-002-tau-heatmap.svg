@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-014-002 - Constantes temporelles adaptatives</title>
+  <desc id="desc">Heatmap pédagogique montrant des constantes temporelles effectives variables selon le contexte et les neurones.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font: 700 28px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 400 16px "Segoe UI", Arial, sans-serif; fill: #4b5563; }
+      .panel { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; filter: url(#shadow); }
+      .label { font: 700 17px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .small { font: 400 14px "Segoe UI", Arial, sans-serif; fill: #4b5563; }
+      .math { font: 600 14px "Consolas", "Cascadia Mono", monospace; fill: #111827; }
+      .cellText { font: 600 13px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .note { fill: #fff7ed; stroke: #ea580c; stroke-width: 1.5; }
+      .axis { stroke: #64748b; stroke-width: 1.2; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="700"/>
+  <text class="title" x="48" y="54">Constantes temporelles adaptatives</text>
+  <text class="subtitle" x="48" y="82">Exemple pédagogique : chaque neurone peut réagir avec une inertie différente selon le contexte.</text>
+
+  <rect class="panel" x="70" y="125" width="1060" height="500" rx="14"/>
+
+  <text class="label" x="155" y="165">Neurones</text>
+  <text class="label" x="500" y="165">Contextes temporels</text>
+
+  <text class="small" x="250" y="205">repos</text>
+  <text class="small" x="365" y="205">signal faible</text>
+  <text class="small" x="505" y="205">transition</text>
+  <text class="small" x="650" y="205">alerte</text>
+  <text class="small" x="785" y="205">retour stable</text>
+
+  <text class="math" x="135" y="250">n_1</text>
+  <text class="math" x="135" y="315">n_2</text>
+  <text class="math" x="135" y="380">n_3</text>
+  <text class="math" x="135" y="445">n_4</text>
+  <text class="math" x="135" y="510">n_5</text>
+
+  <rect x="235" y="225" width="110" height="50" fill="#dbeafe" stroke="#ffffff"/>
+  <rect x="345" y="225" width="110" height="50" fill="#bfdbfe" stroke="#ffffff"/>
+  <rect x="455" y="225" width="110" height="50" fill="#fef3c7" stroke="#ffffff"/>
+  <rect x="565" y="225" width="110" height="50" fill="#fb923c" stroke="#ffffff"/>
+  <rect x="675" y="225" width="110" height="50" fill="#fde68a" stroke="#ffffff"/>
+
+  <rect x="235" y="290" width="110" height="50" fill="#ecfdf5" stroke="#ffffff"/>
+  <rect x="345" y="290" width="110" height="50" fill="#d1fae5" stroke="#ffffff"/>
+  <rect x="455" y="290" width="110" height="50" fill="#fed7aa" stroke="#ffffff"/>
+  <rect x="565" y="290" width="110" height="50" fill="#ea580c" stroke="#ffffff"/>
+  <rect x="675" y="290" width="110" height="50" fill="#fef3c7" stroke="#ffffff"/>
+
+  <rect x="235" y="355" width="110" height="50" fill="#bfdbfe" stroke="#ffffff"/>
+  <rect x="345" y="355" width="110" height="50" fill="#dbeafe" stroke="#ffffff"/>
+  <rect x="455" y="355" width="110" height="50" fill="#fde68a" stroke="#ffffff"/>
+  <rect x="565" y="355" width="110" height="50" fill="#fb923c" stroke="#ffffff"/>
+  <rect x="675" y="355" width="110" height="50" fill="#bfdbfe" stroke="#ffffff"/>
+
+  <rect x="235" y="420" width="110" height="50" fill="#d1fae5" stroke="#ffffff"/>
+  <rect x="345" y="420" width="110" height="50" fill="#fef3c7" stroke="#ffffff"/>
+  <rect x="455" y="420" width="110" height="50" fill="#fb923c" stroke="#ffffff"/>
+  <rect x="565" y="420" width="110" height="50" fill="#dc2626" stroke="#ffffff"/>
+  <rect x="675" y="420" width="110" height="50" fill="#fed7aa" stroke="#ffffff"/>
+
+  <rect x="235" y="485" width="110" height="50" fill="#dbeafe" stroke="#ffffff"/>
+  <rect x="345" y="485" width="110" height="50" fill="#bfdbfe" stroke="#ffffff"/>
+  <rect x="455" y="485" width="110" height="50" fill="#fde68a" stroke="#ffffff"/>
+  <rect x="565" y="485" width="110" height="50" fill="#f97316" stroke="#ffffff"/>
+  <rect x="675" y="485" width="110" height="50" fill="#ecfdf5" stroke="#ffffff"/>
+
+  <text class="cellText" x="273" y="257">lent</text>
+  <text class="cellText" x="382" y="257">moyen</text>
+  <text class="cellText" x="486" y="257">rapide</text>
+  <text class="cellText" x="598" y="257">très rapide</text>
+  <text class="cellText" x="706" y="257">rapide</text>
+
+  <text class="cellText" x="269" y="322">très lent</text>
+  <text class="cellText" x="379" y="322">lent</text>
+  <text class="cellText" x="486" y="322">rapide</text>
+  <text class="cellText" x="598" y="322">très rapide</text>
+  <text class="cellText" x="706" y="322">rapide</text>
+
+  <text class="cellText" x="273" y="387">moyen</text>
+  <text class="cellText" x="379" y="387">lent</text>
+  <text class="cellText" x="486" y="387">rapide</text>
+  <text class="cellText" x="598" y="387">très rapide</text>
+  <text class="cellText" x="706" y="387">moyen</text>
+
+  <text class="cellText" x="273" y="452">lent</text>
+  <text class="cellText" x="486" y="452">très rapide</text>
+  <text class="cellText" x="596" y="452">max</text>
+  <text class="cellText" x="706" y="452">rapide</text>
+
+  <text class="cellText" x="273" y="517">lent</text>
+  <text class="cellText" x="382" y="517">moyen</text>
+  <text class="cellText" x="486" y="517">rapide</text>
+  <text class="cellText" x="598" y="517">très rapide</text>
+  <text class="cellText" x="706" y="517">très lent</text>
+
+  <rect x="875" y="230" width="34" height="34" fill="#ecfdf5" stroke="#cbd5e1"/>
+  <text class="small" x="920" y="253">τ effectif élevé : réaction lente</text>
+  <rect x="875" y="295" width="34" height="34" fill="#fde68a" stroke="#cbd5e1"/>
+  <text class="small" x="920" y="318">τ intermédiaire</text>
+  <rect x="875" y="360" width="34" height="34" fill="#ea580c" stroke="#cbd5e1"/>
+  <text class="small" x="920" y="383">τ effectif faible : réaction rapide</text>
+
+  <rect class="note" x="850" y="455" width="245" height="86" rx="8"/>
+  <text class="small" x="872" y="480">Figure pédagogique :</text>
+  <text class="small" x="872" y="502">pas une mesure issue</text>
+  <text class="small" x="872" y="524">d'un entraînement réel.</text>
+
+  <text class="small" x="380" y="660">FIG-014-002 - Constantes temporelles adaptatives</text>
+</svg>

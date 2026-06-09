@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-021-002 - Contraintes matérielles</title>
+  <desc id="desc">Carte des contraintes matérielles d'un MoE distribué : mémoire, bande passante, latence, équilibrage, compilation et observabilité.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font: 700 28px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 400 16px "Segoe UI", Arial, sans-serif; fill: #4b5563; }
+      .panel { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; filter: url(#shadow); }
+      .core { fill: #ecfdf5; stroke: #047857; stroke-width: 2.5; }
+      .blue { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; }
+      .orange { fill: #fff7ed; stroke: #ea580c; stroke-width: 2; }
+      .purple { fill: #f5f3ff; stroke: #7c3aed; stroke-width: 2; }
+      .yellow { fill: #fefce8; stroke: #ca8a04; stroke-width: 2; }
+      .slate { fill: #f1f5f9; stroke: #64748b; stroke-width: 2; }
+      .label { font: 700 17px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .small { font: 400 13px "Segoe UI", Arial, sans-serif; fill: #475569; }
+      .math { font: 600 13px "Consolas", "Cascadia Mono", monospace; fill: #111827; }
+      .line { fill: none; stroke: #334155; stroke-width: 2; marker-end: url(#arrow); }
+      .dash { fill: none; stroke: #64748b; stroke-width: 1.7; stroke-dasharray: 7 7; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="48" y="54">Contraintes matérielles d'un MoE distribué</text>
+  <text class="subtitle" x="48" y="82">La sparsité réduit du calcul, mais elle ajoute du mouvement : mémoire, réseau, latence et compilation.</text>
+
+  <rect class="panel" x="60" y="120" width="1080" height="520" rx="14"/>
+
+  <rect class="core" x="455" y="285" width="290" height="100" rx="16"/>
+  <text class="label" x="535" y="323">MoE distribué</text>
+  <text class="small" x="500" y="350">routeur + experts + dispatch</text>
+  <text class="math" x="515" y="372">tokens -> devices -> sorties</text>
+
+  <rect class="blue" x="105" y="170" width="250" height="88" rx="12"/>
+  <text class="label" x="145" y="202">Mémoire</text>
+  <text class="small" x="145" y="228">experts stockés, buffers,</text>
+  <text class="small" x="145" y="248">activations intermédiaires</text>
+
+  <rect class="orange" x="105" y="445" width="250" height="88" rx="12"/>
+  <text class="label" x="145" y="477">Bande passante</text>
+  <text class="small" x="145" y="503">tokens déplacés entre</text>
+  <text class="small" x="145" y="523">devices et experts</text>
+
+  <rect class="purple" x="455" y="155" width="290" height="82" rx="12"/>
+  <text class="label" x="550" y="188">Latence</text>
+  <text class="small" x="500" y="214">stragglers, synchronisations, pire chemin</text>
+
+  <rect class="yellow" x="455" y="455" width="290" height="82" rx="12"/>
+  <text class="label" x="530" y="488">Compilation</text>
+  <text class="small" x="500" y="514">annotations, XLA, placement, kernels</text>
+
+  <rect class="blue" x="845" y="170" width="250" height="88" rx="12"/>
+  <text class="label" x="885" y="202">Équilibrage</text>
+  <text class="small" x="885" y="228">hotspots, capacité expert,</text>
+  <text class="small" x="885" y="248">tokens débordés</text>
+
+  <rect class="slate" x="845" y="445" width="250" height="88" rx="12"/>
+  <text class="label" x="885" y="477">Observabilité</text>
+  <text class="small" x="885" y="503">charge par device, logs,</text>
+  <text class="small" x="885" y="523">latence et débit</text>
+
+  <path class="line" d="M355 214 C405 230 430 285 470 310"/>
+  <path class="line" d="M355 489 C405 465 430 385 470 360"/>
+  <path class="line" d="M600 237 V285"/>
+  <path class="line" d="M600 455 V385"/>
+  <path class="line" d="M845 214 C795 230 765 285 730 310"/>
+  <path class="line" d="M845 489 C795 465 765 385 730 360"/>
+
+  <rect class="orange" x="240" y="585" width="720" height="40" rx="8"/>
+  <text class="small" x="278" y="611">Question utile : quel coût devient dominant quand la capacité augmente ? Calcul, mémoire, réseau ou coordination ?</text>
+
+  <text class="small" x="405" y="690">FIG-021-002 - Contraintes matérielles</text>
+</svg>

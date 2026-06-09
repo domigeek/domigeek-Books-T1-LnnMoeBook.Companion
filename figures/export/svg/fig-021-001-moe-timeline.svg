@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">FIG-021-001 - Frise historique des MoE</title>
+  <desc id="desc">Frise montrant le passage des mélanges d'experts locaux aux MoE sparse modernes dans les grands modèles.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .bg { fill: #ffffff; }
+      .title { font: 700 28px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 400 16px "Segoe UI", Arial, sans-serif; fill: #4b5563; }
+      .panel { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; filter: url(#shadow); }
+      .axis { stroke: #334155; stroke-width: 3; marker-end: url(#arrow); }
+      .tick { stroke: #334155; stroke-width: 2; }
+      .year { font: 700 18px "Segoe UI", Arial, sans-serif; fill: #0f172a; }
+      .label { font: 700 16px "Segoe UI", Arial, sans-serif; fill: #111827; }
+      .small { font: 400 13px "Segoe UI", Arial, sans-serif; fill: #475569; }
+      .note { font: 600 13px "Segoe UI", Arial, sans-serif; fill: #334155; }
+      .card1 { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; }
+      .card2 { fill: #ecfdf5; stroke: #047857; stroke-width: 2; }
+      .card3 { fill: #fff7ed; stroke: #ea580c; stroke-width: 2; }
+      .card4 { fill: #f5f3ff; stroke: #7c3aed; stroke-width: 2; }
+      .card5 { fill: #fefce8; stroke: #ca8a04; stroke-width: 2; }
+      .card6 { fill: #f0fdfa; stroke: #0f766e; stroke-width: 2; }
+      .band { fill: #f1f5f9; stroke: #cbd5e1; stroke-width: 1.5; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="48" y="54">Historique des Mixture-of-Experts</text>
+  <text class="subtitle" x="48" y="82">La même idée change de rôle : modélisation locale, calcul conditionnel, puis architecture distribuée.</text>
+
+  <rect class="panel" x="60" y="122" width="1080" height="520" rx="14"/>
+  <line class="axis" x1="120" y1="360" x2="1080" y2="360"/>
+
+  <line class="tick" x1="160" y1="340" x2="160" y2="380"/>
+  <line class="tick" x1="335" y1="340" x2="335" y2="380"/>
+  <line class="tick" x1="510" y1="340" x2="510" y2="380"/>
+  <line class="tick" x1="685" y1="340" x2="685" y2="380"/>
+  <line class="tick" x1="860" y1="340" x2="860" y2="380"/>
+  <line class="tick" x1="1035" y1="340" x2="1035" y2="380"/>
+
+  <rect class="card1" x="85" y="185" width="150" height="118" rx="12"/>
+  <text class="year" x="118" y="215">1991</text>
+  <text class="label" x="104" y="245">Jacobs et al.</text>
+  <text class="small" x="104" y="270">experts locaux</text>
+  <text class="small" x="104" y="291">gate appris</text>
+
+  <rect class="card2" x="260" y="415" width="150" height="118" rx="12"/>
+  <text class="year" x="293" y="445">1994</text>
+  <text class="label" x="282" y="475">Hiérarchie</text>
+  <text class="small" x="282" y="500">structure en arbre</text>
+  <text class="small" x="282" y="521">EM et mixtures</text>
+
+  <rect class="card3" x="435" y="185" width="150" height="118" rx="12"/>
+  <text class="year" x="468" y="215">2017</text>
+  <text class="label" x="455" y="245">Sparse MoE</text>
+  <text class="small" x="455" y="270">gating top-k</text>
+  <text class="small" x="455" y="291">capacité massive</text>
+
+  <rect class="card4" x="610" y="415" width="150" height="118" rx="12"/>
+  <text class="year" x="643" y="445">2020</text>
+  <text class="label" x="646" y="475">GShard</text>
+  <text class="small" x="632" y="500">experts distribués</text>
+  <text class="small" x="632" y="521">sharding automatique</text>
+
+  <rect class="card5" x="785" y="185" width="150" height="118" rx="12"/>
+  <text class="year" x="818" y="215">2022</text>
+  <text class="label" x="820" y="245">Switch</text>
+  <text class="small" x="807" y="270">routage top-1</text>
+  <text class="small" x="807" y="291">simplicité système</text>
+
+  <rect class="card6" x="960" y="415" width="150" height="118" rx="12"/>
+  <text class="year" x="993" y="445">2024</text>
+  <text class="label" x="982" y="475">Mixtral /</text>
+  <text class="label" x="982" y="497">DeepSeek</text>
+  <text class="small" x="982" y="522">LLM sparse MoE</text>
+
+  <rect class="band" x="145" y="575" width="910" height="42" rx="8"/>
+  <text class="note" x="182" y="602">Fil conducteur : capacité totale plus grande, coût actif contrôlé, orchestration plus difficile.</text>
+
+  <text class="small" x="427" y="690">FIG-021-001 - Frise historique des MoE</text>
+</svg>
