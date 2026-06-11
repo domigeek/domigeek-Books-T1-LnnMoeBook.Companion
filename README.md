@@ -1,6 +1,6 @@
-# DomiGeek Books - Tome I - LNN / MoE Companion
+# Les Dimensions de l'Intelligence Artificielle - Tome I - Vers les Réseaux Neuronaux Liquides
 
-Dépôt compagnon du Tome I : _Réseaux de Neurones Liquides, Mixture-of-Experts et Architectures Cognitives Modulaires_.
+Dépôt compagnon du Tome I : _Les Dimensions de l'Intelligence Artificielle - Tome I - Vers les Réseaux Neuronaux Liquides_.
 
 URL du dépôt compagnon :
 
