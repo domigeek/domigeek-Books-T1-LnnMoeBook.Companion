@@ -17,6 +17,8 @@ https://github.com/domigeek/domigeek-Books-T1-LnnMoeBook.Companion
 
 Le dépôt contient uniquement les artefacts listés ci-dessus.
 
+Le dépôt compagnon est appelé à évoluer dans le temps. De nouveaux exemples, variantes, tests et mesures pourront être ajoutés pour nourrir la communauté technique, tout en conservant un objectif pédagogique : rendre les mécanismes lisibles, exécutables et vérifiables sans prétendre fournir un framework de production.
+
 ## Commandes utiles
 
 ```powershell
