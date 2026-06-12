@@ -12,10 +12,11 @@ https://github.com/domigeek/domigeek-Books-T1-LnnMoeBook.Companion
 
 - `code/csharp/` : code compagnon C# / TorchSharp.
 - `figures/export/` : images exportées utilisées par le livre.
+- `solutions/` : corrections longues des exercices du Tome I.
 - `exports/pdf/tome-i.pdf` : version PDF du Tome I.
 - `exports/epub/tome-i.epub` : version EPUB du Tome I.
 
-Le dépôt contient uniquement les artefacts listés ci-dessus.
+Le dépôt contient les artefacts publiés du livre, le code compagnon et les corrections longues.
 
 Le dépôt compagnon est appelé à évoluer dans le temps. De nouveaux exemples, variantes, tests et mesures pourront être ajoutés pour nourrir la communauté technique, tout en conservant un objectif pédagogique : rendre les mécanismes lisibles, exécutables et vérifiables sans prétendre fournir un framework de production.
 
@@ -25,6 +26,7 @@ Le dépôt compagnon est appelé à évoluer dans le temps. De nouveaux exemples
 dotnet build code/csharp/LnnMoeBook.sln
 dotnet test code/csharp/LnnMoeBook.sln -m:1
 dotnet run --project code/csharp/LnnMoeBook.Examples
+python solutions/validate-solutions.py
 ```
 
 ## Note
